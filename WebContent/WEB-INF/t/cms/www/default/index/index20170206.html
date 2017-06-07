@@ -1,0 +1,789 @@
+<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页 - ${site.name}</title>
+<meta http-equiv="keywords" content="${site.keywords!}"/>
+<meta http-equiv="description" content="${site.description!}"/>
+<script src="${resSys}/jquery.js" type="text/javascript"></script>
+<script src="${resSys}/front.js" type="text/javascript"></script>
+<script type="text/javascript" src="/${res}/js/jquery.SuperSlide.js"></script>
+<script type="text/javascript" src="/${res}/js/foucsbox.js"></script>
+<link type="text/css" rel="stylesheet" href="/${res}/css/home20170206.css" />
+<link type="text/css" rel="stylesheet" href="/${res}/css/home.css" />
+<link type="text/css" rel="stylesheet" href="/${res}/css/wangyi-xinxiliu.css" />
+<link type="text/css" rel="stylesheet" href="/${res}/css/index.css" />
+
+
+<!--[if lt IE 9]> 
+<script src="/${res}/js/html5shiv.min.js"></script>
+<script src="/${res}/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(function() {
+	Cms.siteFlow("${base}", location.href, document.referrer, "${site.config.flowSwitch?string}");
+	$.cookie("_site_id_cookie","${site.id!}",{path: '${base}' });
+});
+</script>
+      <script type = "text/javascript" > 
+      $(document).ready(function(){
+    		$(".news_main .newsdata_nav li").mouseover(function(){
+    			$(this).children('a').addClass('current');
+    			$(this).siblings().children('a').removeClass('current');
+    			var index = $(this).index();
+    			number = index;
+    			$('.news_main .newsdata_list li').hide();
+    			$('.news_main .newsdata_list li:eq('+index+')').show();
+    		});
+    		var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+    		if(auto ==1){
+    			var number = 0;
+    			var maxNumber = $('.news_main .newsdata_nav li').length;
+    			function autotab(){
+    				number++;
+    				number == maxNumber? number = 0 : number;
+    				$('.news_main .newsdata_nav li:eq('+number+')').children('a').addClass('current');
+    				$('.news_main .newsdata_nav li:eq('+number+')').siblings().children('a').removeClass('current');
+    				$('.news_main .newsdata_list li:eq('+number+')').show().siblings().hide();
+    			}
+    			var tabChange = setInterval(autotab,5000);
+    			//鼠标悬停暂停切换
+    			$('.news_main').mouseover(function(){
+    				clearInterval(tabChange);
+    			});
+    			$('.news_main').mouseout(function(){
+    				tabChange = setInterval(autotab,5000);
+    			});
+    		  }
+    	});
+	  </script> 
+
+<head>
+<body>
+<section class="top">
+  <div class="red" style="width:100%;"></div>	
+</section>
+[#include "../include/header.html"/]
+<div class="main container home-main clearfix">
+  <section class="top-ad">
+    <a class="top-ad-pic"><img src="/${res}/images/top-ad.jpg"></a>
+  </section>
+  <!--焦点图 头条 ------------------------------------------------------------------------------------------ -->
+  <section class="home-top clearfix">
+  <div class="new-rdjj fl">
+  	    	<!--new 焦点图代码_begin -->
+        <div id="foucsBox">
+            <ul class="imgCon" >
+                <!--展示图片开始-->
+                [@cms_content_list count='5' typeId='3'  channelId='' orderBy='4' titLen='26' channelOption='0' dateFormat='yyyy-MM-dd']      
+		          <ul>
+		            [#list tag_list as a]
+		            	<li><a href="${a.url}" target="_blank">
+		                    <img width="630" height="350" src="${a.typeImg!}"></a>
+		                    <div class="showPage"></div>
+		                    <div class="imgTitle"><a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /]</a></div>
+		                    
+		                </li>
+		            [/#list]
+		          </ul>
+		         [/@cms_content_list]
+                
+                <!--展示图片结束-->
+            </ul>
+            <div class="foucs"><span class=""></span><span class=""></span><span class=""></span><span class="f"></span></div>
+            <div class="rBtn foucsButton">
+                <span></span>
+                <!-- <img src="./图库 - JEECMS子站演示站 - Powered by JEECMS_files/tuku1.jpg"> -->
+            </div>
+            <div class="lBtn foucsButton">
+                <span></span>
+                <!-- <img src="./图库 - JEECMS子站演示站 - Powered by JEECMS_files/tuku3.jpg"> -->
+            </div>
+        </div>
+    	<!-- 焦点图代码_end -->	
+  
+  		<!-- 焦点图开始 -->
+      <!-- <div class="new-home-banner" id="section-focus-pic">
+        <div class="bd" data-scro="list">          
+          [@cms_content_list count='5' typeId='3'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']      
+          <ul>
+            [#list tag_list as a]
+            <li class="item" [#if a_index<1]style="left:0;"[/#if]><a href="${a.url}" target="_blank"><img src="${a.typeImg!}"><div class="banner-title"><i class="Cpic"></i><span>[@text_cut s=a.title len=titLen /]</span></div></a></li>
+            [/#list]
+          </ul>
+         [/@cms_content_list]
+        </div>
+        <div class="hd" data-scro="controler">
+            [@cms_content_list count='5' typeId='2' recommend='1' channelId='75,76' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']
+               [#list tag_list as a]
+               <b [#if a_index<1]class="down"[/#if]>${a_index+1}</b>
+               [/#list]
+               <span>/${tag_list?size}</span>
+            [/@cms_content_list]
+        </div>
+        <div class="controler2" data-scro="controler2">
+		  <a href="javascript:;" class="prev"><i></i></a>
+		  <a href="javascript:;" class="next"><i></i></a>
+	    </div>
+        <script type="text/javascript" src="/${res}/js/script.js"></script>
+      </div> -->
+      <!-- 焦点图结束-->
+  </div>
+  <div class="right-fr fr">
+  	<!-- 头条 -->
+      <div class="rdjj-top-news">
+      [@cms_content_list typeId='1,4' count='4' titLen='20' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+      [#list tag_list as a]
+      <h1>
+      	<a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /]</a>
+      	<p>[@text_cut s=a.description len=78 append='...'/]</p>
+      </h1>
+      [/#list]
+      [/@cms_content_list]
+      </div>
+      <!-- 头条end -->
+  </div>
+  
+  </section>
+  <!-- ------------------------------------------------------------------------------------------- -->
+  <!-- 第二屏 -->
+  <section class="home-top clearfix">
+  <!-- 二焦点begin -->
+                      <div class="data_row news_starslide" ne-state="slideMethod:left;loop:1;" ne-module="slide">
+                        <div class="star_title clearfix">
+                            <a class="" href="http://ent.163.com/star/" target="_blank">
+                                <span>明星</span>图集
+                            </a>
+                            <div class="slide_nav">
+                                <ul class="clearfix" ne-if="state.total">
+                                    <li>
+                                        <span ne-role="slide-nav" class=""></span>
+                                    </li><li>
+                                        <span ne-role="slide-nav" class=""></span>
+                                    </li><li>
+                                        <span ne-role="slide-nav" class="current"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slide_body" ne-role="slide-body">
+                            <div class="slide_scroll clearifx" ne-role="slide-scroll" style="width: 1800px; left: -1200px;">
+                                
+                
+                     <div class="slide_page" ne-role="slide-page" style="width: 600px; left: 1800px;"><div class="top">
+                        <a href="http://ent.163.com/photoview/00AJ0003/631529.html" class="ttop">
+                            <img src="./网易娱乐_有态度的娱乐门户_files/3d961413c4c049d7809eda3ec4ba262620170519135125.jpeg" alt="" width="600" height="293">
+                            <h3>张柏芝随手拍惊艳网友 侧颜超优雅</h3>
+                        </a></div>
+                        
+                        <div class="bottom clearfix">
+                            <a href="http://ent.163.com/photoview/00AJ0003/631556.html" class="bleft">
+                                <img src="./网易娱乐_有态度的娱乐门户_files/12c2553519cd49ce82dcf55c67a2604b20170519182356.jpeg" alt="" width="299" height="146">
+                                <h3><i></i>常思思小秀事业线 与贝嫂互动不断</h3>
+                            </a>
+                            <a href="http://ent.163.com/photoview/00B90003/631559.html?1495203221974#p=CKR585PH00B90003" class="bright">
+                                <img src="./网易娱乐_有态度的娱乐门户_files/73ca5c46f2fb4736a64c313d85b8f8d720170519221355.jpeg" alt="" width="299" height="146">
+                                <h3><i></i>李依晓气质亮相华鼎奖 双面魅力获赞</h3>
+                            </a>
+                        </div>
+                    </div>
+                
+                     <div class="slide_page" ne-role="slide-page" style="width: 600px;"><div class="top">
+                        <a href="http://ent.163.com/photoview/00AJ0003/631446.html" class="ttop">
+                            <img src="./网易娱乐_有态度的娱乐门户_files/1413fab3d2344199834d04d83688ae1520170519000441.jpeg" alt="" width="600" height="293">
+                            <h3>胡静获封华鼎奖 着露背长裙优雅亮相</h3>
+                        </a></div>
+                        <div class="bottom clearfix">
+                            <a href="http://ent.163.com/photoview/00AJ0003/631524.html#p=CKQ87GRG00AJ0003" class="bleft">
+                                <img src="./网易娱乐_有态度的娱乐门户_files/8dfdb0aa68854df983ad801973712ad920170519135319.jpeg" alt="" width="299" height="146">
+                                <h3><i></i>冯瑞睿暖色性感写真 白色上衣撩人</h3>
+                            </a>
+                            <a href="http://ent.163.com/photoview/00B90003/631536.html?1495180007119" class="bright">
+                                <img src="./网易娱乐_有态度的娱乐门户_files/37ac16f0d68543d7a59827887ef194aa20170519155805.jpeg" alt="" width="299" height="146">
+                                <h3><i></i>谭松韵华鼎之夜动人献唱</h3>
+                            </a>
+                        </div>
+                    </div>
+                
+                     <div class="slide_page current" ne-role="slide-page" style="width: 600px; left: 0px;"><div class="top">
+                        <a href="http://ent.163.com/photoview/00B90003/631409.html#p=CKNP2CBC00B90003" class="ttop">
+                            <img src="./网易娱乐_有态度的娱乐门户_files/9062f5af2068468ba3b3f41951e792ef20170518175803.jpeg" alt="" width="600" height="293">
+                            <h3>乔欣金边镜框清新文艺 简约裤装无公害</h3>
+                        </a></div>
+                        <div class="bottom clearfix">
+                            <a href="http://ent.163.com/photoview/00AJ0003/631526.html" class="bleft">
+                                <img src="./网易娱乐_有态度的娱乐门户_files/82220116460e4eb7bcf3479b3a7e83e520170519135158.png" alt="" width="299" height="146">
+                                <h3><i></i>陈梦瑶再现百年前被惊艳的时光</h3>
+                            </a>
+                            <a href="http://ent.163.com/photoview/00B90003/631485.html" class="bright">
+                                <img src="./网易娱乐_有态度的娱乐门户_files/8f09f106f56b45ac83915413981db56120170519115644.jpeg" alt="" width="299" height="146">
+                                <h3><i></i>袁冰妍初夏清爽街拍曝光</h3>
+                            </a>
+                        </div>
+                    </div>
+                            </div>
+                            <a ne-role="slide-prev" class="slide_prev">&lt;</a>
+                            <a ne-role="slide-next" class="slide_next">&gt;</a>
+                        </div>
+                    </div>
+  
+  
+  <!-- 二焦点end -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  	<!-- 旅游_begin -->
+  	   <div class="w680">
+        <div class="rim05 mt10">
+            <div class="tuku_select1">
+                <h1>旅游</h1>
+                <em>
+                <a href="http://demo2.jeecms.com/youxi/index.jhtml" target="_blank">更多&gt;</a>
+                </em>
+            </div>
+            <div class="tukuList4">
+            	<ul>
+            	[@cms_content_list typeId='1,3,4' count='5' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+			      [#list tag_list as a]
+			      [#if a_index<1]
+			      	<li class="LYimg1">
+	                <a href="${a.url}" target="_blank">
+	                <img src="${a.typeImg!}" alt="" class="tukufocus1">
+	                </a>
+	                <p>
+	                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut s=a.title len=titLen /]</a>
+	                </p>
+	                </li>
+	              [#else]  
+	              	<li class="LYimg2">
+	                <a href="${a.url}" target="_blank">
+	                <img src="${a.typeImg!}" alt="" class="tukufocus2">
+	                </a>
+	                <p>
+	                <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut s=a.title len=titLen /]</a>
+	                </p>
+	                </li>
+			      [/#if]
+			      [/#list]
+			    [/@cms_content_list]
+            	
+                </ul>
+            </div>
+        </div>
+      </div>
+    <!-- 旅游_end -->
+    
+    <!-- 广告 -->
+    	<div id="ggads728ad2" class="cboth" style="width: 2720px; margin-left: -2040px;display:block">
+		<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-9472249741255995";
+		/* homebottom */
+		google_ad_slot = "5108559066";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+		</script>
+		<script type="text/javascript"
+		src="http://cpro.baidustatic.com/cpro/ui/c.js">
+		</script>
+		</div>
+    <!-- 广告 -->
+  </section>
+  
+  <!-- 第二屏 -->
+  
+  
+  
+  
+  
+  <section class="home-top clearfix">
+    <div class="new-rdjj fl">
+    
+      <!--信息流开始  -->
+
+      <div class="news_main" style="overflow-y:visible;height:500px;">
+<!-- 				<div ne-module="modules/datalist/datalist.js" ne-extend="modules/datalist/config.js">
+<div class="newsdata_wrap" ne-on="showed:changepanel" ne-module="tabs" ne-state="showhide:true;delay:300"> -->
+    <div class="newsdata_nav">
+        <ul class="clearfix">
+            <li class="nav_item">
+                <a class="nav_name current" ne-role="tab-nav" href="${base}/star/index.jhtml">明星
+                    <span class="nav_item_ink"></span>
+                </a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_name" ne-role="tab-nav" href="${base}/ys/index.jhtml">影视
+                    <span class="nav_item_ink"></span>
+                </a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_name" ne-role="tab-nav" href="${base}/fashion/index.jhtml">时尚
+                    <span class="nav_item_ink"></span>
+                </a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_name" ne-role="tab-nav" href="${base}/yl/index.jhtml">音乐
+                    <span class="nav_item_ink"></span>
+                </a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_name" ne-role="tab-nav" href="${base}/zy/index.jhtml">综艺
+                    <span class="nav_item_ink"></span>
+                </a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_name" ne-role="tab-nav" href="${base}/mt/index.jhtml">美图
+                    <span class="nav_item_ink"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="newsdata_list">
+	<ul>    
+    	<!-- 明星列表 -->
+        <li class="newsdata_item" ne-role="tab-body" style="display: block;" >
+            <div class="ndi_main">
+                <!-- <div class="row_message" ne-click="refreshList()" style="display: block;">
+                小易为你更新了2条新消息哟~~
+                </div> -->
+                [@cms_content_list count='10' typeId='1,2'  channelId='94' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+                [#list tag_list as a]
+                <div class="data_row news_article clearfix news_first">
+                
+                    <a href="${a.url}" class="na_pic" target="_blank">
+                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" >
+                    </a>
+                    
+                    <div class="na_detail clearfix ">
+                        <div class="news_title">
+                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+                        </div>
+                        <div class="news_tag">
+                        	[@text_cut s=a.description len=48 append='...'/]</div>
+                    </div>
+                </div>
+                [/#list]
+                [/@cms_content_list]
+                </div>
+         </li>
+         <!-- 电影列表 -->
+       	 <li class="newsdata_item" ne-role="tab-body" style="display: none;" >
+            <div class="ndi_main">
+                <div class="row_message" ne-click="refreshList()" style="display: none;">
+                小易为你更新了2条新消息哟~~
+                </div>
+                [@cms_content_list count='10' typeId='1,2'  channelId='96' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+                [#list tag_list as a]
+                <div class="data_row news_article clearfix news_first">
+                    <a href="${a.url}" class="na_pic" target="_blank">
+                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
+                    </a>
+                    <div class="na_detail clearfix ">
+                        <div class="news_title">
+                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+                        </div>
+                        <div class="news_tag">
+                        	[@text_cut s=a.description len=48 append='...'/]</div>
+                    </div>
+                </div>
+                [/#list]
+                [/@cms_content_list]
+              </div>
+           </li>
+           <!-- 电视列表 -->
+	       <li class="newsdata_item" ne-role="tab-body" style="display: none;" >
+	            <div class="ndi_main">
+	                [@cms_content_list count='10' typeId='1,2'  channelId='97' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+	                [#list tag_list as a]
+	                <div class="data_row news_article clearfix news_first">
+	                    <a href="${a.url}" class="na_pic" target="_blank">
+	                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
+	                    </a>
+	                    <div class="na_detail clearfix ">
+	                        <div class="news_title">
+	                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+	                        </div>
+	                        <div class="news_tag">
+	                        	[@text_cut s=a.description len=48 append='...'/]</div>
+	                    </div>
+	                </div>
+	                [/#list]
+	                [/@cms_content_list]
+	              </div>
+	         </li>
+	         <!-- 综艺列表 -->
+		       <li class="newsdata_item" ne-role="tab-body" style="display: none;">
+		            <div class="ndi_main">
+		                <!-- <div class="row_message" ne-click="refreshList()" style="display: block;">
+		                小易为你更新了2条新消息哟~~
+		                </div> -->
+		                [@cms_content_list count='10' typeId='1,2,3,4'  channelId='99' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+		                [#list tag_list as a]
+		                <div class="data_row news_article clearfix news_first">
+		                    <a href="${a.url}" class="na_pic" target="_blank">
+		                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
+		                    </a>
+		                    <div class="na_detail clearfix ">
+		                        <div class="news_title">
+		                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+		                        </div>
+		                        <div class="news_tag">
+		                        
+		                        	[@text_cut s=a.description len=48 append='...'/]</div>
+		                        
+		                    </div>
+		                </div>
+		                [/#list]
+		                [/@cms_content_list]
+		              </div>
+		         </li>
+		         <!-- 音乐列表 -->
+		       <li class="newsdata_item" ne-role="tab-body" style="display: none;">
+		            <div class="ndi_main">
+		                <!-- <div class="row_message" ne-click="refreshList()" style="display: block;">
+		                小易为你更新了2条新消息哟~~
+		                </div> -->
+		                [@cms_content_list count='10' typeId='1,2,3,4'  channelId='98' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+		                [#list tag_list as a]
+		                <div class="data_row news_article clearfix news_first">
+		                    <a href="${a.url}" class="na_pic" target="_blank">
+		                        <img src="${a.typeImg}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
+		                    </a>
+		                    <div class="na_detail clearfix ">
+		                        <div class="news_title">
+		                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+		                        </div>
+		                        <div class="news_tag">
+		                        
+		                        	[@text_cut s=a.description len=48 append='...'/]</div>
+		                        
+		                    </div>
+		                </div>
+		                [/#list]
+		                [/@cms_content_list]
+		              </div>
+		         </li>
+		         <!-- 美图列表 -->
+		       <li class="newsdata_item" ne-role="tab-body" style="display: none;">
+		            <div class="ndi_main">
+		                <!-- <div class="row_message" ne-click="refreshList()" style="display: block;">
+		                小易为你更新了2条新消息哟~~
+		                </div> -->
+		                [@cms_content_list count='10' typeId='1,2'  channelId='76' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+		                [#list tag_list as a]
+		                <div class="data_row news_article clearfix news_first">
+		                    <a href="${a.url}" class="na_pic" target="_blank">
+		                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
+		                    </a>
+		                    <div class="na_detail clearfix ">
+		                        <div class="news_title">
+		                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+		                        </div>
+		                        <div class="news_tag">
+		                        
+		                        	[@text_cut s=a.description len=48 append='...'/]</div>
+		                        
+		                    </div>
+		                </div>
+		                [/#list]
+		                [/@cms_content_list]
+		              </div>
+		         </li>
+	         
+	         
+	    </ul>
+        </div>
+                <!-- </div>
+                </div> -->
+        </div>
+        <!-- 信息流结束 -->
+
+      
+      
+      
+      <!-- <div class="home-video">
+        <div class="nav-link"><a href="${base}/video/index.jhtml">视频新闻</a></div>
+        <div class="item clearfix" style="margin-top:14px;">
+          [@cms_content_list count='1' typeId='2' channelId='77' recommend='1' orderBy='4' titLen='11' channelOption='0']
+          [#list tag_list as a]
+          <div class="video-pic fl"><a href="${a.url}" target="_blank"><img src="${a.typeImg!}"><span>[@text_cut s=a.title len=titLen /]</span></a></div>
+          [/#list]
+          [/@cms_content_list]
+          <div class="video-txt">
+          [@cms_content_list count='3' typeId='2' channelId='77' recommend='2' orderBy='4' titLen='19' channelOption='0'] 
+            <ul>
+            [#list tag_list as a]
+              <li><a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /]</a></li>
+            [/#list]
+            </ul>
+          [/@cms_content_list]
+          </div>
+        </div>
+        <div class="item clearfix">
+          [@cms_content_list count='2' typeId='2' channelId='77' recommend='1' orderBy='4' titLen='11' channelOption='0']
+          [#list tag_list as a]
+          [#if a_index>0]
+          <div class="video-pic fl"><a href="${a.url}" target="_blank"><img src="${a.typeImg!}"><span>[@text_cut s=a.title len=titLen /]</span></a></div>
+          [/#if]
+          [/#list]
+          [/@cms_content_list]
+          <div class="video-txt">
+          [@cms_content_list count='6' typeId='2' channelId='77' recommend='2' orderBy='4' titLen='19' channelOption='0'] 
+            <ul>
+            [#list tag_list as a]
+            [#if a_index>2]
+              <li><a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /]</a></li>
+            [/#if]
+            [/#list]
+            </ul>
+          [/@cms_content_list]
+          </div>
+        </div>
+        <div class="video-list">
+           [@cms_content_list count='10' typeId='2' channelId='77' recommend='2' orderBy='4' titLen='26' channelOption='0'] 
+            <ul>
+            [#list tag_list as a]
+            [#if a_index>5]
+              <li><a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /]</a></li>
+            [/#if]
+            [/#list]
+            </ul>
+          [/@cms_content_list]
+        </div>
+      </div> -->
+      
+      
+    </div>
+    <div class="right-fr fr">
+    	<!-- 精彩专题 -->
+    	  <div class="jczt">
+	        <div class="jczt-nav">精彩专题</div>
+	        
+	        <div class="rg_serial_pics mb35">
+					<div class="rg_title">
+						<h2>
+							<a href="http://ent.163.com/special/yllhhhz/">娱乐连环画</a>
+						</h2>
+					</div>
+					
+					<div class="rg_pic_wrap">
+					[@cms_topic_list count='1' recommend='1' orderBy='4' descLen='36' append='...']
+	          		[#list tag_list as t]
+						
+						<div class="first_pic">
+							<a href="${base}/topic/${t.id}.jspx" target="_blank">
+									<img src="${t.titleImg!site.defImg}" alt="" width="300" height="195">
+									<h3>${t.name}</h3>
+								</a>
+						</div>
+						
+					[/#list]
+	          		[/@cms_topic_list] 	
+						
+					</div>
+				</div>
+	        
+	        
+	        
+	        
+	        <!-- <div class="jczt-list">
+	          <div class="home-jczt">
+	          [@cms_topic_list count='3' recommend='1' orderBy='4' descLen='36' append='...']
+	          [#list tag_list as t] 
+	          <a href="${base}/topic/${t.id}.jspx" target="_blank"><img src="${t.titleImg!site.defImg}"></a>
+	          [/#list]
+	          [/@cms_topic_list] 
+	          </div>
+	        </div> -->
+	      </div>
+	      <!-- 精彩专题 -->
+	      	<!-- 星态度 -->
+			<div class="rg_star_attitude mb35">
+				<div class="rg_title">
+					<h2>
+						<a href="http://ent.163.com/special/xtdhz2013/">星态度</a>
+					</h2>
+				</div>
+				<div class="rg_box_wrap">
+					<ul>
+					[@cms_content_list typeId='1,4' count='2' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+	     			 [#list tag_list as a]
+						<li class="first">
+							<a href="${a.url}">
+								<div class="info">
+									<div class="episode">第219期</div>
+									<h3>${a.title}</h3>
+								</div>
+								<div class="pic">
+									<img src="./网易娱乐_有态度的娱乐门户_files/8c13d16970254aacac32e78af9f5c72a20170224122812.png" width="135" height="84">
+								</div>
+							</a>
+						</li>
+						[/#list]
+	      				[/@cms_content_list]
+					</ul>
+				</div>
+			</div>
+	  <!-- 星态度 -->
+	      <section class="tag issue clearfix">
+	      	  <div class="top-news">
+				<h2>top news
+					<span></span>
+				</h2>
+	      	  </div>
+	      
+		      <div class="tag-nav"><h1><a>热闻聚焦</a></h1></div>
+		      [@cms_content_list typeId='2' count='6' orderBy='9' channelId='' channelOption='1']
+			      [#list tag_list as a]
+			      <div class="item clearfix" [#if a_index<1]style="border-top:none;"[/#if]>
+			        <a href="${a.url}" target="_blank" class="img"><img src="${a.typeImg!}"></a>
+			        <h2><a href="${a.url}" target="_blank">[@text_cut s=a.title len='22' append='...' /]</a></h2>
+			        <div class="issue-comment">评论  (${a.contentCount.comments!})</div>
+			      </div>
+			      [/#list]
+		      [/@cms_content_list]
+		  </section>
+		  
+	  
+	  
+	  
+
+      
+      <!-- 列表 -->
+      <div class="rdjj-list">
+      [@cms_content_list typeId='1,2,3' count='18' orderBy='4' channelId='75' channelOption='0' dateFormat='yyyy-MM-dd HH-mm']
+        <ul>
+        [#list tag_list as a]
+          <li><a href="${a.url}" target="_blank" [#if (a_index)%6=0]class="bold"[/#if]>[@text_cut s=a.title len=28 append='...'/]</a></li>
+        [/#list]
+        </ul>
+      [/@cms_content_list]
+      </div>
+    </div>
+
+  </section>
+  <section class="home-ad02"><a><img src="/${res}/images/ds_banner.png"></a></section>
+  <section class="home-ch clearfix">
+    <div class="home-ch-left fl">
+      <div class="jczt">
+        <div class="jczt-nav">精彩专题</div>
+        <div class="jczt-list">
+          <div class="home-jczt">
+          [@cms_topic_list count='3' recommend='1' orderBy='4' descLen='36' append='...']
+          [#list tag_list as t] 
+          <a href="${base}/topic/${t.id}.jspx" target="_blank"><img src="${t.titleImg!site.defImg}"></a>
+          [/#list]
+          [/@cms_topic_list] 
+          </div>
+        </div>
+      </div>
+      <div class="zxly">
+        <div class="left-nav"><span>最新留言</span></div>
+        <div class="jcpl-list" style="padding-top:10px;">
+         [@cms_guestbook_list count='4' checked='true' recommend='true']
+           [#list tag_list as m]
+          <div class="item" [#if m_index<1]style="border-top:none;"[/#if]>
+            <a>${m.titleHtml!}</a>
+          </div>
+           [/#list]     
+         [/@cms_guestbook_list] 
+        </div>
+        <div class="message"><a href="${base}/guestbook.jspx"><img src="/${res}/images/message.png"></a></div>
+      </div>
+    </div>
+    <div class="home-ch-m fl">
+    <div class="rdjj">
+      <div class="nav-link"><a href="${base}/job/index.jhtml">招聘板块</a></div>
+      <div class="rdjj-list job-list">
+     [@cms_content_list count='10' orderBy='4' channelId='79' channelOption='0' dateFormat='yyyy-MM-dd']
+        <ul>
+       [#list tag_list as a]   
+          <li><a [#if (a_index)%6=0]class="bold"[/#if] href="${a.url}" target="_blank">${a.title}/<span>${a.attr.workplace!}</span>/${a.companyName!}${a.date?string(dateFormat)}</a></li>
+       [/#list]
+        </ul>
+     [/@cms_content_list]
+      </div>
+    </div>
+    <div class="rdjj" style="margin-top:16px;">
+      <div class="nav-link"><a href="${base}/news/index.jhtml">新闻板块</a></div>
+      <div class="rdjj-list job-list doc-list">
+      [@cms_content_list count='10' orderBy='4' channelId='75' titLen='30' channelOption='0' dateFormat='yyyy-MM-dd']
+        <ul>
+	      [#list tag_list as a] 
+	          <li><a [#if (a_index)%6=0]class="bold"[/#if] href="${a.url}" target="_blank">[@text_cut s=a.title! len=titLen append='...'/]|${a.date?string(dateFormat)}</a></li>
+	      [/#list]
+        </ul>
+     [/@cms_content_list]
+      </div>
+    </div>
+    </div>
+    <div class="home-ch-m fr clearfix">
+    <div class="rdjj" style="margin:0; overflow:hidden;">
+      <div class="nav-link"><a href="${base}/download/index.jhtml">下载板块</a></div>
+      <div class="dl-list clearfix">
+        [@cms_content_list count='12' orderBy='4' channelId='90,91,92,93' titLen='10' channelOption='0' dateFormat='yyyy-MM-dd']
+        [#list tag_list as a] 
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="${a.url}" target="_blank"><img src="${a.titleImg!}"></a></div>
+          <div>
+            <a href="${a.url}" target="_blank" class="dl-txt">[#if a.shortTitle??][@text_cut s=a.shortTitle! len=titLen append='...'/][#else][@text_cut s=a.title! len=titLen append='...'/][/#if]</a>
+            <a href="${a.url}" target="_blank" class="dl-btn"><img src="/${res}/images/dl-btn.gif"></a>
+          </div>
+        </div>
+        [/#list]
+     [/@cms_content_list]
+      </div>
+    </div>
+    <div class="rdjj" style="margin-top:16px; margin-left:0">
+      <div class="nav-link"><a href="${base}/survey/index.jhtml">网络调查</a></div>
+      <div class="rdjj-list job-list">
+       [@cms_vote_list  siteId=site.id count='10'] 
+        <ul>
+          [#list tag_list as vote]
+          <li><a [#if (vote_index)%6=0]class="bold"[/#if] href="${base}/vote.jspx?voteId=${vote.id}" target="_blank">${vote.title?html}|[#if vote.endTime??]${vote.endTime?string("yyyy-MM-dd")}[#else]已结束[/#if]</a></li>
+          [/#list]
+        </ul>
+      [/@cms_vote_list]
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="rdjj tssj">
+    <div class="nav-link"><a>图说世界</a></div>
+    <script type="text/javascript" src="/${res}/js/jquery.bxslider.js"></script>
+    <link href="/${res}/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <div class="tssj-list">
+      [@cms_content_list  titLen='14' count='8' channelId='76' orderBy='4' channelOption='0']
+      [#list tag_list as a]
+      <div class="item">
+        <a href="${a.url}" target="_blank"><img src="${a.typeImg!site.defImg}"><span>[@text_cut s=a.title len=titLen /]</span></a>
+      </div>
+      [/#list]
+      [/@cms_content_list]
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.tssj-list').bxSlider({
+            slideWidth: 224,
+            minSlides: 1,
+            maxSlides: 5,
+            slideMargin: 20
+          });
+        });
+    </script> 
+  </section>
+</div>
+[#include "../include/footer.html"/]
+[#include "../include/right-fixed.html"/]
+</body>
+</html>

@@ -14,7 +14,7 @@ img{border:none;}
 .color1{color:White;}
 .color2{color:#333333;}
 /*图片特效*/
-.piccontext{width:1200px;margin:0 auto;box-sizing:border-box;}
+.piccontext{width:1000px;margin:0 auto;box-sizing:border-box;}
 .piccontext h2{width:100%;line-height:30px;overflow:hidden;font-size:24px;color:#1d1d1d;font-weight:normal;}
 .support{float:left;height:20px;overflow:hidden; color:#666666;}
 .support img{padding:0px 5px;}

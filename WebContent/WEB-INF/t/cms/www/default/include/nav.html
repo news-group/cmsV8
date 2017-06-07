@@ -1,13 +1,14 @@
 <nav class="nav">
      [@cms_channel_list]
       <ul class="menu">
+      <li><a href="${base}/" target="_blank">首页</a></li>
      [#if !channel??]     
       [#list tag_list as c]
-      [#if c_index<3]
-        <li><a href="${c.url}">${c.name}</a></li>
+      [#if c_index<6]
+        <li><a href="${c.url}" target="_blank">${c.name}</a></li>
       [/#if]
       [/#list]
-        <li><a href="http://bbs.jeecms.com" target="_blank">论坛</a></li>     
+        <!-- <li><a href="http://bbs.jeecms.com" target="_blank">论坛1</a></li>     
         <li class="more">      
       [#list tag_list as c]
       [#if c_index==3] 
@@ -21,18 +22,18 @@
               [/#if]
             [/#list]
           </ul>
-        </li> 
+        </li>  -->
      [#else]  
       [#list tag_list as c]
-      [#if c_index<3]
-        <li [#if channel??&&channel.id==c.id]class="on"[/#if]><a href="${c.url}">${c.name}</a></li>
+      [#if c_index<6]
+        <li [#if channel??&&channel.id==c.id]class="on"[/#if]><a href="${c.url}" target="_blank">${c.name}</a></li>
       [/#if]
       [/#list]
-        <li><a href="http://bbs.jeecms.com" target="_blank">论坛</a></li>     
+        <!-- <li><a href="http://bbs.jeecms.com" target="_blank">论坛2</a></li>     
         <li class="more"> 
        [#assign before=true/]     
       [#list tag_list as c]
-      [#if c_index>3] 
+      [#if c_index>6] 
           [#if c.id==channel.id]
                [#assign before=false/]     
                <a href="${channel.url}">${channel.name}</a>
@@ -59,7 +60,7 @@
                     [/#if]
             [/#list]
           </ul>
-        </li> 
+        </li>  -->
        [/#if]   
       </ul>
      [/@cms_channel_list]

@@ -16,5 +16,6 @@
 	<root>
 		<level value="DEBUG" />
 		<appender-ref ref="fileAppender" />
+		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>

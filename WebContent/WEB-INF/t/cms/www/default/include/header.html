@@ -10,17 +10,21 @@ function qkeypress(){
 }
 </script>
 <header class="header rel">
-  <div class="header-jf"><a class="jf-btn" name="gb2big5" id="gb2big5">繁</a></div>
+  <!-- <div class="header-jf"><a class="jf-btn" name="gb2big5" id="gb2big5">繁</a></div>
   <Script Language=Javascript Src="${resSys}/gb2big5.js"></Script>
   <div class="header-rss"><a class="rss-btn" href="${base}/rss.jspx" target="_blank" title="RSS订阅">RSS</a></div>
-  <div class="header-tag"><a class="tag-btn" href="${base}/tag.jspx" target="_blank" title="Tags标签">Tags</a></div>
+  <div class="header-tag"><a class="tag-btn" href="${base}/tag.jspx" target="_blank" title="Tags标签">Tags</a></div> -->
   <div class="container clearfix">
-    <a class="logo" href="${base}/"></a>
+    <!-- <a class="logo" href="${base}/"></a> -->
+    <a class="logo" href="${base}/" target="_blank">
+    	<img src="${base}/r/cms/www/ent_logo.png" alt="">
+    </a>
     [#include "../include/nav.html"]
-    <div class="header-r">     
+    <!-- 搜索框 -->
+    <!-- <div class="header-r">     
       <div class="search">
         <form action="${base}/search.jspx" target="_blank" id="searchForm">
-        <input type="text" name="q" value="${oldq!}" maxlength="50" autocomplete="off" class="searchCon" style="width:202px;"><input type="submit" value="" class="searchMenu">
+        <input type="text" name="q" value="${oldq!}" maxlength="50" autocomplete="off" class="searchCon" style="width:160px;"><input type="submit" value="" class="searchMenu">
         </form>
       </div>      
       <div id="loginCsiDiv" style="float:left;"></div>
@@ -32,6 +36,6 @@ function qkeypress(){
 			Cms.loginCsi("${base}","loginCsiDiv",{"returnUrl":"${location}"});
 		});
 	   </script>
-    </div> 
+    </div> --> 
   </div>
 </header>
