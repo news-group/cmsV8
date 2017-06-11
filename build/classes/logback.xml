@@ -15,7 +15,7 @@
 	    <prudent>false</prudent>  
 	</appender>  
 	<root>
-		<level value="DEBUG" />
+		<level value="Info" />
 		<appender-ref ref="fileAppender" />
 		<appender-ref ref="STDOUT" />
 	</root>

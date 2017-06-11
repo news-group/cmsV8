@@ -211,9 +211,9 @@
 .nav-link a:before{content:""; width:1px; height:2px; background-color:#fff; position:absolute; bottom:-2px; right:-1px;}
 
 .rdjj-top-news{font-size:16px; font-weight:bold; margin:0px 0 10px;    height: 355px;}
-.rdjj-top-news h1{float: left;height: 78px;margin: 6px auto;overflow: hidden;}
+.rdjj-top-news h1{float: left;height: 100px;margin: 10px auto;overflow: hidden;}
 .rdjj-top-news h1 a{font-size:16px; font-weight:bold;}
-.rdjj-top-news h1 p{float: left;line-height:24px;font-size:14px;font-weight: normal;overflow: hidden; margin: 6px auto;}
+.rdjj-top-news h1 p{float: left;line-height:24px;font-size:12px;font-weight: normal;overflow: hidden; margin: 6px auto;}
 
     
     

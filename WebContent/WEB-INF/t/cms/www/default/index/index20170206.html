@@ -132,7 +132,7 @@ $(function() {
   <div class="right-fr fr">
   	<!-- 头条 -->
       <div class="rdjj-top-news">
-      [@cms_content_list typeId='1,4' count='4' titLen='20' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+      [@cms_content_list typeId='1,4' count='3' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
       [#list tag_list as a]
       <h1>
       	<a href="${a.url}" target="_blank">[@text_cut s=a.title len=titLen /]</a>
@@ -332,12 +332,12 @@ $(function() {
                 </a>
             </li>
             <li class="nav_item">
-                <a class="nav_name" ne-role="tab-nav" href="${base}/yl/index.jhtml">音乐
+                <a class="nav_name" ne-role="tab-nav" href="${base}/yy/index.jhtml">音乐
                     <span class="nav_item_ink"></span>
                 </a>
             </li>
             <li class="nav_item">
-                <a class="nav_name" ne-role="tab-nav" href="${base}/zy/index.jhtml">综艺
+                <a class="nav_name" ne-role="tab-nav" href="${base}/zy/index.jhtml">科技
                     <span class="nav_item_ink"></span>
                 </a>
             </li>
@@ -376,7 +376,7 @@ $(function() {
                 [/@cms_content_list]
                 </div>
          </li>
-         <!-- 电影列表 -->
+         <!-- 影视列表 -->
        	 <li class="newsdata_item" ne-role="tab-body" style="display: none;" >
             <div class="ndi_main">
                 <div class="row_message" ne-click="refreshList()" style="display: none;">
@@ -400,7 +400,7 @@ $(function() {
                 [/@cms_content_list]
               </div>
            </li>
-           <!-- 电视列表 -->
+           <!-- 时尚列表 -->
 	       <li class="newsdata_item" ne-role="tab-body" style="display: none;" >
 	            <div class="ndi_main">
 	                [@cms_content_list count='10' typeId='1,2'  channelId='97' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
@@ -421,13 +421,13 @@ $(function() {
 	                [/@cms_content_list]
 	              </div>
 	         </li>
-	         <!-- 综艺列表 -->
+	         <!-- 音乐列表 -->
 		       <li class="newsdata_item" ne-role="tab-body" style="display: none;">
 		            <div class="ndi_main">
 		                <!-- <div class="row_message" ne-click="refreshList()" style="display: block;">
 		                小易为你更新了2条新消息哟~~
 		                </div> -->
-		                [@cms_content_list count='10' typeId='1,2,3,4'  channelId='99' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+		                [@cms_content_list count='10' typeId='1,2,3,4'  channelId='98' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
 		                [#list tag_list as a]
 		                <div class="data_row news_article clearfix news_first">
 		                    <a href="${a.url}" class="na_pic" target="_blank">
@@ -447,17 +447,17 @@ $(function() {
 		                [/@cms_content_list]
 		              </div>
 		         </li>
-		         <!-- 音乐列表 -->
+		         <!-- 科技列表 -->
 		       <li class="newsdata_item" ne-role="tab-body" style="display: none;">
 		            <div class="ndi_main">
 		                <!-- <div class="row_message" ne-click="refreshList()" style="display: block;">
 		                小易为你更新了2条新消息哟~~
 		                </div> -->
-		                [@cms_content_list count='10' typeId='1,2,3,4'  channelId='98' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+		                [@cms_content_list count='10' typeId='1,2,3,4'  channelId='99' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
 		                [#list tag_list as a]
 		                <div class="data_row news_article clearfix news_first">
 		                    <a href="${a.url}" class="na_pic" target="_blank">
-		                        <img src="${a.typeImg}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
+		                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" onerror="javascript:this.src=&#39;http://img2.cache.netease.com/f2e/news/index2016_rmd/images/pic3_error0106.jpg&#39;;">
 		                    </a>
 		                    <div class="na_detail clearfix ">
 		                        <div class="news_title">
@@ -582,7 +582,7 @@ $(function() {
 						
 						<div class="first_pic">
 							<a href="${base}/topic/${t.id}.jspx" target="_blank">
-									<img src="${t.titleImg!site.defImg}" alt="" width="300" height="195">
+									<img src="${t.titleImg!site.defImg}" alt="" width="350" height="205">
 									<h3>${t.name}</h3>
 								</a>
 						</div>
@@ -611,21 +611,21 @@ $(function() {
 			<div class="rg_star_attitude mb35">
 				<div class="rg_title">
 					<h2>
-						<a href="http://ent.163.com/special/xtdhz2013/">星态度</a>
+						<a href="${base}/a/jhtml">星态度</a>
 					</h2>
 				</div>
 				<div class="rg_box_wrap">
 					<ul>
-					[@cms_content_list typeId='1,4' count='2' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+					[@cms_content_list typeId='1,2' count='2' titLen='22' channelId='100' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
 	     			 [#list tag_list as a]
 						<li class="first">
-							<a href="${a.url}">
+							<a href="${a.url}" target="_blank">
 								<div class="info">
 									<div class="episode">第219期</div>
 									<h3>${a.title}</h3>
 								</div>
 								<div class="pic">
-									<img src="./网易娱乐_有态度的娱乐门户_files/8c13d16970254aacac32e78af9f5c72a20170224122812.png" width="135" height="84">
+									<img src="${a.typeImg!}" width="135" height="84">
 								</div>
 							</a>
 						</li>
@@ -643,12 +643,12 @@ $(function() {
 	      	  </div>
 	      
 		      <div class="tag-nav"><h1><a>热闻聚焦</a></h1></div>
-		      [@cms_content_list typeId='2' count='6' orderBy='9' channelId='' channelOption='1']
+		      [@cms_content_list typeId='2' count='6' orderBy='7' channelId='' channelOption='1']
 			      [#list tag_list as a]
 			      <div class="item clearfix" [#if a_index<1]style="border-top:none;"[/#if]>
 			        <a href="${a.url}" target="_blank" class="img"><img src="${a.typeImg!}"></a>
 			        <h2><a href="${a.url}" target="_blank">[@text_cut s=a.title len='22' append='...' /]</a></h2>
-			        <div class="issue-comment">评论  (${a.contentCount.comments!})</div>
+			        <!-- <div class="issue-comment">评论  (${a.contentCount.comments!})</div> -->
 			      </div>
 			      [/#list]
 		      [/@cms_content_list]
@@ -673,91 +673,7 @@ $(function() {
 
   </section>
   <section class="home-ad02"><a><img src="/${res}/images/ds_banner.png"></a></section>
-  <section class="home-ch clearfix">
-    <div class="home-ch-left fl">
-      <div class="jczt">
-        <div class="jczt-nav">精彩专题</div>
-        <div class="jczt-list">
-          <div class="home-jczt">
-          [@cms_topic_list count='3' recommend='1' orderBy='4' descLen='36' append='...']
-          [#list tag_list as t] 
-          <a href="${base}/topic/${t.id}.jspx" target="_blank"><img src="${t.titleImg!site.defImg}"></a>
-          [/#list]
-          [/@cms_topic_list] 
-          </div>
-        </div>
-      </div>
-      <div class="zxly">
-        <div class="left-nav"><span>最新留言</span></div>
-        <div class="jcpl-list" style="padding-top:10px;">
-         [@cms_guestbook_list count='4' checked='true' recommend='true']
-           [#list tag_list as m]
-          <div class="item" [#if m_index<1]style="border-top:none;"[/#if]>
-            <a>${m.titleHtml!}</a>
-          </div>
-           [/#list]     
-         [/@cms_guestbook_list] 
-        </div>
-        <div class="message"><a href="${base}/guestbook.jspx"><img src="/${res}/images/message.png"></a></div>
-      </div>
-    </div>
-    <div class="home-ch-m fl">
-    <div class="rdjj">
-      <div class="nav-link"><a href="${base}/job/index.jhtml">招聘板块</a></div>
-      <div class="rdjj-list job-list">
-     [@cms_content_list count='10' orderBy='4' channelId='79' channelOption='0' dateFormat='yyyy-MM-dd']
-        <ul>
-       [#list tag_list as a]   
-          <li><a [#if (a_index)%6=0]class="bold"[/#if] href="${a.url}" target="_blank">${a.title}/<span>${a.attr.workplace!}</span>/${a.companyName!}${a.date?string(dateFormat)}</a></li>
-       [/#list]
-        </ul>
-     [/@cms_content_list]
-      </div>
-    </div>
-    <div class="rdjj" style="margin-top:16px;">
-      <div class="nav-link"><a href="${base}/news/index.jhtml">新闻板块</a></div>
-      <div class="rdjj-list job-list doc-list">
-      [@cms_content_list count='10' orderBy='4' channelId='75' titLen='30' channelOption='0' dateFormat='yyyy-MM-dd']
-        <ul>
-	      [#list tag_list as a] 
-	          <li><a [#if (a_index)%6=0]class="bold"[/#if] href="${a.url}" target="_blank">[@text_cut s=a.title! len=titLen append='...'/]|${a.date?string(dateFormat)}</a></li>
-	      [/#list]
-        </ul>
-     [/@cms_content_list]
-      </div>
-    </div>
-    </div>
-    <div class="home-ch-m fr clearfix">
-    <div class="rdjj" style="margin:0; overflow:hidden;">
-      <div class="nav-link"><a href="${base}/download/index.jhtml">下载板块</a></div>
-      <div class="dl-list clearfix">
-        [@cms_content_list count='12' orderBy='4' channelId='90,91,92,93' titLen='10' channelOption='0' dateFormat='yyyy-MM-dd']
-        [#list tag_list as a] 
-        <div class="item clearfix">
-          <div class="dl-pic"><a href="${a.url}" target="_blank"><img src="${a.titleImg!}"></a></div>
-          <div>
-            <a href="${a.url}" target="_blank" class="dl-txt">[#if a.shortTitle??][@text_cut s=a.shortTitle! len=titLen append='...'/][#else][@text_cut s=a.title! len=titLen append='...'/][/#if]</a>
-            <a href="${a.url}" target="_blank" class="dl-btn"><img src="/${res}/images/dl-btn.gif"></a>
-          </div>
-        </div>
-        [/#list]
-     [/@cms_content_list]
-      </div>
-    </div>
-    <div class="rdjj" style="margin-top:16px; margin-left:0">
-      <div class="nav-link"><a href="${base}/survey/index.jhtml">网络调查</a></div>
-      <div class="rdjj-list job-list">
-       [@cms_vote_list  siteId=site.id count='10'] 
-        <ul>
-          [#list tag_list as vote]
-          <li><a [#if (vote_index)%6=0]class="bold"[/#if] href="${base}/vote.jspx?voteId=${vote.id}" target="_blank">${vote.title?html}|[#if vote.endTime??]${vote.endTime?string("yyyy-MM-dd")}[#else]已结束[/#if]</a></li>
-          [/#list]
-        </ul>
-      [/@cms_vote_list]
-      </div>
-    </div>
-    </div>
-  </section>
+  
   <section class="rdjj tssj">
     <div class="nav-link"><a>图说世界</a></div>
     <script type="text/javascript" src="/${res}/js/jquery.bxslider.js"></script>
@@ -766,7 +682,7 @@ $(function() {
       [@cms_content_list  titLen='14' count='8' channelId='76' orderBy='4' channelOption='0']
       [#list tag_list as a]
       <div class="item">
-        <a href="${a.url}" target="_blank"><img src="${a.typeImg!site.defImg}"><span>[@text_cut s=a.title len=titLen /]</span></a>
+        <a href="${a.url}" target="_blank"><img src="${a.typeImg!site.defImg}" width="135" height="84"><span>[@text_cut s=a.title len=titLen /]</span></a>
       </div>
       [/#list]
       [/@cms_content_list]

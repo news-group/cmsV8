@@ -121,13 +121,13 @@ a:hover {
 }
 
 .rg_title {
-	width: 300px;
+	width: 350px;
 	height: 36px;
 	margin-bottom: 6px
 }
 
 .rg_title h2 {
-	width: 283px;
+	width: 333px;
 	padding-left: 17px;
 	background: url(../images/icon.png) no-repeat -200px 11px;
 	font: bold 18px/36px "STHeiti","Microsoft Yahei";
@@ -144,13 +144,13 @@ a:hover {
 }
 
 .rg_box_wrap ul li {
-	width: 300px;
+	width: 350px;
 	height: 121px
 }
 
 .rg_box_wrap ul li a {
 	display: block;
-	width: 300px;
+	width: 350px;
 	height: 84px;
 	padding: 18px 0;
 	border-bottom: 1px solid #eee;
@@ -226,19 +226,19 @@ a:hover {
 }
 
 .rg_pic_wrap {
-	width: 300px
+	width: 350px
 }
 
 .rg_pic_wrap .first_pic {
-	width: 300px;
+	width: 350px;
 	height: 195px;
 	margin-bottom: 8px
 }
 
 .rg_pic_wrap .first_pic a {
 	display: block;
-	width: 300px;
-	height: 195px;
+	width: 350px;
+	height: 205px;
 	position: relative;
 	overflow: hidden;
 	text-decoration: none
@@ -267,14 +267,14 @@ a:hover {
 }
 
 .rg_pic_wrap .first_pic h3 {
-	width: 292px;
+	width: 350px;
 	height: 56px;
 	padding-left: 8px;
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	background: url(../images/til_bg.png) repeat;
-	border-bottom: 3px solid #fdf400;
+	border-bottom: 3px solid #fd5200;
 	font: normal 14px/70px "STHeiti","SimSun";
 	color: #fff;
 	-webkit-transition: all .1s;

@@ -2,6 +2,8 @@ package com.jeecms.cms.action.front;
 
 import static com.jeecms.cms.Constants.TPLDIR_SPECIAL;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +48,14 @@ public class SearchAct {
 		FrontUtils.frontData(request, model, site);
 		FrontUtils.frontPageData(request, model);
 		String q = RequestUtils.getQueryParam(request, "q");
+		try {
+			String temp = URLDecoder.decode(q, "UTF-8");
+			String ss=new String(q.getBytes("ISO-8859-1"),"utf-8");
+			System.out.println(temp+ss);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String channelId = RequestUtils.getQueryParam(request, "channelId");
 		if (StringUtils.isBlank(q) && StringUtils.isBlank(channelId)) {
 			return FrontUtils.getTplPath(request, site.getSolutionPath(),

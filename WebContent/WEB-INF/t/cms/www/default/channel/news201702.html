@@ -31,9 +31,8 @@ $(function() {
     
     <section class="hot">
       <!-- <div class="hot-nav"><h1><span>热点聚焦</span></h1></div> -->
-     [@cms_content_page count='10' orderBy='4' channelId='94,96,97,98,99,76' channelOption='0' dateFormat='yyyy-MM-dd HH-mm']
+     [@cms_content_page count='10' orderBy='4' channelId='${channel.id}' channelOption='0' dateFormat='yyyy-MM-dd HH-mm']
       [#list tag_pagination.list as a]
-       [#if a_index>2]
       <div class="item clearfix" [#if a_index<1]style="border-top:none;"[/#if]>
           [#if a.typeImg??]<a href="${a.url}" target="_blank" class="img"><img src="${a.typeImg!}"></a>[/#if]
           <div class="text">
@@ -43,7 +42,6 @@ $(function() {
             <div class="data"><span class="view">${a.contentCount.views!}</span><span class="comment">${a.contentCount.comments!}</span></div>
           </div>
       </div>
-        [/#if]
        [/#list]
       [#include "../include/page.html"/]
     [/@cms_content_page]
@@ -63,8 +61,8 @@ $(function() {
       </div>
     </section>
     <section class="tag issue clearfix">
-      <div class="tag-nav"><h1><span>热门话题</span></h1></div>
-   [@cms_content_list typeId='2' count='8' orderBy='9' channelId='94,96,97,98,99' channelOption='0']
+      <div class="tag-nav"><h1><span>热门推荐</span></h1></div>
+   [@cms_content_list typeId='2' count='8' orderBy='7' channelId='${channel.id}' channelOption='0']
      [#list tag_list as a]
       <div class="item clearfix" [#if a_index<1]style="border-top:none;"[/#if]>
         <a href="${a.url}" target="_blank" class="img"><img src="${a.typeImg!}"></a>
@@ -84,7 +82,7 @@ $(function() {
           [/@cms_topic_list] 
       </div>
     </section> -->
-    <section class="tag wcom clearfix">
+    <!--  <section class="tag wcom clearfix">
       <div class="tag-nav"><h1><span>精彩评论</span></h1></div>
      [@cms_comment_list siteId=site.id checked='true' recommend='true' count='5' ]
      [#list tag_list as c]
@@ -97,7 +95,7 @@ $(function() {
       </div>
      [/#list]
      [/@cms_comment_list]
-    </section>
+    </section>-->
   </section>
 </div>
 [#include "../include/footer.html"/]
