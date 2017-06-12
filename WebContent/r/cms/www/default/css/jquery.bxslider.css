@@ -10,7 +10,7 @@
  * http://bxcreative.com
  */
 
-.tssj-list{width:1200px; overflow:hidden;}
+.tssj-list{width:1000px; overflow:hidden;}
 .tssj-list .item{width:224px; float:left; position:relative;}
 .tssj-list .item img{width:100%; height:100%;}
 .tssj-list .item span{width:100%; height:30px; line-height:30px; color:#fff; text-align:center; position:absolute; bottom:0; left:0; background-color:rgba(43,43,43,0.5); font-size:13px; font-family:"宋体";}
@@ -19,7 +19,7 @@
 ===================================*/
 
 .bx-wrapper {
-	width:1200px;
+	width:1000px;
 	position: relative;
 	margin: 0 auto;
 	padding: 0;

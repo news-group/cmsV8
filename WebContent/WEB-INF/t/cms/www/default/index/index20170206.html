@@ -149,7 +149,7 @@ $(function() {
   <!-- 第二屏 -->
   <section class="home-top clearfix">
   <!-- 二焦点begin -->
-                      <div class="data_row news_starslide" ne-state="slideMethod:left;loop:1;" ne-module="slide">
+                     <!--  <div class="data_row news_starslide" ne-state="slideMethod:left;loop:1;" ne-module="slide">
                         <div class="star_title clearfix">
                             <a class="" href="http://ent.163.com/star/" target="_blank">
                                 <span>明星</span>图集
@@ -225,7 +225,7 @@ $(function() {
                             <a ne-role="slide-prev" class="slide_prev">&lt;</a>
                             <a ne-role="slide-next" class="slide_next">&gt;</a>
                         </div>
-                    </div>
+                    </div>-->
   
   
   <!-- 二焦点end -->
@@ -243,7 +243,7 @@ $(function() {
   
   
   	<!-- 旅游_begin -->
-  	   <div class="w680">
+  	<!--     <div class="w680">
         <div class="rim05 mt10">
             <div class="tuku_select1">
                 <h1>旅游</h1>
@@ -280,24 +280,9 @@ $(function() {
                 </ul>
             </div>
         </div>
-      </div>
+      </div>-->
     <!-- 旅游_end -->
     
-    <!-- 广告 -->
-    	<div id="ggads728ad2" class="cboth" style="width: 2720px; margin-left: -2040px;display:block">
-		<script type="text/javascript"><!--
-		google_ad_client = "ca-pub-9472249741255995";
-		/* homebottom */
-		google_ad_slot = "5108559066";
-		google_ad_width = 728;
-		google_ad_height = 90;
-		//-->
-		</script>
-		<script type="text/javascript"
-		src="http://cpro.baidustatic.com/cpro/ui/c.js">
-		</script>
-		</div>
-    <!-- 广告 -->
   </section>
   
   <!-- 第二屏 -->
@@ -309,9 +294,9 @@ $(function() {
   <section class="home-top clearfix">
     <div class="new-rdjj fl">
     
-      <!--信息流开始  -->
+      <!--信息流开始 style="overflow-y:visible;height:500px;" -->
 
-      <div class="news_main" style="overflow-y:visible;height:500px;">
+      <div class="news_main" >
 <!-- 				<div ne-module="modules/datalist/datalist.js" ne-extend="modules/datalist/config.js">
 <div class="newsdata_wrap" ne-on="showed:changepanel" ne-module="tabs" ne-state="showhide:true;delay:300"> -->
     <div class="newsdata_nav">
@@ -566,13 +551,12 @@ $(function() {
     </div>
     <div class="right-fr fr">
     	<!-- 精彩专题 -->
-    	  <div class="jczt">
-	        <div class="jczt-nav">精彩专题</div>
+    	 <!--  <div class="jczt"> -->
 	        
 	        <div class="rg_serial_pics mb35">
 					<div class="rg_title">
 						<h2>
-							<a href="http://ent.163.com/special/yllhhhz/">娱乐连环画</a>
+							<a href="">娱乐连环画</a>
 						</h2>
 					</div>
 					
@@ -593,25 +577,13 @@ $(function() {
 					</div>
 				</div>
 	        
-	        
-	        
-	        
-	        <!-- <div class="jczt-list">
-	          <div class="home-jczt">
-	          [@cms_topic_list count='3' recommend='1' orderBy='4' descLen='36' append='...']
-	          [#list tag_list as t] 
-	          <a href="${base}/topic/${t.id}.jspx" target="_blank"><img src="${t.titleImg!site.defImg}"></a>
-	          [/#list]
-	          [/@cms_topic_list] 
-	          </div>
-	        </div> -->
-	      </div>
+	      <!-- </div> -->
 	      <!-- 精彩专题 -->
 	      	<!-- 星态度 -->
 			<div class="rg_star_attitude mb35">
 				<div class="rg_title">
 					<h2>
-						<a href="${base}/a/jhtml">星态度</a>
+						<a href="${base}/a/jhtml">星观点</a>
 					</h2>
 				</div>
 				<div class="rg_box_wrap">
@@ -621,7 +593,7 @@ $(function() {
 						<li class="first">
 							<a href="${a.url}" target="_blank">
 								<div class="info">
-									<div class="episode">第219期</div>
+									<div class="episode">本期观点</div>
 									<h3>${a.title}</h3>
 								</div>
 								<div class="pic">
@@ -636,11 +608,11 @@ $(function() {
 			</div>
 	  <!-- 星态度 -->
 	      <section class="tag issue clearfix">
-	      	  <div class="top-news">
+	      	  <!-- <div class="top-news">
 				<h2>top news
 					<span></span>
 				</h2>
-	      	  </div>
+	      	  </div> -->
 	      
 		      <div class="tag-nav"><h1><a>热闻聚焦</a></h1></div>
 		      [@cms_content_list typeId='2' count='6' orderBy='7' channelId='' channelOption='1']
@@ -660,7 +632,7 @@ $(function() {
 
       
       <!-- 列表 -->
-      <div class="rdjj-list">
+      <!-- <div class="rdjj-list">
       [@cms_content_list typeId='1,2,3' count='18' orderBy='4' channelId='75' channelOption='0' dateFormat='yyyy-MM-dd HH-mm']
         <ul>
         [#list tag_list as a]
@@ -668,11 +640,11 @@ $(function() {
         [/#list]
         </ul>
       [/@cms_content_list]
-      </div>
+      </div> -->
     </div>
 
   </section>
-  <section class="home-ad02"><a><img src="/${res}/images/ds_banner.png"></a></section>
+  <section class="home-ad02"><a><img src="/${res}/images/top-ad.jpg"></a></section>
   
   <section class="rdjj tssj">
     <div class="nav-link"><a>图说世界</a></div>
@@ -690,9 +662,9 @@ $(function() {
     <script type="text/javascript">
         $(document).ready(function(){
           $('.tssj-list').bxSlider({
-            slideWidth: 224,
+            slideWidth: 235,
             minSlides: 1,
-            maxSlides: 5,
+            maxSlides: 4,
             slideMargin: 20
           });
         });
