@@ -23,6 +23,14 @@
 				scrollTop > 50 ? $(".back-top").slideDown(300).css("display","block") : $(".back-top").slideUp(300);			
 			});
 			$('.back-top').click(function (e) {
+				
+				[@cms_content_list  titLen='14' count='8' channelId='76' orderBy='4' channelOption='0']
+			      [#list tag_list as a]
+			      <div class="item">
+			        <a href="${a.url}" target="_blank"><img src="${a.typeImg!site.defImg}" width="135" height="84"><span>[@text_cut s=a.title len=titLen /]</span></a>
+			      </div>
+			      [/#list]
+			      [/@cms_content_list]
 				e.preventDefault();
 				$('html,body').animate({ scrollTop:0});
 			});
