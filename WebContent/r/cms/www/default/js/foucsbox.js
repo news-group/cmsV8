@@ -35,9 +35,9 @@
             t = setInterval(autoChange, config.timeo);
             $lmk.mouseenter(function () { clearInterval(t); }).mouseleave(function () { t = setInterval(autoChange, config.timeo); });
             $rlBtn.hover(function () {
-                $(this).addClass('btnHover');
+//                $(this).addClass('btnHover');
             }, function () {
-                $(this).removeClass('btnHover');
+//                $(this).removeClass('btnHover');
             }).click(function () {
                 i = $foucsDiv.find('span.f').index();
                 if ($(this).is('.lBtn')) {

@@ -36,15 +36,16 @@
 #foucsBox .imgCon li .imgTitle a{ color:#fff; display:block; text-decoration:none; font-family: "Microsoft Yahei","黑体"; font-weight:normal; font-size:18px; zoom:1;margin:10 auto; }
 #foucsBox .showPage{ width:630px; height:42px; position:absolute; bottom:0; background:#000; opacity:0.7; filter:alpha(opacity=70); z-index:1; }
 #foucsBox .foucs{ width:630px; height:22px; position:absolute; bottom:3px; text-align:right; z-index:3; }
-#foucsBox .foucs span{ display:inline-block; width:7px; height:7px; margin:0 5px; line-height:0; font-size:0; background:url(../img/tukubg_qq.png) -160px -90px no-repeat; cursor:pointer; overflow: hidden;}
-#foucsBox .foucs span.f{ background:url(../img/tukubg_qq.gif) -657px -570px no-repeat; }
-#foucsBox .foucsButton { width:40px; height:56px; padding:7px; margin-top:-70px; position: relative; z-index:4;}
-#foucsBox .foucsButton span{ display:inline; width:23px; height:45px; margin:7px 5px 0; cursor: pointer; overflow:hidden; background:url(../img/tukubg_qq.png) 0 0 no-repeat; }
+#foucsBox .foucs span{ display:inline-block; width:7px; height:7px; margin:0 5px; line-height:0; font-size:0; background:url(../img/tukubg_qq.png) -657px -586px no-repeat; cursor:pointer; overflow: hidden;}
+#foucsBox .foucs span.f{ background:url(../img/tukubg_qq.png) -657px -570px no-repeat; }
+#foucsBox .foucsButton { width:40px; height:56px; padding:0px; margin-top:-200px; position: relative; z-index:4;}
+#foucsBox .foucsButton span{ display:inline; width:46px; height:48px; margin:7px 0px 0; cursor: pointer; overflow:hidden; background:url(../img/tukubg_qq.png) -544px -570px no-repeat; }
 #foucsBox .foucsButton img{ display:none; cursor:pointer; border-width:0px; vertical-align:middle; width:100px; height:56px; }
+#foucsBox .rBtn{ float:right; }
+#foucsBox .rBtn span{ float:right; background-position:-600px -570x;}
 #foucsBox .lBtn{ float:left; }
 #foucsBox .lBtn span{ float:left; background-position:-544px -570px;}
-#foucsBox .rBtn{ float:right; }
-#foucsBox .rBtn span{ float:right; background-position:-617px -628px;}
+
 #foucsBox .btnHover{ width:146px; background:#408ED6; overflow:hidden;}
 #foucsBox .btnHover img{ display:inline;}
 
