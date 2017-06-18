@@ -13,6 +13,7 @@
 <link type="text/css" rel="stylesheet" href="/${res}/css/home.css" />
 <link type="text/css" rel="stylesheet" href="/${res}/css/wangyi-xinxiliu.css" />
 <link type="text/css" rel="stylesheet" href="/${res}/css/index.css" />
+<!-- <link type="text/css" rel="stylesheet" href="/${res}/css/hx/build.css" /> -->
 
 
 <!--[if lt IE 9]> 
@@ -92,7 +93,7 @@ $(function() {
             </ul>
             <div class="foucs"><span class=""></span><span class=""></span><span class=""></span><span class="f"></span></div>
             <div class="rBtn foucsButton">
-                <span></span>
+                <span class="pre"></span>
                 <!-- <img src="./图库 - JEECMS子站演示站 - Powered by JEECMS_files/tuku1.jpg"> -->
             </div>
             <div class="lBtn foucsButton">
@@ -613,8 +614,12 @@ $(function() {
 					<span></span>
 				</h2>
 	      	  </div> -->
-	      
-		      <div class="tag-nav"><h1><a>热闻聚焦</a></h1></div>
+	      	<div class="rg_title">
+					<h2>
+						<a href="${base}/a/jhtml">热点新闻</a>
+					</h2>
+				</div>
+		      <!-- <div class="tag-nav"><h1><a>热闻聚焦</a></h1></div> -->
 		      [@cms_content_list typeId='2' count='6' orderBy='7' channelId='' channelOption='1']
 			      [#list tag_list as a]
 			      <div class="item clearfix" [#if a_index<1]style="border-top:none;"[/#if]>
@@ -625,7 +630,53 @@ $(function() {
 			      [/#list]
 		      [/@cms_content_list]
 		  </section>
-		  
+	  <!--传言部分开始-->
+		<div id="rumor_center"></div>
+		<div class="box-moder moder-rumors-list">
+		    <h3>传言</h3>
+		<!--    <span class="pull-right project-more story-more"><a href="--><!--" class="transition" target="_blank">全部</a></span>-->
+		    <span class="span-mark"></span>
+		    <div class="big2-pic pull-right">
+		    [@cms_content_list typeId='2' count='1' orderBy='7' channelId='100' channelOption='1']
+			      [#list tag_list as a]
+		        <a href="https://www.huxiu.com/#" class="back-img" target="_blank">
+		            <img class="lazy" src="${a.typeImg!}" alt="">
+		        </a>
+		        <a href="${a.url}" target="_blank">
+		            <div class="big2-pic-content">
+		                <h2 class="t-h1">${a.title}</h2>
+		            </div>
+		            <div class="clear"></div>
+		        </a>
+		        [/#list]
+		      [/@cms_content_list]
+		    </div>
+		    <div class="clear"></div>
+		    <ul class="rumorlist">
+		                    <li>
+		                <div class="icon-clock"><img src="./虎嗅网_files/clock.jpg"></div>
+		                <p class="rumor-time">06月16日  20:03</p>
+		                <p class="rumor-detail"><a href="https://chuanyan.huxiu.com/rumor/detail/645.html" target="_blank">腾讯OMG（网络媒体事业群）架构调整方案今日正式公布。组织架...</a></p>
+		            </li>
+		            <li class="time-omitted">
+		                <div class="icon-clock"><img src="./虎嗅网_files/clock.jpg"></div>
+		                <p class="rumor-time"><img class="eclipsis" src="./虎嗅网_files/eclipsis.png"></p>
+		            </li>
+		                <li>
+		            <div class="icon-clock"><img src="./虎嗅网_files/clock.jpg"></div>
+		            <p class="rumor-time">06月15日  18:19</p>
+		            <p class="rumor-detail"><a href="https://chuanyan.huxiu.com/rumor/detail/645.html" target="_blank">今日有消息称，腾讯旗下网络媒体事业群（OMG）在换帅之后即将...</a></p>
+		        </li>
+		    </ul>
+		    <div class="rumor-more">
+		        <p><a href="https://chuanyan.huxiu.com/rumor/detail/645.html" target="_blank">详情&gt;&gt;</a></p>
+		    </div>
+		    <div class="rumor-brunt-box">
+		        <a class="btn btn-blue-cy js-update-cy transition  js-show-bruntback-box1" data-url="https://chuanyan.huxiu.com/api/source/add">我要爆料</a>
+		    </div>
+		</div>
+		<div class="placeholder"></div>
+		<!--传言部分结束-->  
 	  
 	  
 	  

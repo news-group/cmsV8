@@ -1,0 +1,228 @@
+@CHARSET "UTF-8";
+
+.box-moder {
+	background-color: #fafafa
+}
+
+.box-moder h3 {
+	margin: 0;
+	height: 60px
+}
+
+.box-moder h3 {
+	font-size: 20px;
+	font-weight: 400;
+	padding: 30px 30px 0 30px;
+	margin: 0
+}
+
+.box-moder h4 {
+	font-size: 16px;
+	font-weight: 700;
+	margin: 10px 30px 5px
+}
+
+
+.moder-rumors-list .big2-pic {
+	margin-top: 14px;
+	width: 280px;
+	height: 210px;
+	margin-right: 30px
+}
+
+.moder-rumors-list .big2-pic-content {
+	width: 280px;
+	height: 210px
+}
+
+.moder-rumors-list .big2-pic-content .t-h1 {
+	margin: 20px;
+	bottom: 0
+}
+
+.moder-rumors-list .rumorlist {
+	padding: 0 30px;
+	padding-left: 37px
+}
+
+.moder-rumors-list .rumorlist li {
+	position: relative;
+	border-left: 2px solid #f0f0f0
+}
+
+.moder-rumors-list .rumorlist li:first-child {
+	margin-top: 30px
+}
+
+.moder-rumors-list .rumorlist li:last-child {
+	border-left: 0
+}
+
+.moder-rumors-list .rumorlist .time-omitted {
+	position: relative;
+	padding: 36px 0
+}
+
+.moder-rumors-list .rumorlist .time-omitted .icon-clock {
+	position: absolute;
+	top: 30px
+}
+
+.moder-rumors-list .rumorlist li img {
+	display: block;
+	width: auto
+}
+
+.moder-rumors-list .rumorlist li p {
+	padding-left: 16px
+}
+
+.moder-rumors-list .rumorlist li .icon-clock {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background-color: #fafafa;
+	position: absolute;
+	left: -9px;
+	top: -6px;
+	width: 16px;
+	height: 28px
+}
+
+.moder-rumors-list .rumorlist .rumor-time {
+	color: #999;
+	line-height: 16px
+}
+
+.moder-rumors-list .rumorlist .rumor-detail {
+	padding-top: 9px;
+	font-size: 16px;
+	color: #333;
+	line-height: 28px
+}
+
+.moder-rumors-list .rumor-more a {
+	display: block;
+	padding: 0 30px 14px 30px;
+	text-align: right;
+	font-size: 16px;
+	color: #bbb;
+	line-height: 28px;
+	border-bottom: 1px solid #f0f0f0
+}
+
+.moder-rumors-list .rumor-more a:hover {
+	color: #2f99ea
+}
+
+.moder-rumors-list .rumor-brunt-box {
+	padding: 30px
+}
+
+.moder-rumors-list .rumor-brunt-box .brunt-box {
+	position: fixed;
+	z-index: 1041;
+	width: 600px;
+	top: 50px;
+	left: 50%;
+	margin-left: -300px;
+	padding: 20px 20px 0 20px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 6px rgba(17,40,62,.51);
+	-moz-box-shadow: 0 0 6px rgba(17,40,62,.51);
+	box-shadow: 0 0 6px rgba(17,40,62,.51)
+}
+
+
+.span-mark {
+	display: inline-block;
+	background-color: #f63756;
+	position: absolute;
+	z-index: 1;
+	height: 20px;
+	line-height: 20px;
+	margin: -28px 0 0 0;
+	width: 4px
+}
+
+.big-pic-box {
+	position: relative;
+	height: 400px
+}
+
+.big-pic {
+	position: absolute;
+	width: 533px;
+	height: 400px;
+	margin-bottom: 30px;
+	overflow: hidden
+}
+
+.big-pic.big-pic-cy {
+	position: relative;
+	width: 800px;
+	height: 450px
+}
+
+.big-pic .back-img,.big2-pic .back-img {
+	position: absolute;
+	width: 100%
+}
+
+.big-pic-content,.big2-pic-content {
+	position: absolute;
+	width: 533px;
+	height: 400px;
+	z-index: 10;
+	cursor: pointer;
+	display: block
+}
+
+.big-pic.big-pic-cy .big-pic-content {
+	width: 800px;
+	height: 450px
+}
+
+.big2-pic-content .t-h1 {
+	word-break: inherit;
+	font-size: 18px;
+	color: #fff;
+	line-height: 1.5;
+	font-weight: 400
+}
+
+.big-pic:before,.big2-pic:before,.topic-content:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 1;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+	background: -webkit-gradient(linear,0 30%,0 100%,from(rgba(0,0,0,0)),to(#121515));
+	background: -moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0),#121515);
+	background: -ms-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0),#121515);
+	background: -o-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0),#121515)
+}
+
+.big-pic:hover:before,.big2-pic:hover:before,.topic-content:hover:before {
+	opacity: .9
+}
+
+.big-pic img,.big2-pic img,.hot-article-img img,.mod-thumb img,.topic-content img {
+	width: 100%;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	vertical-align: top
+}
+
+.big-pic:hover img,.big2-pic:hover img,.hot-article-img:hover img,.mod-thumb:hover img,.topic-content:hover img {
+	-webkit-transform: scale(1.04);
+	-moz-transform: scale(1.04);
+	-ms-transform: scale(1.04);
+	-o-transform: scale(1.04);
+	transform: scale(1.04)
+}

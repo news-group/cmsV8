@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${site.name} - </title>
+<meta http-equiv="keywords" content="${channel.keywords!}"/>
+<meta http-equiv="description" content="${channel.description!}"/>
+<script src="${resSys}/jquery.js" type="text/javascript"></script>
+<script src="${resSys}/jqueryUI/jquery-ui.js" type="text/javascript"></script>
+<script src="${resSys}/front.js" type="text/javascript"></script>
+
+<link type="text/css" rel="stylesheet" href="/${res}/css/index.css" />
+<link href="${resSys}/jqueryUI/jquery.ui.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="/${res}/css/hx/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/${res}/css/hx/build.css">
+    <link rel="stylesheet" type="text/css" href="/${res}/css/hx/right.css">
+    <link rel="stylesheet" type="text/css" href="/${res}/css/hx/login.css">
+    <link rel="stylesheet" type="text/css" href="/${res}/css/hx/vip-icon.css">
+    <link rel="stylesheet" type="text/css" href="/${res}/css/hx/nanoscroller.css">
+    <link rel="stylesheet" type="text/css" href="/${res}/css/hx/cy.css">
+<link rel="stylesheet" type="text/css" href="/${res}/css/hx/o.css">
+<link rel="stylesheet" type="text/css" href="/${res}/css/hx/video.css">
+<!--[if lt IE 9]> 
+<script src="/${res}/js/html5shiv.min.js"></script>
+<script src="/${res}/js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+$(function() {
+  Cms.channelViewCount("${base}","${channel.id}");
+  Cms.siteFlow("${base}",location.href, document.referrer,"${site.config.flowSwitch?
+
+string}");
+});
+</script>
+
+<head>
+<body>
+[#include "../include/top.html"/]
+[#include "../include/header.html"/]
+<!-- <div class="main container clearfix">
+
+  <section class="content_w850">
+    <h1 style="text-align:center;">${channel.title!channel.name}</h1>
+    <div class="content-txt">${channel.txt!}</div>
+  </section>
+</div> -->
+
+<div class="container per_center per_center_body" id="per_center">
+	[#include "../include/aboutmenu.html"/]
+	<section class="content_w850">
+    <div class="content-txt">${channel.txt!}</div>
+    </section>
+    <!-- <div class="user-menu-warp">
+        <div class="menu-warp">
+            <ul>
+                <li class="active"><a href="https://www.huxiu.com/about">关于虎嗅</a></li>
+                <li><a href="https://www.huxiu.com/contact">广告与服务</a></li>
+                <li><a href="https://www.huxiu.com/help">常见问题解答</a></li>
+                <li><a href="https://www.huxiu.com/copyright">版权说明</a></li>
+                <li><a href="https://www.huxiu.com/links">友情链接</a></li>
+                <li><a href="https://www.huxiu.com/joinus">加入我们</a></li>
+                <li><a href="https://www.huxiu.com/renzheng">虎嗅认证</a></li>
+            </ul>
+        </div>
+
+        <div class="user-content-warp">
+            <ul class="nav-box nav-box-border">
+                <li class="active"><a href="javascript:void(0);">关于虎嗅<span class="badge"></span></a></li>
+            </ul>
+            <div class="about-us-box">
+                                <div class="about-us-box"> -->
+
+    <div class="about-us-intro">
+        <!-- <p>
+            北京虎嗅信息科技股份有限公司是一个用户可参与的商业资讯与观点交流平台。这个资讯及观点平台的核心，是关注互联网与移动互联网一系列明星公司（包括公众公司与创业型企业）的起落轨迹、产业潮汐的动力与趋势，以及互联网与移动互联网如何改造传统产业。
+        </p>
+
+        <p><br></p>
+
+        <p>
+            我们致力于为用户创造获取与交流商业资讯的更"有效率"的体验 。
+        </p> -->
+    </div>
+</div>
+</div>
+
+[#include "../include/footer.html"/]
+[#include "../include/right-fixed.html"/]
+</body>
+</html>
