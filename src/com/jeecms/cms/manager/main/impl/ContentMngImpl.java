@@ -20,17 +20,17 @@ import org.springframework.util.Assert;
 import com.jeecms.cms.dao.main.ContentDao;
 import com.jeecms.cms.entity.assist.CmsFile;
 import com.jeecms.cms.entity.main.Channel;
+import com.jeecms.cms.entity.main.Channel.AfterCheckEnum;
 import com.jeecms.cms.entity.main.CmsTopic;
 import com.jeecms.cms.entity.main.Content;
+import com.jeecms.cms.entity.main.Content.ContentStatus;
+import com.jeecms.cms.entity.main.ContentCharge;
 import com.jeecms.cms.entity.main.ContentCheck;
 import com.jeecms.cms.entity.main.ContentCount;
 import com.jeecms.cms.entity.main.ContentExt;
 import com.jeecms.cms.entity.main.ContentRecord.ContentOperateType;
 import com.jeecms.cms.entity.main.ContentTag;
 import com.jeecms.cms.entity.main.ContentTxt;
-import com.jeecms.cms.entity.main.Channel.AfterCheckEnum;
-import com.jeecms.cms.entity.main.Content.ContentStatus;
-import com.jeecms.cms.entity.main.ContentCharge;
 import com.jeecms.cms.manager.assist.CmsCommentMng;
 import com.jeecms.cms.manager.assist.CmsFileMng;
 import com.jeecms.cms.manager.main.ChannelCountMng;
@@ -55,6 +55,7 @@ import com.jeecms.cms.staticpage.exception.TemplateNotFoundException;
 import com.jeecms.cms.staticpage.exception.TemplateParseException;
 import com.jeecms.common.hibernate4.Updater;
 import com.jeecms.common.page.Pagination;
+import com.jeecms.common.util.PicUtil;
 import com.jeecms.core.entity.CmsGroup;
 import com.jeecms.core.entity.CmsSite;
 import com.jeecms.core.entity.CmsUser;
@@ -394,6 +395,22 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 		// 执行监听器
 		preSave(bean);
 		dao.save(bean);
+		
+		if(!StringUtils.isBlank(txt.getTxt())){
+			List<String> imgList = PicUtil.getPicUrlFromTxt(txt.getTxt());
+			if(imgList.size()>0){
+				if(StringUtils.isBlank(ext.getTypeImg())){
+					ext.setTypeImg(imgList.get(0));
+				}
+				if(StringUtils.isBlank(ext.getContentImg())){
+					ext.setContentImg(imgList.get(0));
+				}
+				if(StringUtils.isBlank(ext.getTitleImg())){
+					ext.setTitleImg(imgList.get(0));
+				}
+			}
+		}
+		
 		contentExtMng.save(ext, bean);
 		contentTxtMng.save(txt, bean);
 		ContentCheck check = new ContentCheck();
@@ -470,6 +487,21 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 		// 更新类型
 		if (typeId != null) {
 			bean.setType(contentTypeMng.findById(typeId));
+		}
+		
+		if(!StringUtils.isBlank(txt.getTxt())){
+			List<String> imgList = PicUtil.getPicUrlFromTxt(txt.getTxt());
+			if(imgList.size()>0){
+				if(StringUtils.isBlank(ext.getTypeImg())){
+					ext.setTypeImg(imgList.get(0));
+				}
+				if(StringUtils.isBlank(ext.getContentImg())){
+					ext.setContentImg(imgList.get(0));
+				}
+				if(StringUtils.isBlank(ext.getTitleImg())){
+					ext.setTitleImg(imgList.get(0));
+				}
+			}
 		}
 		// 更新扩展表
 		contentExtMng.update(ext);
