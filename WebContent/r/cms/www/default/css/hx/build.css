@@ -198,9 +198,9 @@ a:link {
 	text-decoration: none
 }
 
-/* img {
+ img {
 	width: 100%
-} */
+} 
 
 .c1 {
 	color: #333
@@ -634,7 +634,7 @@ header.active .navbar-left .nav-news,header.active .navbar-nav.navbar-right .use
 	font-weight: 700
 }
 
-/* .container {
+ .container {
 	padding: 0 0;
 	width: 1170px!important;
 	position: relative
@@ -661,7 +661,7 @@ header.active .navbar-left .nav-news,header.active .navbar-nav.navbar-right .use
 
 .container>.navbar-header img {
 	width: 100%
-} */
+} 
 
 .navbar-nav {
 	margin: 0
@@ -4659,7 +4659,7 @@ footer .footer-icon-list .app-qrcode:after {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	background: url(../image/footer.png) no-repeat
+	background: url(../../images/hx/hx_footer.png) no-repeat
 }
 
 .i-reply {

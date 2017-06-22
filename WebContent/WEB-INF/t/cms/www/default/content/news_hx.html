@@ -194,19 +194,19 @@
 		style="position: relative;">
 		<div class="container">
 			<div class="navbar-header transition">
-				<a href="https://www.huxiu.com/" title="首页"> <img
-					src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/logo.jpg" alt="虎嗅网"
+				<a href="${base}/" title="首页"> <img
+					src="${base}/r/cms/www/1.png" alt="资讯"
 					title="首页">
 				</a>
 			</div>
 			<ul class="nav navbar-nav navbar-left">
 				<li class="nav-news js-show-menu">
-					<a href="https://www.huxiu.com/">首页 <span class="caret"></span></a>
+					<a href="${base}/">首页 <span class="caret"></span></a>
 				</li>
 				<li>
 					[@cms_channel_list] 
 					[#list tag_list as c]
-					  [#if c_index<3]
+					  [#if c_index<6]
 					<li class="nav-news"><a href="${c.url}"
 					target="_blank">${c.name}<span class="nums-prompt nums-prompt-topic"
 						style="display: none;"></span></a></li>
@@ -2519,16 +2519,15 @@
 					<div class="article-wrap">
 						<h1 class="t-h1">${content.title}</h1>
 						<div class="article-author">
-							<span class="author-name"> <a
-								href="https://www.huxiu.com/member/1351371.html" target="_blank">提琴没有弦</a>
+							<span class="author-name"> ${content.author!'本站编辑'}
 							</span>
 
 							<div class="column-link-box">
 								<span class="article-time pull-left">2017-06-20 20:23</span> <span
 									class="article-share pull-left">收藏7</span> <span
 									class="article-pl pull-left">评论6</span> <a
-									href="https://www.huxiu.com/channel/22.html"
-									class="column-link" target="_blank">娱乐淘金</a> <i></i>
+									href="${base}/news/index.jhtml"
+									class="column-link" target="_blank">${channel.name}</a> <i></i>
 							</div>
 
 						</div>
@@ -2866,11 +2865,11 @@
 
 
 	<script type="text/javascript"
-		src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/jquery-1.11.1.min.js"></script>
+		src="/${res}/js/hx/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript"
-		src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/jquery.detection.js"></script>
+		src="/${res}/js/hx/jquery.detection.js"></script>
 	<script type="text/javascript"
-		src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/sea.js"></script>
+		src="/${res}/js/hx/sea.js"></script>
 	<script>
 		var base_static_url = $('meta[name="base-static-url"]').attr('content');
 		seajs.config({
@@ -2890,9 +2889,9 @@
 		seajs.use([ 'init' ]);
 	</script>
 	<script type="text/javascript"
-		src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/seajs_css.js"></script>
+		src="/${res}/js/hx/seajs_css.js"></script>
 
-	<script src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/wxLogin.js"></script>
+	<script src="/${res}/js/hx/wxLogin.js"></script>
 
 	<!--[if lt IE 10]>
 <script type="text/javascript">
