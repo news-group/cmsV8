@@ -188,82 +188,99 @@
 <div class="placeholder-height"></div>
 <div class="container" id="index">
 
-            <div class="wrap-left pull-left">
+        <div class="wrap-left pull-left">
         <div class="big-pic-box">
-                            <!--一级banner图-->
+        [@cms_content_list count='3' typeId='3'  channelId='94' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+                [#list tag_list as a]
+                [#if a_index<1]
+                <!--一级banner图-->
                 <div class="big-pic">
-                    <a href="https://www.huxiu.com/article/201006.html" target="_blank" class="transition" title="「所罗门矩阵」调查：这可能是中国互联网史上最大的骗局">
+                    <a href="${a.url}" target="_blank" class="transition" title="${a.title}">
                         <div class="back-img">
-                            <img src="./虎嗅网_files/075610533983.jpg" alt="「所罗门矩阵」调查：这可能是中国互联网史上最大的骗局">
+                            <img src="${a.typeImg!}"" alt="${a.title}">
                         </div>
                         <div class="big-pic-content">
-                            <h1 class="t-h1">「所罗门矩阵」调查：这可能是中国互联网史上最大的骗局</h1>
+                            <h1 class="t-h1">${a.title}</h1>
                         </div>
                     </a>
                 </div>
+                [#elseif a_index=1]
                         <!--二级banner图-->
-                            <div class="big2-pic big2-pic-index big2-pic-index-top">
-                    <a href="https://www.huxiu.com/article/201186.html" class="back-img transition" target="_blank" title="新浪微博、AcFun、凤凰网的视频要被关了？只因它们没有视听牌照">
-                        <img class="lazy" data-original="https://img.huxiucdn.com/article/cover/201706/22/185710650793.jpg?imageView2/1/w/462/h/351/|imageMogr2/strip/interlace/1/quality/85/format/jpg" alt="新浪微博、AcFun、凤凰网的视频要被关了？只因它们没有视听牌照" src="./虎嗅网_files/185710650793.jpg" style="display: inline;">
+                <div class="big2-pic big2-pic-index big2-pic-index-top">
+                    <a href="${a.url}" class="back-img transition" target="_blank" title="${a.title}">
+                        <img class="lazy" data-original="${a.typeImg!}"" alt="${a.title}" src="${a.typeImg!}"" style="display: inline;">
                     </a>
-                    <a href="https://www.huxiu.com/article/201186.html" target="_blank" title="新浪微博、AcFun、凤凰网的视频要被关了？只因它们没有视听牌照">
+                    <a href="${a.url}" target="_blank" title="${a.title}">
                         <div class="big2-pic-content">
-                            <h2 class="t-h1">新浪微博、AcFun、凤凰网的视频要被关了？只因它们没有视听牌照</h2>
+                            <h2 class="t-h1">${a.title}</h2>
                         </div>
                     </a>
                 </div>
-            
-                            <div class="big2-pic big2-pic-index big2-pic-index-bottom">
-                    <a href="https://www.huxiu.com/article/201100.html" class="back-img transition" target="_blank" title="【突发】万达股债“双杀”，万达电影紧急停牌">
-                        <img class="lazy" data-original="https://img.huxiucdn.com/article/cover/201611/07/162339266747.jpg?imageView2/1/w/462/h/351/|imageMogr2/strip/interlace/1/quality/85/format/jpg" alt="【突发】万达股债“双杀”，万达电影紧急停牌" src="./虎嗅网_files/162339266747.jpg" style="display: inline;">
+                [#else]
+                        <!--二级banner图-->
+                <div class="big2-pic big2-pic-index big2-pic-index-bottom">
+                    <a href="${a.url}" class="back-img transition" target="_blank" title="${a.title}">
+                        <img class="lazy" data-original="${a.typeImg!}"" alt="${a.title}" src="${a.typeImg!}"" style="display: inline;">
                     </a>
-                    <a href="https://www.huxiu.com/article/201100.html" target="_blank" 【突发】万达股债“双杀”，万达电影紧急停牌="">
+                    <a href="${a.url}" target="_blank" title="${a.title}">
                         <div class="big2-pic-content">
-                            <h2 class="t-h1">【突发】万达股债“双杀”，万达电影紧急停牌</h2>
+                            <h2 class="t-h1">${a.title}</h2>
                         </div>
                     </a>
                 </div>
-                    </div>
+                [/#if]
+                [/#list]
+        [/@cms_content_list]
+                
+        </div>
 
 
             <!--文章列表-->
         <div class="mod-info-flow">
-        
-        [@cms_content_list count='10' typeId='1,2'  channelId='94' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
-                [#list tag_list as a]
-                <div class="data_row news_article clearfix news_first">
-                
-                    <a href="${a.url}" class="na_pic" target="_blank">
-                        <img src="${a.typeImg!}" alt="${a.title}"  width="190" height="120" >
-                    </a>
-                    
-                    <div class="na_detail clearfix ">
-                        <div class="news_title">
-                            <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
-                        </div>
-                        <div class="news_tag">
-                        	[@text_cut s=a.description len=48 append='...'/]</div>
-                    </div>
-                </div>
-                [/#list]
-                [/@cms_content_list]
-        	
         	[@cms_content_list count='30' typeId='1,2'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
             [#list tag_list as a]
+            [#if a_index=2||a_index=5]
+            <!--特殊文章列表由编辑推送-->
+            <div class="mod-b mod-art mod-b-push ">
+                <a class="transition" href="${a.url}" target="_blank" title="${a.title}">
+                    <div class="mod-thumb ">
+                       <img class="lazy" data-original="${a.typeImg!}" alt="${a.title}" src="${a.typeImg!}">
+                    </div>
+                </a>
+                <!--文章Tag展示-->
+                <div class="column-link-box column-link-big-box">
+                    <a href="${a.url}" class="column-link" target="_blank">电商消费</a>
+                </div>
+                <div class="mob-ctt">
+                    <h2><a href="${a.url}" class="transition msubstr-row5" target="_blank">${a.title}</a></h2>
+                    <div class="mob-author">
+                            <div class="author-face">
+                                <a href="${a.url}" target="_blank"><img class="lazy" data-original="${a.typeImg!}" src="${a.typeImg!}"></a>
+                            </div>
+                            <a href="${a.url}" target="_blank">
+                                <span class="author-name">发条橙子</span>
+                            </a>
+                            <a href="https://www.huxiu.com/vip" target="_blank"></a>
+                            <i class="i-icon icon-team-auth" title="虎嗅团队"></i><span class="time">6小时前</span>
+                    </div>
+                    <div class="mob-sub">可以可以</div>
+                 </div>
+            </div>
+            [#else]
         	<div class="mod-b mod-art " data-aid="201213">
                 <!--栏目链接-->
                 <div class="mod-thumb ">
 	                <a class="transition" title="${a.title}" href="${a.url}" target="_blank">
 	                <!--文章图片-->
-	                <img class="lazy" data-original="${a.typeImg!}" alt="从马云斗王卫，看互联网的三场大战" src="${a.typeImg!}">
+	                <img class="lazy" data-original="${a.typeImg!}" alt="${a.title}" src="${a.typeImg!}">
 	                </a>
                 </div>
                 <!--文章Tag展示-->
                 <div class="column-link-box">
-                	<a href="https://www.huxiu.com/channel/103.html" class="column-link" target="_blank"></a>
+                	<a href="${a.url}" class="column-link" target="_blank"></a>
                 </div>
                 <div class="mob-ctt">
-	                <h2><a href=${a.url} class="transition msubstr-row2" target="_blank">[@text_cut s=a.description len=28 append='...'/]</a></h2>
+	                <h2><a href=${a.url} class="transition msubstr-row2" target="_blank">${a.title}</a></h2>
 					<div class="mob-author">
 		                <div class="author-face">
 		                	<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTAyOTEyNw==&amp;mid=2649631868&amp;idx=1&amp;sn=f5185ebc174c67cd05abe3c4956cd8a0&amp;chksm=f0526814c725e10252f79d5cc72951e05ccb997c05fe709e7bd60ba33502c4e01d45441d2824&amp;mpshare=1&amp;scene=1&amp;srcid=0622clSBTzfedtVnXQUYOoAE&amp;key=4ad62f60730b" target="_blank"><img src="./虎嗅网_files/default.jpg"></a>
@@ -280,6 +297,7 @@
 	                <div class="mob-sub">[@text_cut s=a.description len=28 append='...'/]</div>
                 </div>
             </div>
+            [/#if]
             [/#list]
             [/@cms_content_list]	
             	
