@@ -1,0 +1,44 @@
+
+<header id="top" role="banner" class="transition">
+    <div class="container">
+        <div class="navbar-header transition">
+            <a href="${base}/" title="首页">
+                <img src="${base}/r/cms/www/1.png" alt="${site.name}" title="首页">
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+        	<li class="nav-news js-show-menu">
+				<a href="${base}/">首页 <span class="caret"></span></a>
+			</li>
+            <li>
+					[@cms_channel_list] 
+					[#list tag_list as c]
+					  [#if c_index<6]
+					<li class="nav-news"><a href="${c.url}"
+					target="_blank">${c.name}<span class="nums-prompt nums-prompt-topic"
+						style="display: none;"></span></a></li>
+					  [/#if]
+					[/#list] 
+					[/@cms_channel_list]
+			</li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right transition">
+            <li class="app-guide js-app-guide">
+                <div class="app-guide-box" style="opacity: 0; margin-top: 0px; display: none;">
+                    <img src="./虎嗅网_files/1448211685.png">
+                    <div class="app-guide-title">
+                        <span>微信扫一扫</span><br>
+                        <span>下载虎嗅APP</span>
+                    </div>
+                </div>
+                <i class="icon icon-sm-phone"></i>APP下载<em class="guide-prompt" style="display: none;"></em>
+            </li>
+            <li class="search-li js-show-search-box"><i class="icon icon-search "></i><span>搜索</span></li>
+                        <li class="login-link-box"><a class="js-login">登录</a></li>
+            <li><a class="js-register">注册</a></li>
+                        <li><a class="js-open-contribute transition" target="_blank">投稿</a></li>
+        </ul>
+    </div>
+</header>
