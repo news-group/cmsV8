@@ -331,87 +331,19 @@
     <h3>雪花一代-热文</h3>
     <span class="span-mark"></span>
     <ul>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/199312.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/074035727328(1).jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/199312.html" class="transition" target="_blank">还没出考场，你就已经输了</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/200318.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/184344956495(1).jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/200318.html" class="transition" target="_blank">意料之外的年轻人，00后的消费观没有想象中“反骨”</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/193846.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/183157040681.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/193846.html" class="transition" target="_blank">危险！这款引诱青少年自杀的「蓝鲸游戏」正在蔓延</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/194938.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/150606846542.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/194938.html" class="transition" target="_blank">蓝鲸游戏是如何让青少年心甘情愿去自杀的？</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/196754.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/195952461270(1).jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/196754.html" class="transition" target="_blank">台湾同性婚姻合法化，湾湾是如何成为亚洲第一「弯」的？</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/195204.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/234757310958.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/195204.html" class="transition" target="_blank">互联网阴暗前传：暗网“丝绸之路”覆灭始末</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/181904.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/180341234876.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/181904.html" class="transition" target="_blank">运动品牌还是不能太 “运动”，你看Under Armour</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/184754.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/100715216250.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/184754.html" class="transition" target="_blank">95后找工作：有人优秀得逆天有人丧，有人认为上班不如卖美妆</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/193842.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/202211585343.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/193842.html" class="transition" target="_blank">小学生入学“考”家长，刺痛了你哪根神经？</a>
-        </li>
-                <li>
-            <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/192756.html" target="_blank">
-                                            <img src="./雪花一代-虎嗅网_files/220322136391.jpg">
-                                    </a>
-            </div>
-            <a href="https://www.huxiu.com/article/192756.html" class="transition" target="_blank">曾经估值4亿美元的YikYak百万美元卖身了, 我们来回顾一下它的那些年</a>
-        </li>
-            </ul>
+        [@cms_content_list typeId='2' count='10' orderBy='7' channelId='' channelOption='1']
+		     [#list tag_list as a]
+		      <li>
+				<div class="hot-article-img">
+					<a href="${a.url}" target="_blank"> <img
+						src="${a.typeImg!}">
+					</a>
+				</div> <a href="${a.url}"
+				class="transition" target="_blank">[@text_cut s=a.title len='22' append='...' /]</a>
+			  </li>
+		     [/#list]
+		   [/@cms_content_list]
+     </ul>
 </div>
 
         </div>
