@@ -597,238 +597,114 @@ $(function() {
     <div class="tab_hd">
         <ul class="tab_nav clearfix">
             <li ne-role="tab-nav" class="tagname icon_ent current"><a href="http://ent.163.com/">电影</a></li>
-            <li ne-role="tab-nav" class="nav_li_w140"><a href="http://ent.163.com/movie/">电视</a><span>/</span><a href="http://ent.163.com/music/">综艺</a></li>
         </ul>
-        <div class="channel_more_list">
-            <a href="http://ent.163.com/star/">123</a><span>/</span><a href="http://ent.163.com/photo/#Dujia">456</a>
-        </div>
     </div>
     <div class="tab_main">
         <div ne-role="tab-body" class="tab_panel current">
-            <!-- ×ó -->
+            <!-- 左边-->
             <div class="col_l">
-                <div class="cm_bigimg">
-                <img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="http://cms-bucket.nosdn.127.net/9f3dde06797341b4aa75ac6c8f4d7f8920170701173426.jpeg?imageView&amp;thumbnail=380y187&amp;quality=85" alt="ºÃÇåÁ¹£¡ÑîÃÝ×îÐÂ´óÆ¬ºÜÓÐÏÄÌìµÄ¸Ð¾õ" class="img1200" width="380" height="187" src="./ÍøÒ×_files/9f3dde06797341b4aa75ac6c8f4d7f8920170701173426.jpeg" style="opacity: 1;">
-                <img ne-lazy="effect: fadeIn;tabIndex:0" data-original="http://cms-bucket.nosdn.127.net/9f3dde06797341b4aa75ac6c8f4d7f8920170701173426.jpeg?imageView&amp;thumbnail=200y125&amp;quality=85" alt="ºÃÇåÁ¹£¡ÑîÃÝ×îÐÂ´óÆ¬ºÜÓÐÏÄÌìµÄ¸Ð¾õ" class="img960" width="200" height="125">
-                </a><h3><a href="http://ent.163.com/photoview/00AJ0003/634924.html">好有夫妻相！郑恺和女友玩换脸毫无违和感1</a></h3>
-                <div class="cm_smallimg_list clearfix">
-                <a href="http://ent.163.com/photoview/00AJ0003/634925.html" title="ÊÝÁË£¡°¢½¿Ë¦ºñµ×Ð¬ÊÝÒ»È¦ÖÕÏÔÍÈÃÀ" class="photo">
-                	<img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="http://cms-bucket.nosdn.127.net/bb81340f43c9417bab23fe06e456370820170701181007.jpeg?imageView&amp;thumbnail=185y116&amp;quality=85" alt="ÊÝÁË£¡°¢½¿Ë¦ºñµ×Ð¬ÊÝÒ»È¦ÖÕÏÔÍÈÃÀ" width="185" height="116" src="./ÍøÒ×_files/bb81340f43c9417bab23fe06e456370820170701181007.jpeg" style="display: inline; opacity: 1;">
-                </a>
-                <h3><a href="http://ent.163.com/photoview/00AJ0003/634925.html">好有夫妻相！郑恺和女友玩换脸毫无违和感2</a></h3>
-            	</div>
-            	<div class="cm_smallimg_list clearfix">
-                    <a href="http://ent.163.com/photoview/00AJ0003/634922.html" title="Éñ»°¶Ó³¤Eric´ó»é ÓëÐ¡12Ëê½¿ÆÞÉîÇéÇ×ÎÇ" class="photo">
-                        <img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="http://cms-bucket.nosdn.127.net/074ef4de942840a38b0d55b46b09663320170701171317.jpeg?imageView&amp;thumbnail=185y116&amp;quality=85" alt="Éñ»°¶Ó³¤Eric´ó»é ÓëÐ¡12Ëê½¿ÆÞÉîÇéÇ×ÎÇ" width="185" height="116" src="./ÍøÒ×_files/074ef4de942840a38b0d55b46b09663320170701171317.jpeg" style="display: inline; opacity: 1;">
-                    </a>
-                    <h3><a href="http://ent.163.com/photoview/00AJ0003/634922.html">123</a></h3>
-                </div>
-                <a href="http://ent.163.com/" class="go_btn">333</a>
+            	[@cms_content_list typeId='1,2' count='3' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+    			[#list tag_list as a]
+    			[#if a_index=0]
+    				<div class="cm_bigimg">
+	                <a href="${a.url}" title="${a.title}" target="_blank" class="photo" >
+	                <img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" class="img1200" width="380" height="187" src="${a.typeImg!a.titleImg!}" style="opacity: 1;">
+	                <img ne-lazy="effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" class="img960" width="200" height="125">
+	                </a>
+	                <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+	                </div>
+	            [/#if]    
+    			[#if a_index=1]
+    				<div class="cm_smallimg_list clearfix">
+	                <div class="cm_smallimg">
+	                <a href="${a.url}" title="${a.title}" target="_blank" class="photo">
+	                	<img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" width="185" height="116" src="${a.typeImg!a.titleImg!}" style="display: inline; opacity: 1;">
+	                </a>
+	                <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+	            	</div>
+	            [/#if]	
+    			[#if a_index=2]
+	    			<div class="cm_smallimg">
+	                    <a href="${a.url}" title="${a.title}" target="_blank" class="photo">
+	                        <img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" width="185" height="116" src="${a.typeImg!a.titleImg!}" style="display: inline; opacity: 1;">
+	                    </a>
+	                    <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+	                </div>
+	                </div>
+    			[/#if]
+				[/#list]
+     			[/@cms_content_list]
+                
             </div>
-            <!-- ÖÐ -->
+            <!-- 中间 -->
             <div class="col_c">
                 <div class="cm_news_main">
                     <ul class="cm_ul_round ul_page1">
-                            <li class="cm_fb">
-                                <a href="http://ent.163.com/17/0701/16/CO97F2AV00038FO9.html">ºÃÓÐ·òÆÞÏà£¡Ö£âýºÍÅ®ÓÑÍæ»»Á³ºÁÎÞÎ¥ºÍ¸Ð</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO94M57000038FO9.html">ÀîÖ¾·¢ÎÄÁ¦Í¦Í¬ÐÔÁµ£ºÕâ²»ÊÇÐÔ±äÌ¬ ÕâÊÇ°®</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/18/CO9F23K300037VVH.html">¼Ö¾²ö©É¹ÓëÖìµ¤ºÏÓ° ÊÖÃþ×¼ÂèÂè´ó¶ÇºÜÓÐ°®</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO95VV6A00038FO9.html">ÕÔÀöÓ±ÎªÔ±¹¤¼Ó²Í ³¬³¤ÍâÂôµ¥¾ªµ½ÍøÓÑ</a>
-                            </li>
-                                                                                                                                                                                                    <li>
-                                <a href="http://ent.163.com/17/0701/18/CO9GG61600038FO9.html">ÎâÕòÓî×ÔºÀÉ¹ÍÞ 9ËêµÄ·ÑÂüÇåÐãµÃÏñ¸öÐ¡¹ÃÄï</a>
-                            </li>
-                                                                                                                                                           <li><a ne-href="{{boheEntList.url}}?f=163.homeEnt6" ne-text="{{boheEntList.ltitle}}" href="http://live.ent.163.com/30953605?f=163.homeEnt6">È¹×ÓÄÇÃ´¶Ì£¬Äã´©³öÈ¥×¼±¸¸øË­¿´£¿</a></li>
-                                                        <li class="cm_fb two_li">
-                                <a href="http://ent.163.com/17/0701/15/CO96389N00038FO9.html">TOPÎü´óÂéÖ»·£71Ôª±ÈÕ¨¼¦»¹±ãÒË£¿º«Ã½»¹Ô­ÕæÏà</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/18/CO9FDE6B00038FO9.html">¾´Ò»µ¤É¹ÓëÀÏÓÑµÔÊ÷½Ü½üÕÕ Ãå»³´îµµÂÞ¾©</a>
-                            </li>
-                                                                                                                                                                                                    <li>
-                                <a href="http://ent.163.com/17/0701/18/CO9GNVLH00038FO9.html">ÕÔÎÄ×¿»ú³¡ËÍ¶ùÅ®¶À×Ô×ø·É»úÔ¶ÐÐ º¢×ÓÃÇºÜµ­¶¨</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO96F7NJ00038FO9.html">183Club½âÉ¢9ÄêÔÙºÏÌå£¡ÎªÃ÷µÀÖØ³ª¾­µäÇúÄ¿</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/photoview/00AJ0003/634923.html">Ð¡ÁÖÂéÑë4Ëê¶ù×ÓµÇÌ¨ ÊÐ´¨º£ÀÏ²Ø¿ªÌ³Æí¸£</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO96IG9600038FO9.html">ºÃËÖ£¡»ô½¨»ªÃë±ä³Ô»õ º±¼û¿ªÉ¤³ªÀèÃ÷ÔÁÓï¸è</a>
-                            </li>
-                                                                                                                            </ul><ul class="cm_ul_round ul_page2">
-                                                                                    <li class="cm_fb">
-                                <a href="http://ent.163.com/17/0701/11/CO8MS5GB00038FO9.html">ÂèÂèÉæÏÓÌ°ÎÛ»òÅÐËÀÐÌ ÇúÍñæÃ£º¶ÔÖÐ¹ú·¨ÂÉÓÐÐÅÐÄ</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/07/CO8ADOCC00038FO9.html">»ô½¨»ª¾ÜÊÕ·ÛË¿ÀñÎïÔ­ÒòÆØ¹â ÒòÐ¡Ñ§ÀÏÊ¦ÕâÑùËµ</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/photoview/00AJ0003/634914.html">ÅÜÄÐÊÕ¹Ù ³ÂºÕÉ¹ÕÕ£ºÒÑ¾­¿ªÊ¼ÏëÄãÃÇÁË</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO96CD7K00038FO9.html">Íõ´óÂ½Ôâ½ð³¿µ÷Ù©£ºÅÄÕâ²¿Ï·×î´óÀ§ÄÑÊÇ±ïÐ¦</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/09/CO8EVJUL00038FO9.html">Õç×Óµ¤ÏÖÉíÏã¸Û»Ø¹é20ÖÜÄêÎÄÒÕÍí»á ¾¹È»×öÕâ¼þÊÂ</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0630/22/CO7A514M00038FO9.html">7ÔÂ1ÈÕÆðÓ°ÔºÄÚÃ¿²¿µçÓ°·ÅÓ³Ç°½«²¥·Å¡¶ÖÐ¹úÃÎ¡·</a>
-                            </li>
-                            <li class="cm_fb two_li">
-                                <a href="http://ent.163.com/photoview/00AJ0003/634894.html">ÕÅ°ØÖ¥Ð¯Á½×Ó»Ø¾Æµê Èý¸öÈË¶¼¿á¿áµÄ</a>
-                            </li>
-                            <li>
-                                <a href="http://ent.163.com/17/0701/16/CO9736S800038FO9.html">Å¦Ô¼Ê±±¨ÆÀ¡¶ÄæÊ±Óª¾È¡·£º±ð°Ñº¢×Óµ¥¶ÀÁô¼ÒÀï</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO96Q6LC00037VVH.html">º«¸ýÉ¹ÊÖÅõÏÊ»¨ËØÑÕÕÕ ·ÛË¿Ö»¹Ø×¢»¨±³ºóµÄ"ÃÀ¾°"</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/15/CO9696FS00038FO9.html">ÈÕ±¾Å®ÐÇ±³×ÅÀÏ¹«ÅÄÇéÉ«Æ¬ ±»×¥°üÎÞÄÎÀë»é</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/photoview/00AJ0003/634920.html">Å·ÑôÄÈÄÈËØÑÕÏÖÉíÓë³Â¿­¸è¶ù×ÓÍ¬¿ò</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/12/CO8R02O100038FO9.html">Ñî²ÉÄÝºØ±¦±´Ë«Éú¶ù°ÙÈÕÅÉ±ý Íûº¢×ÓÓµÐÒ¸£ÈËÉú</a>
-                            </li>
-                                                                                                                                                        <li>
-                                <a href="http://ent.163.com/17/0701/10/CO8JVK7900037VVV.html">¡¶ÎÒÃÇÏà°®°É¡·Îâê¿¹Ò³ÂÀ¤ÕÕÆ¬ÅËçâ°Ø¡°³Ô´×¡±</a>
-                            </li>
-                                                                                                                                                                                                    </ul>
+                    	[@cms_content_list typeId='1,2' count='12' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+    					[#list tag_list as a]
+    						[#if a_index=0||a_index=6]
+    							<li class="cm_fb">
+                                <a href="${a.url}" target="_blank">${a.title}</a>
+                            	</li>
+    						[#else]
+    							<li>
+                                <a href="${a.url}" target="_blank">${a.title}</a>
+                            	</li>
+    						[/#if]
+    					[/#list]
+     					[/@cms_content_list]
                 </div>
                 <a href="javascript:void(0);" class="next_news_btn" ne-click="newsNextPage($event);" target="_self">
                     <span class="bg"></span>
                     <i class="x1"></i>
                     <i class="x2"></i>
-                    <strong>»»Ò»Åú</strong>
+                    <strong>1234</strong>
                 </a>
             </div>
         </div>
-        <div ne-role="tab-body" class="tab_panel" style="display: none;">
-            <!-- ×ó -->
-            <div class="col_l">
-                <div class="cm_bigimg">
-                                                                                                                                                        <a href="http://ent.163.com/17/0701/10/CO8JLJP200037VVV.html" title="¡¶Äê´úÐã¡·µË×ÏÆå³É×¬Ç®ÄÜÊÖ Íô¶«³ÇÏ×³ö&quot;µÚÒ»´Î&quot;" class="photo">
-                            <img lazy-src="http://cms-bucket.nosdn.127.net/d377511d920a4d5d936eaba9409f91c120170701102200.png?imageView&amp;thumbnail=380y187&amp;quality=85" alt="¡¶Äê´úÐã¡·µË×ÏÆå³É×¬Ç®ÄÜÊÖ Íô¶«³ÇÏ×³ö&quot;µÚÒ»´Î&quot;" class="img1200" width="380" height="187">
-                                                                                    <img ne-lazy="effect: fadeIn;tabIndex:1" data-original="http://cms-bucket.nosdn.127.net/d377511d920a4d5d936eaba9409f91c120170701102200.png?imageView&amp;thumbnail=200y125&amp;quality=85" alt="¡¶Äê´úÐã¡·µË×ÏÆå³É×¬Ç®ÄÜÊÖ Íô¶«³ÇÏ×³ö&quot;µÚÒ»´Î&quot;" class="img960" width="200" height="125">
-                        </a>
-                        <h3><a href="http://ent.163.com/17/0701/10/CO8JLJP200037VVV.html">¡¶Äê´úÐã¡·µË×ÏÆå³É×¬Ç®ÄÜÊÖ Íô¶«³ÇÏ×³ö"µÚÒ»´Î"</a></h3>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                <div class="cm_smallimg_list clearfix">
-                                                                                                                                                                                                                                                                            <div class="cm_smallimg">
-                                <a href="http://ent.163.com/17/0701/12/CO8RHJ3R00037VVV.html" title="¡¶Ã÷ÈÕÖ®×Ó¡·ÑîÃÝÈüµÀÉý¼¶Õ½½ñÈÕÕýÊ½´òÏì" class="photo">
-                                    <img lazy-src="http://cms-bucket.nosdn.127.net/8c0226f1f8784279af40511308fa6e6d20170701123851.png?imageView&amp;thumbnail=185y116&amp;quality=85" alt="¡¶Ã÷ÈÕÖ®×Ó¡·ÑîÃÝÈüµÀÉý¼¶Õ½½ñÈÕÕýÊ½´òÏì" width="185" height="116">
-                                </a>
-                                <h3><a href="http://ent.163.com/17/0701/12/CO8RHJ3R00037VVV.html">¡¶Ã÷ÈÕÖ®×Ó¡·ÑîÃÝÈüµÀÉý¼¶Õ½½ñÈÕÕýÊ½´òÏì</a></h3>
-                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="cm_smallimg">
-                            <a href="http://ent.163.com/17/0622/08/CNH7K4D3000380CJ.html" title="ÀîÈÙºÆ¡¶¾ÍÕâÑù¡·ÑûÓ°ºóÂíË¼´¿³öÑÝMV" class="photo">
-                                <img lazy-src="http://cms-bucket.nosdn.127.net/1359445dfba44f0b8678306060a04b0420170622085320.jpeg?imageView&amp;thumbnail=185y116&amp;quality=85" alt="ÀîÈÙºÆ¡¶¾ÍÕâÑù¡·ÑûÓ°ºóÂíË¼´¿³öÑÝMV" width="185" height="116">
-                            </a>
-                            <h3><a href="http://ent.163.com/17/0622/08/CNH7K4D3000380CJ.html">ÀîÈÙºÆ¡¶¾ÍÕâÑù¡·ÑûÓ°ºóÂíË¼´¿³öÑÝMV</a></h3>
-                        </div>
-                                    </div>
-                <a href="http://ent.163.com/movie/" class="go_btn">½øÈëÓ°ÊÓÆµµÀ</a>
-            </div>
-            <!-- ÖÐ -->
-            <div class="col_c">
-                <div class="cm_news_main">
-                    <ul class="cm_ul_round">
-                                                                                                                                                                <li class="cm_fb">
-                                <a href="http://ent.163.com/17/0701/11/CO8NRVNS00037VVV.html">TFBOYSÏ×Éù¡¶¿ìÀÖ´ó±¾Óª¡·¶þÊ®ÖÜÄêÈ«ÐÂÖ÷ÌâÇú</a>
-                            </li>
-                                                                                                <li>
-                                <a href="http://ent.163.com/17/0701/11/CO8NPLDD00037VVV.html">¡¶¼«ÏÞÌôÕ½3¡·7ÔÂ9ÈÕ²¥³ö ËïºìÀ×ÍõÑ¸Å¯ÐÄ»¥¶¯</a>
-                            </li>
-                                                                                                <li>
-                                <a href="http://ent.163.com/17/0701/11/CO8NNCOI00037VVV.html">¡¶¿ìÀÖ´ó±¾Óª¡·ÕÅÖÇÁØÈÝ×æ¶ùÏÕÏÝ¡°ÈËÇéÎ£»ú¡± </a>
-                            </li>
-                                                                                                <li>
-                                <a href="http://ent.163.com/17/0701/11/CO8NIIJ000037VVV.html">¡¶Ãµ¹åÖ®ÂÃ¡·ÄÐÅ®¼Î±ö¡°ÈëÏçËæË×¡±×öÊÖ¹¤</a>
-                            </li>
-                                                                                                <li>
-                                <a href="http://ent.163.com/17/0701/11/CO8NESQG00037VVV.html">¶«·½´óÐÍ×¨Ìâ¼ÍÂ¼Æ¬¡¶µ®ÉúµØ¡·´©ËóÀúÊ·ÓëÏÖÊµ</a>
-                            </li>
-                                                                                                <li>
-                                <a href="http://ent.163.com/17/0701/10/CO8K52V100037VVV.html">¡¶ÁË²»ÆðµÄº¢×Ó¡·7ÔÂ9ÈÕÊ×²¥ Ð»ÒÀÁØ½ÓµµÌìÍõÉ©</a>
-                            </li>
-                                                                                                <li class="cm_fb two_li">
-                                <a href="http://ent.163.com/17/0701/10/CO8JVK7900037VVV.html">¡¶ÎÒÃÇÏà°®°É¡·Îâê¿¹Ò³ÂÀ¤ÕÕÆ¬ÅËçâ°Ø¡°³Ô´×¡±</a>
-                            </li>
-                                                                                                <li>
-                                <a href="http://ent.163.com/17/0701/10/CO8JQ6QV00037VVV.html">¡¶ÌôÕ½ÕßÁªÃË¡·³ÂÑ§¶¬Õæ¾üÊ¦ÂíËÕÅ·µÜ³ÉÀÏ´ó</a>
-                            </li>
-                                                                                                                                                                                                                            <li>
-                            <a href="http://dy.163.com/v2/article/detail/CO8F58GN0517EOHP.html">ÁõµÂ»ªÑ¡³öÀ´µÄÀÖÌ³ÈýÎ»¸èÉñ ¾ÍÎÊÄãÃÇ·þ²»·þ£¿</a>
-                        </li>
-                                                                                                                <li>
-                            <a href="http://dy.163.com/v2/article/detail/CO8F2O6D0517FCAU.html">ñ¼¾¸Í¯É¹ÓëÃÃÃÃºÏÓ° »ñÏ×ÎÇ³¤µÃÒ»Ä£Ò»Ñù</a>
-                        </li>
-                                                                                                                <li>
-                            <a href="http://dy.163.com/v2/article/detail/CO8F26J10517FC7V.html">±»Ö¸ÊÇ¹ýÆøÍ¯ÐÇ! ´óÕÅÎ°: ÑÝÒÕÈ¦²»¿¿Å¬Á¦¿¿Ãü</a>
-                        </li>
-                                                                                                                <li>
-                            <a href="http://dy.163.com/v2/article/detail/CO8E3GG20517G5FG.html">»Æ¼Ò¾ÔÊÅÊÀ24Äê ÓÐ¶àÉÙÈË»¹¼ÇµÃÕâÎ»ÒôÀÖÍõÕß</a>
-                        </li>
-                                        </ul>
-                </div>
-            </div>
-        </div>
+       
     </div>
 </div></div>
 </div>
 <div class="col_r">
     <div class="cm_mod_tab cm_mod_tab1 mod_tab_gongyi">
         <div class="tab_nav">
-            <h2><span class="title"><i></i><a href="http://gongyi.163.com/">¹«Òæ</a>¡¤<a href="http://media.163.com/">´«Ã½</a></span></h2>
-            <a href="http://media.163.com/" class="more">¸ü¶à</a>
+            <h2><span class="title"><i></i><a href="">聚焦</a></span></h2>
         </div>
         <div class="tab_main">
             <ul class="cm_ul_round_r">
-                                                    <li>
-                        <a href="http://www.163.com/">[¹«Òæ]</a> <a target="_blank" href="http://gongyi.163.com/17/0410/11/CHLIGC5J00933KC8.html">³ÂÀ¤¡¤ÐÐ×ßµÄÁ¦Á¿ ÔÙÆô³Ì</a>
-                    </li>
-                                                    <li>
-                        <a href="http://www.163.com/">[¹«Òæ]</a> <a target="_blank" href="http://gongyi.163.com/17/0303/11/CEJNF8Q900933KC8.html">2016ÄêÐÔÇÖ¶ùÍ¯°¸¼þÍ¬±ÈÔö³¤3³É </a>
-                    </li>
-                                                    <li>
-                        <!-- <span class="tag"><a href="">¹«Òæ</a></span> -->
-                        <a href="http://media.163.com/">[´«Ã½]</a> <a target="_blank" href="http://media.163.com/17/0616/16/CN2KO38900763NKJ.html">ÍøÒ×´«Ã½¾Ù°ìÊ×ÆÚ¡°ÎÅÑ§ÉçÉ³Áú¡±</a>
-                    </li>
-                                    <li>
-                        <!-- <span class="tag"><a href="">¹«Òæ</a></span> -->
-                        <a href="http://media.163.com/">[´«Ã½]</a> <a target="_blank" href="http://media.163.com/17/0629/12/CO3M2LB200763NKJ.html">iWeekly v4.0À´ÁË£¡¸üÐÂÓ®ºÀÀñ£¡</a>
-                    </li>
-                                    <li>
-                        <!-- <span class="tag"><a href="">¹«Òæ</a></span> -->
-                        <a href="http://media.163.com/">[´«Ã½]</a> <a target="_blank" href="http://media.163.com/17/0522/11/CL1N8FH600763NKJ.html">Ö±²¥ÏÂÒ»Õ¾£º¿´»¥ÁªÍøÊ±´úµÄ´«²¥</a>
-                    </li>
-                            </ul>
+            [@cms_content_list typeId='1,2' count='2' titLen='22' channelId='' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+    			[#list tag_list as a]
+    			<div class="cm_smallimg">
+	                <a href="${a.url}" title="${a.title}" target="_blank" class="photo">
+	                	<img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" width="185" height="116" src="${a.typeImg!a.titleImg!}" style="display: inline; opacity: 1;">
+	                </a>
+	                <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
+	            </div>
+            	[/#list]
+     		[/@cms_content_list]
+            
+            </ul>
         </div>
     </div>
-    <!-- ÍøÒ×Ê×Ò³M3  -->
-    <div class="mod_r_ad mt23">
-        <!--300*250-->
-<div style="position:relative;line-height:0;overflow:hidden;">
-<a href="http://gb.corp.163.com/gb/legal.html" class="ad_hover_href"></a>
-<iframe id="m3" name="m3" src="./ÍøÒ×_files/r(5).html" width="300" height="250" frameborder="0" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-    </div>
-    </div>
+
 </div>
 </div>
-  </div>
   </section>
   <!-- 娱乐频道 end -->
-  
+  <!-- 美图 -->
+   <section class="home-top clearfix">
+   <div class="nav-link"><a>图说世界</a></div>
+   	<div class="bx-wrapper">
+   	   [@cms_content_list  titLen='14' count='4' channelId='76' orderBy='4' channelOption='0']
+       [#list tag_list as a]
+       <div class="item" style="float: left; list-style: none; position: relative; width: 235px; margin-right: 20px;">
+        <a href="${a.url}" target="_blank"><img src="${a.typeImg!site.defImg}" width="135" height="84"><span>[@text_cut s=a.title len=titLen /]</span></a>
+       </div>
+       [/#list]
+       [/@cms_content_list]
+       </div>
+   </section> 
   
   <section class="rdjj tssj">
     <div class="nav-link"><a>图说世界</a></div>

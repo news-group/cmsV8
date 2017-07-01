@@ -18,7 +18,7 @@
       <div class="item clearfix" [#if a_index<1]style="border-top:none;"[/#if]>
         <a href="${a.url}" target="_blank" class="img"><img src="${a.typeImg!}"></a>
         <h2><a href="${a.url}" target="_blank">[@text_cut s=a.title len='22' append='...' /]</a></h2>
-        <div class="issue-comment">评论  (${a.contentCount.comments!})</div>
+        <!-- <div class="issue-comment">评论  (${a.contentCount.comments!})</div> -->
       </div>
      [/#list]
    [/@cms_content_list]

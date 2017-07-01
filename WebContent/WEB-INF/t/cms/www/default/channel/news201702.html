@@ -39,7 +39,7 @@ $(function() {
             <h1><a href="${a.url}" target="_blank">${a.title}</a></h1>
             <div class="des">[#if a.typeImg??][@text_cut s=a.description len=46 append='...'/][#else][@text_cut s=a.description len=26 append='...'/][/#if]</div>
             <div class="fl"><span class="ch">${a.ctgName}<em>${a.date?string(dateFormat)}</em></span></div>
-            <div class="data"><span class="view">${a.contentCount.views!}</span><span class="comment">${a.contentCount.comments!}</span></div>
+            <!-- <div class="data"><span class="view">${a.contentCount.views!}</span><span class="comment">${a.contentCount.comments!}</span></div> -->
           </div>
       </div>
        [/#list]
@@ -48,7 +48,6 @@ $(function() {
     </section>
   </section>
   <section class="w310">
-
     <section class="tag issue clearfix">
       <div class="tag-nav"><h1><span>热门推荐</span></h1></div>
    [@cms_content_list typeId='2' count='8' orderBy='7' channelId='${channel.id}' channelOption='0']

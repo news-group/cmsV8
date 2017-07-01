@@ -56,6 +56,19 @@ $(function(){
      
 });
 </script>
+	<script>
+		(function() {
+			var bp = document.createElement('script');
+			var curProtocol = window.location.protocol.split(':')[0];
+			if (curProtocol === 'https') {
+				bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			} else {
+				bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			}
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bp, s);
+		})();
+	</script>
 
 <head>
 <body>
@@ -63,7 +76,7 @@ $(function(){
 [#include "../include/header.html"/]
 <div class="main container clearfix">
   <section class="content_w650">
-    <h1>${content.title}<a class="position" href="${base}/news/index.jhtml">${channel.name}</a></h1>
+    <h1>${content.title}</h1>
     <div class="content-inf">发布时间：${content.releaseDate}&nbsp;&nbsp;作者：${content.author!'本站编辑'}&nbsp;&nbsp;来源：${content.origin!'本站原创'}&nbsp;&nbsp;
     <div class="content-action">
 	     [#if channel.commentControl!=2]
@@ -87,6 +100,10 @@ $(function(){
           [#else]
             ${txt!}
           [/#if]
+          <div class="neirong-shouquan-public">
+                   <!--认证-->
+			<p style="color: #ff0000"><strong>本文由${site.name}整理报道，如需转载请务必加本文链接并注明出处！</strong></p>
+          </div>
     </div>
     <!-- 分页 -->
     <div class="pagebar">[#include "../style_page/content.html"/]</div>
