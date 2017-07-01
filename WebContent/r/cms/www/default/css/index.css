@@ -92,7 +92,7 @@
 .top > div.blue{ background-color:#1e8dff;}
 
 /*head*/
-.header{width:100%; border-bottom:1px solid #cfcfcf; height:80px; box-sizing:border-box; background-color:#fff;}
+.header{width:100%; border-bottom:2px solid #f33; height:80px; box-sizing:border-box; background-color:#fff;}
 .header .logo{display:inline-block; float:left; width:230px; height:32px; margin-top:15px; background-position:-286px -10px;}
 .rel{position:relative;}
 .header-jf{position:absolute; top:8px; right:0;}
@@ -134,7 +134,7 @@
 /*新闻样式开始*/
 
 /*main*/
-.main{padding:32px 0 50px; border-bottom:5px solid #ef3838; position:relative;}
+.main{padding:3px 0 50px; border-bottom:5px solid #ef3838; position:relative;}
 .w860{width:850px; float:left;}
 .w630{width:630px; float:left;}
 
@@ -198,7 +198,7 @@
 .hot-more a:hover{border:1px solid #ef3838; color:#ef3838; transition-duration:400ms; -moz-transition-duration:400ms; -webkit-transition-duration:400ms; -o-transition-duration:400ms;}
 
 /*tag*/
-.w310{width:310px; float:right;}
+.w310{width:310px; float:right;margin-top: 18px;}
 .tag .tag-nav{width:100%; border-bottom:2px solid #e7e7e7; padding-bottom:10px; position:relative;}
 .tag .tag-nav h1{color:#1a1a1a; font-weight:normal; position:relative; display:inline-block;}
 .tag .tag-nav h1:after{content:""; height:2px; width:100%; position:absolute; left:0; bottom:-12px; background-color:#ef3838;}
@@ -599,6 +599,8 @@
 /*新闻内容页样式开始*/
 .content_w850{width:680px; float:left;}
 .content_w850 h1{color:#1f1f1f; font-size:24px; font-weight:normal;}
+.content_w650{width:650px; float:left; margin-top: 18px;}
+.content_w650 h1{color:#1f1f1f; font-size:24px; font-weight:normal;}
 h1 .position{margin-left:50px; color:#333333; font-size:16px; position:relative;}
 h1 .position:before{width:12px; height:13px; display:inline-block; content:""; position:absolute; background:url(../images/content_tubiao.png) -13px -11px no-repeat; left:-20px; bottom:3px;}
 .content-inf{margin-top:14px; color:#9a9a9a; font-size:12px; font-family:"宋体";}

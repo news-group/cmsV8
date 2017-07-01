@@ -62,19 +62,19 @@ $(function(){
 [#include "../include/top.html"/]
 [#include "../include/header.html"/]
 <div class="main container clearfix">
-  <section class="content_w850">
+  <section class="content_w650">
     <h1>${content.title}<a class="position" href="${base}/news/index.jhtml">${channel.name}</a></h1>
-    <div class="content-inf">发布时间：${content.releaseDate}&nbsp;&nbsp;作者：${content.author!'本站编辑'}&nbsp;&nbsp;来源：${content.origin!'本站原创'}&nbsp;&nbsp;浏览次数：<span id="views"></span>
+    <div class="content-inf">发布时间：${content.releaseDate}&nbsp;&nbsp;作者：${content.author!'本站编辑'}&nbsp;&nbsp;来源：${content.origin!'本站原创'}&nbsp;&nbsp;
     <div class="content-action">
 	     [#if channel.commentControl!=2]
 		    <a class="content-comment">我有话说</a>
 		 [/#if]
 	     [#if channel.allowShare]
-	      | <span class="content-share">分享
+	      <span class="content-share">分享
               [#include "inc_share.html"/]
 	     </span>
 	     [/#if]
-	      | <a class="content-collect" id="collectCsiDiv"></a>
+	     
 	    </div>
     </div>
     <div class="content-txt">
@@ -90,7 +90,7 @@ $(function(){
     </div>
     <!-- 分页 -->
     <div class="pagebar">[#include "../style_page/content.html"/]</div>
-    <div class="reward"><a href="${base}/content/reward.jspx?contentId=${content.id}"></a></div>
+    <!-- <div class="reward"><a href="${base}/content/reward.jspx?contentId=${content.id}"></a></div> -->
     <div class="inter clearfix"> 
       [#if channel.allowUpdown]
       <div class="ups"><a onclick="Cms.up('${base}',${content.id},${content.ups});"><span id="ups"></span></a></div>

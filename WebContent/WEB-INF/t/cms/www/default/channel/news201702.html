@@ -48,18 +48,7 @@ $(function() {
     </section>
   </section>
   <section class="w310">
-    <section class="tag clearfix">
-      <div class="tag-nav"><h1><span>大家都在搜</span></h1></div>
-      <div class="tagList">
-        <div style="" class="cTag">
-        [@cms_searchword_list word='' siteId='1' recommend='1' orderBy='4' count='11']
-	        [#list tag_list as word]
-		     <a href="${base}/search.jspx?q=${word.name!}">${word.name!}</a>
-	        [/#list]
-		[/@cms_searchword_list]
-        </div>
-      </div>
-    </section>
+
     <section class="tag issue clearfix">
       <div class="tag-nav"><h1><span>热门推荐</span></h1></div>
    [@cms_content_list typeId='2' count='8' orderBy='7' channelId='${channel.id}' channelOption='0']
@@ -72,30 +61,7 @@ $(function() {
      [/#list]
    [/@cms_content_list]
     </section>
-    <!-- <section class="tag topic clearfix">
-      <div class="tag-nav"><h1><a>专题专栏</a></h1></div>
-      <div class="topicList">
-        [@cms_topic_list count='3' recommend='1' orderBy='4' descLen='36' append='...']
-          [#list tag_list as t] 
-          <a href="${base}/topic/${t.id}.jspx" target="_blank"><img src="${t.titleImg!site.defImg}"></a>
-          [/#list]
-          [/@cms_topic_list] 
-      </div>
-    </section> -->
-    <!--  <section class="tag wcom clearfix">
-      <div class="tag-nav"><h1><span>精彩评论</span></h1></div>
-     [@cms_comment_list siteId=site.id checked='true' recommend='true' count='5' ]
-     [#list tag_list as c]
-      <div class="item clearfix" [#if c_index<1]style="border-top:none;"[/#if]>
-        <div class="ori-news"><a href="${c.content.url}">${c.content.title!}</a></div>
-        <div class="flo clearfix">
-          <div class="zan">${c.ups!}</div>
-          <div class="com-txt"><a href="${c.content.url}">${c.textHtml!}</a></div>
-        </div>
-      </div>
-     [/#list]
-     [/@cms_comment_list]
-    </section>-->
+
   </section>
 </div>
 [#include "../include/footer.html"/]

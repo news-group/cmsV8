@@ -39,12 +39,16 @@
 #foucsBox .foucs span{ display:inline-block; width:7px; height:7px; margin:0 5px; line-height:0; font-size:0; background:url(../img/tukubg_qq.png) -657px -586px no-repeat; cursor:pointer; overflow: hidden;}
 #foucsBox .foucs span.f{ background:url(../img/tukubg_qq.png) -657px -570px no-repeat; }
 #foucsBox .foucsButton { width:40px; height:56px; padding:0px; margin-top:-200px; position: relative; z-index:4;}
-#foucsBox .foucsButton span{ display:inline; width:46px; height:48px; margin:7px 0px 0; cursor: pointer; overflow:hidden; background:url(../img/tukubg_qq.png) -544px -570px no-repeat; }
+#foucsBox .foucsButton { width:40px; height:56px; padding:0px; margin-top:-200px; position: relative; z-index:4;}
+/*#foucsBox .foucsButton span{ display:inline; width:46px; height:48px; margin:7px 0px 0; cursor: pointer; overflow:hidden; 
+background:url(../img/tukubg_qq.png) -544px -570px no-repeat; }*/
 #foucsBox .foucsButton img{ display:none; cursor:pointer; border-width:0px; vertical-align:middle; width:100px; height:56px; }
 #foucsBox .rBtn{ float:right; }
-#foucsBox .rBtn .pre{ float:right; background-position:-600px -570x;}
+/* #foucsBox .rBtn span{ float:right; background-position:-600px -570x;} */
+#foucsBox .rBtn span{display:inline; width:46px; height:48px; margin:7px 0px 0; cursor: pointer; overflow:hidden; background:url(../img/tukubg_qq.png) -600px -570px no-repeat; float:right; }
 #foucsBox .lBtn{ float:left; }
-#foucsBox .lBtn span{ float:left; background-position:-544px -570px;}
+/* #foucsBox .lBtn span{ float:left; background-position:-544px -570px;} */
+#foucsBox .lBtn span{display:inline; width:46px; height:48px; margin:7px 0px 0; cursor: pointer; overflow:hidden; background:url(../img/tukubg_qq.png) -544px -570px no-repeat; float:left; }
 
 #foucsBox .btnHover{ width:146px; background:#408ED6; overflow:hidden;}
 #foucsBox .btnHover img{ display:inline;}

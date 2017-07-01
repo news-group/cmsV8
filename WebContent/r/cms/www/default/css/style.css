@@ -169,7 +169,7 @@
 .hot-downul dl dt{font-weight:bold; float:right; text-align:left; width:85px; }
 .dw-txt{float:right; text-align:left; width:85px; color:#a7a7a7;}
 
-.down-right{ width:234px; border:1px solid #d8d8d8; height:353px; background:url(../img/download/downrg-bg.gif) repeat-x; position:relative;}
+.down-right{ width:234px; border:1px solid #d8d8d8; height:153px; background:url(../img/download/downrg-bg.gif) repeat-x; position:relative;}
 .down-right h1{font-size:14px; color:#606060; text-indent:10px; line-height:25px;}
 .down-tubiao{width:45px; height:21px; position:absolute; top:3px; right:-2px;}
 .down-one{height:43px; border-bottom:1px dashed #dedcdd; padding-top:10px;} 
