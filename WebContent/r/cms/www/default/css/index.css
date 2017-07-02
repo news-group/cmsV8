@@ -93,7 +93,7 @@
 
 /*head*/
 .header{width:100%; border-bottom:2px solid #f33; height:80px; box-sizing:border-box; background-color:#fff;}
-.header .logo{display:inline-block; float:left; width:230px; height:32px; margin-top:15px; background-position:-286px -10px;}
+.header .logo{display:inline-block; float:left; width:200px; height:32px; margin-top:8px;margin-left:30px; background-position:-286px -10px;}
 .rel{position:relative;}
 .header-jf{position:absolute; top:8px; right:0;}
 .header-rss{position:absolute; top:29px; right:0;}

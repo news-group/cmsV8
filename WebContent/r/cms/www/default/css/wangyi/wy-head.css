@@ -2599,6 +2599,9 @@ a.photo {
 	line-height: 36px;
 	font-size: 18px
 }
+.cm_ul_round li a{
+	font-size: 17px
+}
 
 .cm_ul_round li:after {
 	margin-top: -2px
@@ -2785,7 +2788,8 @@ a.photo {
 }
 
 .cm_fb {
-	font-weight: bold
+	font-weight: bold;
+	margin-top:15px;
 }
 
 .cm_channel_tab {
