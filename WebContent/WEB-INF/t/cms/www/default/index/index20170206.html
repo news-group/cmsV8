@@ -479,7 +479,7 @@ $(function() {
 	                     <div class="slide_body">
 	                     <div class="slide_scroll clearifx" >
 		                     <div class="slide_page current"  style="width: 600px; left: 0px;">
-		                     [@cms_content_list typeId='1,2' count='3' titLen='21' channelId='108' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+		                     [@cms_content_list typeId='2' count='3' titLen='21' channelId='108' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
 		      				 [#list tag_list as a]
 		      				 [#if a_index=0]
 		                     	<div class="top">
@@ -547,13 +547,13 @@ $(function() {
         <div ne-role="tab-body" class="tab_panel current">
             <!-- 左边-->
             <div class="col_l">
-            	[@cms_content_list typeId='1,2' count='3' titLen='22' channelId='' orderBy='7' channelOption='0' dateFormat='yyyy-MM-dd']
+            	[@cms_content_list typeId='2' count='3' titLen='22' channelId='' orderBy='7' channelOption='0' dateFormat='yyyy-MM-dd']
     			[#list tag_list as a]
     			[#if a_index=0]
     				<div class="cm_bigimg">
 	                <a href="${a.url}" title="${a.title}" target="_blank" class="photo" >
-	                <img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" class="img1200" width="380" height="187" src="${a.typeImg!a.titleImg!}" style="opacity: 1;">
-	                <img ne-lazy="effect: fadeIn;tabIndex:0" data-original="${a.typeImg!a.titleImg!}" alt="${a.title}" class="img960" width="200" height="125">
+	                <img ne-lazy="loaded:true;effect: fadeIn;tabIndex:0" data-original="${a.typeImg!}" alt="${a.title}" class="img1200" width="380" height="187" src="${a.typeImg!}" style="opacity: 1;">
+	                <img ne-lazy="effect: fadeIn;tabIndex:0" data-original="${a.typeImg!}" alt="${a.title}" class="img960" width="200" height="125">
 	                </a>
 	                <h3><a href="${a.url}" target="_blank">${a.title}</a></h3>
 	                </div>
@@ -650,7 +650,7 @@ $(function() {
 	                     <div class="slide_body">
 	                     <div class="slide_scroll clearifx" >
 		                     <div class="slide_page current"  style="width: 600px; left: 0px;">
-		                     [@cms_content_list typeId='1,2,3,4' count='3' titLen='21' channelId='110' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
+		                     [@cms_content_list typeId='2' count='3' titLen='21' channelId='110' orderBy='4' channelOption='0' dateFormat='yyyy-MM-dd']
 		      				 [#list tag_list as a]
 		      				 [#if a_index=0]
 		                     	<div class="top">
