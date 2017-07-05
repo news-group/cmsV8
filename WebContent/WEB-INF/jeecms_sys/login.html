@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>JEECMS Administrator's Control Panel</title>
+<title>content admin</title>
 <#include "/jeecms_sys/head.html"/>
 <script type="text/javascript">
 if(top!=this) {
@@ -23,7 +23,7 @@ body{background:url(${base}/res/jeecms/img/login/bg.jpg) left top repeat-x;}
 <#if processUrl??><input type="hidden" name="processUrl" value="${processUrl}"/></#if>
 <div class="login-index">
   <div class="login-index-box">
-      <div class="login-logo"><img src="${base}/res/jeecms/images/login-logo.jpg"></div>
+      <div class="login-logo"><!-- <img src="${base}/res/jeecms/images/login-logo.jpg"> --></div>
       <div class="login-text">
         <div class="username-con"><i></i><input type="text" id="username" name="username" vld="{required:true}" maxlength="100" class="username" placeholder="<@s.m "login.username"/>" /></div>
         <div class="password-con"><i></i><input type="password" id="password" name="password" maxlength="32" vld="{required:true}" class="password" placeholder="<@s.m "login.password"/>" /></div>
