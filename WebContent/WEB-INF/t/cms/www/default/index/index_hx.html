@@ -9,7 +9,7 @@
     <meta name="baidu-site-verification" content="R9XA5lWxu2">
     <meta name="author" content="${site.name}">
     <meta name="keywords" content="科技资讯,商业评论,明星公司,动态,宏观,趋势,创业,精选,有料,干货,有用,细节,内幕">
-    <meta name="description" content="聚合优质的创新信息与人群，捕获精选|深度|犀利的商业科技资讯。在虎嗅，不错过互联网的每个重要时刻。">
+    <meta name="description" content="聚合优质的创新信息与人群，捕获精选|深度|犀利的商业科技资讯。不错过互联网的每个重要时刻。">
     <meta name="base-static-url" content="https://statics.huxiu.com/w/mini">
         <link rel="stylesheet" type="text/css" href="/${res}/css/hx/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/${res}/css/hx/build.css">
@@ -173,7 +173,7 @@
                     <img src="./虎嗅网_files/1448211685.png">
                     <div class="app-guide-title">
                         <span>微信扫一扫</span><br>
-                        <span>下载虎嗅APP</span>
+                        <span>下载APP</span>
                     </div>
                 </div>
                 <i class="icon icon-sm-phone"></i>APP下载<em class="guide-prompt" style="display: none;"></em>
@@ -366,7 +366,7 @@
                                 <p class="transition"><span class="icon icon-caret"></span>${a.title}</p>
                             </div>
                             <div class="story-info" style="display:none">
-                                <p class="story-detail-hide">[@text_cut s=a.description len=28 append='...'/]<a href="http://tech.sina.com.cn/d/2017-06-22/doc-ifyhmtrw3544845.shtml?cre=tianyi&amp;mod=pctech&amp;loc=22&amp;r=0&amp;doct=0&amp;rfunc=58&amp;tj=none&amp;s=0&amp;tr=0" target="_blank" class="transition">详情&gt;&gt;</a></p>
+                                <p class="story-detail-hide">[@text_cut s=a.description len=28 append='...'/]<a href="${a.url}" target="_blank" class="transition">详情&gt;&gt;</a></p>
                                 <div class="story-time">
                                     <p class="time">5小时前</p>
                                     <p class="like">
@@ -406,34 +406,38 @@
 <!--传言部分开始-->
 <div id="rumor_center"></div>
 <div class="box-moder moder-rumors-list">
-    <h3>传言</h3>
+    <h3>热点</h3>
 <!--    <span class="pull-right project-more story-more"><a href="--><!--" class="transition" target="_blank">全部</a></span>-->
     <span class="span-mark"></span>
+    [@cms_content_list count='1' typeId='2'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+            	[#list tag_list as a]
     <div class="big2-pic pull-right">
         <a href="https://www.huxiu.com/#" class="back-img" target="_blank">
-            <img class="lazy" src="./虎嗅网_files/174923026938.jpg" alt="">
+            <img class="lazy" src="${a.typeImg!}" alt="">
         </a>
-        <a href="https://chuanyan.huxiu.com/rumor/detail/650.html" target="_blank">
+        <a href="${a.url}" target="_blank">
             <div class="big2-pic-content">
-                <h2 class="t-h1">传乐视拖欠中国移动1426.25万，或被下线290G带宽</h2>
+                <h2 class="t-h1">${a.title}</h2>
             </div>
             <div class="clear"></div>
         </a>
     </div>
     <div class="clear"></div>
-    <ul class="rumorlist">
+    <!-- <ul class="rumorlist">
                 <li>
             <div class="icon-clock"><img src="./虎嗅网_files/clock.jpg"></div>
             <p class="rumor-time">06月22日  17:49</p>
-            <p class="rumor-detail"><a href="https://chuanyan.huxiu.com/rumor/detail/650.html" target="_blank">一份网络文件显示，乐视拖欠中国移动江苏公司1426.25万元IDC...</a></p>
+            <p class="rumor-detail"><a href="${a.url}" target="_blank">[@text_cut s=a.description len=28 append='...'/]...</a></p>
         </li>
     </ul>
     <div class="rumor-more">
-        <p><a href="https://chuanyan.huxiu.com/rumor/detail/650.html" target="_blank">详情&gt;&gt;</a></p>
-    </div>
-    <div class="rumor-brunt-box">
+        <p><a href="${a.url}" target="_blank">详情&gt;&gt;</a></p>
+    </div> -->
+    [/#list]
+            	[/@cms_content_list] 
+    <!-- <div class="rumor-brunt-box">
         <a class="btn btn-blue-cy js-update-cy transition  js-show-bruntback-box1" data-url="https://chuanyan.huxiu.com/api/source/add">我要爆料</a>
-    </div>
+    </div> -->
 </div>
 <div class="placeholder"></div>
 <!--传言部分结束-->
