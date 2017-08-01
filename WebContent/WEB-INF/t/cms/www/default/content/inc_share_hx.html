@@ -1,0 +1,48 @@
+<!--普通文章分享微博-->
+<li><a
+	href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent('${content.title}')+'&url='+encodeURIComponent('${content.url}')+'&pic='+encodeURIComponent('http://www.cnews123.com${content.typeImg!}'),'_blank','width=450,height=400');})()"
+	title="新浪微博分享"> <i
+		class="icon icon-article icon-article-wb js-weibo "
+		data-location="article" data-f="pc-weibo-article" aid="200762"></i>
+</a></li>
+<!--普通文章分享微信-->
+<!-- <li class="weixin">
+								<div class="weixin-Qr-code js-wx-Qr-code"
+									style="opacity: 0; margin-left: 80px; display: none;">
+									<div
+									</div>
+								</div> <a class="js-weixin" data-f="pc-friends-article"><i
+									class="icon icon-article icon-article-pyq"></i></a>
+							</li> -->
+
+<!--普通文章分享qq空间 -->
+<li><a href="" onclick="forward_tencentqzone('test2')"><i
+		class="icon icon-article icon-article-qzone js-qzone"
+		data-location="article" data-f="pc-qzone-article" aid="200762"></i></a></li>
+<script type="text/javascript">
+	function forward_tencentqzone(title) {
+		var p = {
+			url : '${content.url}',
+			showcount : '1',
+			desc : '${content.title}',
+			summary : '${content.title}',
+			title : '${content.title}',
+			site : '${site.name}',
+			pics : 'http://www.cnews123.com${content.typeImg!}',
+			style : '203',
+			width : 98,
+			height : 22
+		};
+		var s = [];
+		for ( var i in p) {
+			s.push(i + '=' + p[i] || '');
+		}
+		var _u = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?'
+				+ s.join('&');
+		window
+				.open(
+						_u,
+						'',
+						'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');
+	}
+</script>

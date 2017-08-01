@@ -1,0 +1,109 @@
+<footer class="footer">
+    <div class="modal-backdrop fade in js-modal-backdrop"></div>
+    <div class="feedback-box" onmouseover="is_feedback=false" onmouseout="is_feedback=true">
+
+        <div class="close-box pull-right js-feedback-close" data-show="true">
+            <i class="icon icon-close"></i>
+        </div>
+        <div class="will-choose">*</div>
+        <textarea id="content" class="form-control" placeholder="请输入反馈，我们将为您不断改进"></textarea>
+        <input class="form-control" id="contact" placeholder="请输入手机/邮箱">
+        <a class="btn btn-article pull-left js-feedback-submit transition">提交</a><span class="will-choose-error">请输入反馈信息</span>
+    </div>
+
+    <div class="go-top-box js-go-top-box">
+
+        <!-- <div class="go-top transition js-show-feedback-box">
+            <div class="go-hover transition">
+                用户反馈
+            </div>
+            <i class="icon-footer-right i-reply"></i>
+        </div>
+
+        <div class="go-top app-feedback js-app-feedback transition">
+            <div class="app-footer-guide">
+                <img src="./虎嗅网_files/1450293529.png">
+                <span style="color: #333;line-height:2;">微信扫一扫</span>
+            </div>
+            <i class="icon-footer-right i-qr"></i>
+        </div> -->
+
+        <div class="go-top go-footer js-go-top transition" id="go-top-btn">
+            <div class="go-hover transition">
+                回到顶部
+            </div>
+            <i class="icon-footer-right i-top"></i>
+        </div>
+
+    </div>
+
+    <div class="container copy-right">
+        <div class="footer-tag-list">
+            <a href="https://www.huxiu.com/about.html" target="_blank" class="transition">关于我们</a>
+            <a href="https://www.huxiu.com/joinus.html" target="_blank" class="transition">加入我们</a>
+            <a href="https://www.huxiu.com/links" target="_blank" class="transition">合作伙伴</a>
+            <a href="https://www.huxiu.com/contact.html" target="_blank" class="transition">广告及服务</a>
+            <a href="https://www.huxiu.com/help" target="_blank" class="transition">常见问题解答</a>
+            <a href="https://www.huxiu.com/tags/10340.html" target="_blank" class="transition">防网络诈骗专题</a>
+        </div>
+        <span>Copyright © <a href="https://www.huxiu.com/">虎嗅网</a> <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备12013432号-1</a>
+            &nbsp;<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102001402" target="_blank"><i class="i-wj"></i>京公网安备 11010102001402号</a>&nbsp;&nbsp;&nbsp;<em class="bull-right">本站由</em><i class="icon-aliyun" style="width: 70px;background-size: 100%;left: 7px;"></i><em class="bull-em">提供计算与安全服务</em>
+        </span>
+        <div class="footer-icon-list pull-right">
+            <ul>
+                <a><li class="Qr-code-footer">
+                    <div class="app-qrcode">
+                        <img src="./虎嗅网_files/weixin_erweima.png">
+                    </div>
+                    <i class="icon icon-footer icon-footer-wx"></i>
+                </li>
+                </a>
+                <a><li class="Qr-code-footer">
+                    <div class="app-qrcode">
+                        <img src="./虎嗅网_files/app_erweima.png">
+                    </div>
+                    <i class="icon icon-footer icon-footer-ios"></i>
+                </li>
+                </a>
+                <a><li class="Qr-code-footer">
+                    <div class="app-qrcode">
+                        <img src="./虎嗅网_files/app_erweima.png">
+                    </div>
+                    <i class="icon icon-footer icon-footer-android"></i>
+                </li>
+                </a>
+                <a href="http://en.huxiu.com/" target="_blank" title="虎嗅英文版">
+                    <li><i class="icon icon-footer icon-footer-inter"></i></li>
+                </a>
+                <a href="http://www.huxiu.com/rss" target="_blank" title="虎嗅RSS订阅中心">
+                    <li><i class="icon icon-footer icon-footer-rss"></i></li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" language="javascript">
+   //加入收藏
+       function AddFavorite(sURL, sTitle) {
+           sURL =encodeURI(sURL); 
+       try{   
+          window.external.addFavorite(sURL, sTitle);   
+       }catch(e) {   
+          try{   
+              window.sidebar.addPanel(sTitle, sURL, "");   
+           }catch (e){   
+              alert("您的浏览器不支持自动加入收藏功能，请使用Ctrl+D进行添加，或手动在浏览器里进行设置！");
+          }   
+       }
+   }
+   
+   //设为首页
+   function SetHome(url){
+       if (document.all) {
+          document.body.style.behavior='url(#default#homepage)';
+             document.body.setHomePage(url);
+       }else{
+           alert("您的浏览器不支持自动设置页面为首页功能，请您手动在浏览器里设置该页面为首页！");
+       }
+   }
+</script>

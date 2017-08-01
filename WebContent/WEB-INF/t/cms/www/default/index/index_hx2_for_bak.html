@@ -91,9 +91,31 @@
                             </form>
         </div>
         <div class="search-history hide" id="history">
+            <span>我的搜索历史</span>
+            <ul class="transition" id="history_ul">
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E6%95%B0%E7%A0%81">数码</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E7%A7%91%E6%8A%80">科技</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E7%A7%91%E6%8A%80">科技</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E4%BA%92%E8%81%94%E7%BD%91">互联网</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E6%B1%BD%E8%BD%A6%E4%B9%8B%E5%AE%B6">汽车之家</a></li>
+            </ul>
+            <div class="pull-right empty-history js-empty-history">清空历史</div>
         </div>
         <div class="search-history search-hot">
-            
+            <strong>热搜词</strong>
+            <ul>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E6%95%B0%E7%A0%81">数码</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E7%A7%91%E6%8A%80">科技</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E4%BA%92%E8%81%94%E7%BD%91">互联网</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E6%B1%BD%E8%BD%A6%E4%B9%8B%E5%AE%B6">汽车之家</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=Uber">Uber</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E6%94%AF%E4%BB%98%E5%AE%9D">支付宝</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E5%A4%A7%E6%95%B0%E6%8D%AE">大数据</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E5%88%9B%E4%B8%9A">创业</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E6%97%85%E6%B8%B8">旅游</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E7%BE%8E%E5%9B%A2">美团</a></li>
+                <li class="transition"><a href="https://www.huxiu.com/search.html?s=%E7%A4%BE%E4%BA%A4">社交</a></li>
+            </ul>
         </div>
     </div>
 </div>
@@ -376,28 +398,19 @@
     <div class="js-more-story" data-cur_page="1"></div>
 </div>
 <div class="placeholder"></div>
+<input type="hidden" id="agree-add-url" value="https://analyzer.huxiu.com/discuss/agree">
+<input type="hidden" id="count-info-url" value="https://analyzer.huxiu.com/discuss/getByIds">
 <input type="hidden" id="product" value="story">
 <!--短趣部分结束-->
 
 <!--传言部分开始-->
 <div id="rumor_center"></div>
-<!--投稿-->
-	<div class="box-moder moder-project-list">
-		<div class="project-btn-box">
-            <a class="js-open-cy btn btn-blue-cy transition">投稿与合作</a>
-        </div>
-        <ul class="project-info">
-            <li>1.投稿与撤稿：editor_ent@163.com</li>
-            <li>2.QQ:123456</li>
-        </ul>
-    </div>
-    <div class="placeholder"></div>
 <div class="box-moder moder-rumors-list">
     <h3>热点</h3>
 <!--    <span class="pull-right project-more story-more"><a href="--><!--" class="transition" target="_blank">全部</a></span>-->
     <span class="span-mark"></span>
     [@cms_content_list count='1' typeId='2'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
-    	[#list tag_list as a]
+            	[#list tag_list as a]
     <div class="big2-pic pull-right">
         <a href="https://www.huxiu.com/#" class="back-img" target="_blank">
             <img class="lazy" src="${a.typeImg!}" alt="">
@@ -410,36 +423,96 @@
         </a>
     </div>
     <div class="clear"></div>
-    	[/#list]
-    [/@cms_content_list] 
+    <!-- <ul class="rumorlist">
+                <li>
+            <div class="icon-clock"><img src="./虎嗅网_files/clock.jpg"></div>
+            <p class="rumor-time">06月22日  17:49</p>
+            <p class="rumor-detail"><a href="${a.url}" target="_blank">[@text_cut s=a.description len=28 append='...'/]...</a></p>
+        </li>
+    </ul>
+    <div class="rumor-more">
+        <p><a href="${a.url}" target="_blank">详情&gt;&gt;</a></p>
+    </div> -->
+    [/#list]
+            	[/@cms_content_list] 
     <!-- <div class="rumor-brunt-box">
         <a class="btn btn-blue-cy js-update-cy transition  js-show-bruntback-box1" data-url="https://chuanyan.huxiu.com/api/source/add">我要爆料</a>
     </div> -->
 </div>
 <div class="placeholder"></div>
 <!--传言部分结束-->
-	
+
+
     <div class="box-moder moder-project-list">
-        <h3>娱乐江湖</h3>
+        <h3>创业白板</h3>
         <span class="pull-right project-more"><a href="https://www.huxiu.com/chuangye" class="transition" target="_blank">全部</a></span>
         <span class="span-mark"></span>
         <ul>
-        		[@cms_content_list count='3' typeId='2'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
-    			[#list tag_list as a]
-    			<li>
+                            <li>
                     <div class="project-pic">
-                        <img src="${a.typeImg!}">
+                        <img src="./虎嗅网_files/1489474631225095.jpg">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
-                            <a href="${a.url}" class="transition" target="_blank">${a.title}</a>
+                            <a href="https://www.huxiu.com/chuangye/product/59921" class="transition" target="_blank">犀牛电竞</a>
                         </div>
+                        <p>犀牛电竞——兼容LOL&amp;炉石传说的自动化对战平台</p>
                     </div>
                 </li>
-    			[/#list]
-    			[/@cms_content_list] 
+                            <li>
+                    <div class="project-pic">
+                        <img src="./虎嗅网_files/1489733234036407.png">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <a href="https://www.huxiu.com/chuangye/product/59941" class="transition" target="_blank">奇点云</a>
+                        </div>
+                        <p>奇点云大数据平台</p>
+                    </div>
+                </li>
+                            <li>
+                    <div class="project-pic">
+                        <img src="./虎嗅网_files/cy_pic_logo_1489742425.jpg">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <a href="https://www.huxiu.com/chuangye/product/59943" class="transition" target="_blank">保险盒子</a>
+                        </div>
+                        <p>保险盒子-互联网保险定制专家</p>
+                    </div>
+                </li>
+                            <li>
+                    <div class="project-pic">
+                        <img src="./虎嗅网_files/1488784386846578.png">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <a href="https://www.huxiu.com/chuangye/product/59899" class="transition" target="_blank">肽积木</a>
+                        </div>
+                        <p>医疗大数据人工智能训练平台+医疗影像智能诊断平台</p>
+                    </div>
+                </li>
+                            <li>
+                    <div class="project-pic">
+                        <img src="./虎嗅网_files/1488178607939022.jpg">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">
+                            <a href="https://www.huxiu.com/chuangye/product/59885" class="transition" target="_blank">波奇网</a>
+                        </div>
+                        <p>是一家宠物服务平台。</p>
+                    </div>
+                </li>
+                    </ul>
+        <div class="project-btn-box">
+            <a class="js-open-cy btn btn-blue-cy transition">立即报名，获得曝光机会！</a>
+        </div>
+        <ul class="project-info">
+            <li>创业公司立即报名提交信息的好处：</li>
+            <li>1.优质的展示和访谈机会</li>
+            <li>2.获得投资人的关注</li>
+            <li>3.虎嗅提供的创业支持服务</li>
         </ul>
-        
     </div>
     <div class="placeholder"></div>
 
@@ -448,22 +521,57 @@
         <h3>赞助内容</h3>
         <span class="span-mark"></span>
         <ul>
-        	[@cms_content_list count='5' typeId='2'  channelId='99' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
-    			[#list tag_list as a]
-    			<li>
+                            <li>
                     <div class="mod-thumb">
-                        <a href="${a.url}" target="_blank">
-                            <img src="${a.typeImg}">
+                        <a href="https://www.huxiu.com/special/957.html" target="_blank">
+                            <img src="./虎嗅网_files/112722625248.jpg">
                         </a>
                     </div>
                     <div class="project-content">
-                        <a href="${a.url}" class="c2" target="_blank">数字医疗</a><span class="point">•</span><a href="${a.url}" target="_blank">${a.title}</a>
+                        <a href="https://www.huxiu.com/special/957.html" class="c2" target="_blank">数字医疗</a><span class="point">•</span><a href="https://www.huxiu.com/article/198766.html" target="_blank">茄子口腔云崔伟：用数据打败时间</a>
                     </div>
                 </li>
-    			[/#list]
-    		[/@cms_content_list]
-                
-        </ul>
+                            <li>
+                    <div class="mod-thumb">
+                        <a href="https://www.huxiu.com/zhuanti/hisense" target="_blank">
+                            <img src="./虎嗅网_files/ec521f68f241735921cfcf97dade0d84.png">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <a href="https://www.huxiu.com/zhuanti/hisense" class="c2" target="_blank">技术原创力</a><span class="point">•</span><a href="https://www.huxiu.com/article/195406.html" target="_blank">手术方案可以用AI全程设计了，科幻离现实还有多远？</a>
+                    </div>
+                </li>
+                            <li>
+                    <div class="mod-thumb">
+                        <a href="https://www.huxiu.com/special/499.html" target="_blank">
+                            <img src="./虎嗅网_files/262c910c2f4110d33270ab20d872394b.png">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <a href="https://www.huxiu.com/special/499.html" class="c2" target="_blank">商业发明史</a><span class="point">•</span><a href="https://www.huxiu.com/article/192073.html" target="_blank">声音传播是如何被发明的，历史这样说</a>
+                    </div>
+                </li>
+                            <li>
+                    <div class="mod-thumb">
+                        <a href="https://www.huxiu.com/special/484.html" target="_blank">
+                            <img src="./虎嗅网_files/121306622724.png">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <a href="https://www.huxiu.com/special/484.html" class="c2" target="_blank">三星GalaxyS8</a><span class="point">•</span><a href="https://www.huxiu.com/article/191057.html" target="_blank">水性PK！三星S8 vs iPhone ...</a>
+                    </div>
+                </li>
+                            <li>
+                    <div class="mod-thumb">
+                        <a href="https://www.huxiu.com/special/501.html" target="_blank">
+                            <img src="./虎嗅网_files/8a36f9bdd41400ed9bd527e4d2934331.png">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <a href="https://www.huxiu.com/special/501.html" class="c2" target="_blank">梦想城行者</a><span class="point">•</span><a href="https://www.huxiu.com/article/176374.html" target="_blank">无人机市场这么火，自拍型无人机如何突围场景？</a>
+                    </div>
+                </li>
+                    </ul>
     </div>
     <div class="placeholder"></div>
 
@@ -604,8 +712,91 @@
 
     </div>
 </div>
+<footer class="footer">
+    <div class="modal-backdrop fade in js-modal-backdrop"></div>
+    <div class="feedback-box" onmouseover="is_feedback=false" onmouseout="is_feedback=true">
 
-[#include "../include/footer_hx.html"/]
+        <div class="close-box pull-right js-feedback-close" data-show="true">
+            <i class="icon icon-close"></i>
+        </div>
+        <div class="will-choose">*</div>
+        <textarea id="content" class="form-control" placeholder="请输入反馈，我们将为您不断改进"></textarea>
+        <input class="form-control" id="contact" placeholder="请输入手机/邮箱">
+        <a class="btn btn-article pull-left js-feedback-submit transition">提交</a><span class="will-choose-error">请输入反馈信息</span>
+    </div>
+
+    <div class="go-top-box js-go-top-box">
+
+        <div class="go-top transition js-show-feedback-box">
+            <div class="go-hover transition">
+                用户反馈
+            </div>
+            <i class="icon-footer-right i-reply"></i>
+        </div>
+
+        <div class="go-top app-feedback js-app-feedback transition">
+            <div class="app-footer-guide">
+                <img src="./虎嗅网_files/1450293529.png">
+                <span style="color: #333;line-height:2;">微信扫一扫</span>
+            </div>
+            <i class="icon-footer-right i-qr"></i>
+        </div>
+
+        <div class="go-top go-footer js-go-top transition" id="go-top-btn">
+            <div class="go-hover transition">
+                回到顶部
+            </div>
+            <i class="icon-footer-right i-top"></i>
+        </div>
+
+    </div>
+
+    <div class="container copy-right">
+        <div class="footer-tag-list">
+            <a href="https://www.huxiu.com/about.html" target="_blank" class="transition">关于我们</a>
+            <a href="https://www.huxiu.com/joinus.html" target="_blank" class="transition">加入我们</a>
+            <a href="https://www.huxiu.com/links" target="_blank" class="transition">合作伙伴</a>
+            <a href="https://www.huxiu.com/contact.html" target="_blank" class="transition">广告及服务</a>
+            <a href="https://www.huxiu.com/help" target="_blank" class="transition">常见问题解答</a>
+            <a href="https://www.huxiu.com/tags/10340.html" target="_blank" class="transition">防网络诈骗专题</a>
+        </div>
+        <span>Copyright © <a href="https://www.huxiu.com/">虎嗅网</a> <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备12013432号-1</a>
+            &nbsp;<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102001402" target="_blank"><i class="i-wj"></i>京公网安备 11010102001402号</a>&nbsp;&nbsp;&nbsp;<em class="bull-right">本站由</em><i class="icon-aliyun" style="width: 70px;background-size: 100%;left: 7px;"></i><em class="bull-em">提供计算与安全服务</em>
+        </span>
+        <div class="footer-icon-list pull-right">
+            <ul>
+                <a><li class="Qr-code-footer">
+                    <div class="app-qrcode">
+                        <img src="./虎嗅网_files/weixin_erweima.png">
+                    </div>
+                    <i class="icon icon-footer icon-footer-wx"></i>
+                </li>
+                </a>
+                <a><li class="Qr-code-footer">
+                    <div class="app-qrcode">
+                        <img src="./虎嗅网_files/app_erweima.png">
+                    </div>
+                    <i class="icon icon-footer icon-footer-ios"></i>
+                </li>
+                </a>
+                <a><li class="Qr-code-footer">
+                    <div class="app-qrcode">
+                        <img src="./虎嗅网_files/app_erweima.png">
+                    </div>
+                    <i class="icon icon-footer icon-footer-android"></i>
+                </li>
+                </a>
+                <a href="http://en.huxiu.com/" target="_blank" title="虎嗅英文版">
+                    <li><i class="icon icon-footer icon-footer-inter"></i></li>
+                </a>
+                <a href="http://www.huxiu.com/rss" target="_blank" title="虎嗅RSS订阅中心">
+                    <li><i class="icon icon-footer icon-footer-rss"></i></li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</footer>
+
 
 <script type="text/javascript" src="/${res}/js/hx/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/${res}/js/hx/jquery.detection.js"></script>
