@@ -30,8 +30,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://static.huxiucdn.com/common/image/apple-touch-icon-180x180.png">
     <script async="" src="/${res}/js/hx/sensorsdata.sdk.js"></script>
     <script src="/${res}/js/hx/push.js"></script>
-    <script async="" src="/${res}/js/hx/analytics.js">
-    </script><script src="/${res}/js/hx/hm.js"></script>
+    <script async="" src="/${res}/js/hx/analytics.js"></script>
+    <script src="/${res}/js/hx/hm.js"></script>
     <script>
         var uid='0';
         var is_vip='';
@@ -120,49 +120,8 @@
         }
     </style>
 
-<![endif]--><header id="top" role="banner" class="transition">
-    <div class="container">
-        <div class="navbar-header transition">
-            <a href="${base}/" title="首页">
-                <img src="${base}/r/cms/www/zgzixun21.png" alt="${site.name}" title="首页">
-            </a>
-        </div>
-        <ul class="nav navbar-nav navbar-left">
-        	<li class="nav-news js-show-menu">
-				<a href="${base}/">首页 <span class="caret"></span></a>
-			</li>
-            <li>
-					[@cms_channel_list] 
-					[#list tag_list as c]
-					  [#if c_index<6]
-					<li class="nav-news"><a href="${c.url}"
-					target="_blank">${c.name}<span class="nums-prompt nums-prompt-topic"
-						style="display: none;"></span></a></li>
-					  [/#if]
-					[/#list] 
-					[/@cms_channel_list]
-			</li>
-
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right transition">
-            <li class="app-guide js-app-guide">
-                <div class="app-guide-box" style="opacity: 0; margin-top: 0px; display: none;">
-                    <img src="./虎嗅网_files/1448211685.png">
-                    <div class="app-guide-title">
-                        <span>微信扫一扫</span><br>
-                        <span>下载APP</span>
-                    </div>
-                </div>
-                <i class="icon icon-sm-phone"></i>APP下载<em class="guide-prompt" style="display: none;"></em>
-            </li>
-            <li class="search-li js-show-search-box"><i class="icon icon-search "></i><span>搜索</span></li>
-                        <li class="login-link-box"><a class="js-login">登录</a></li>
-            <li><a class="js-register">注册</a></li>
-                        <li><a class="js-open-contribute transition" target="_blank">投稿</a></li>
-        </ul>
-    </div>
-</header>
+<![endif]-->
+[#include "../include/header_hx.html"/]
 <div class="placeholder-height"></div>
 <div class="container" id="index">
 
@@ -268,8 +227,8 @@
 		                </a>
 		                <a href="https://www.huxiu.com/vip" target="_blank" title="购买VIP会员"></a>
 		                <span class="time">${a.date?string(dateFormat)}</span>
-		                <i class="icon icon-cmt"></i><em>${a.date}</em>
-		                <i class="icon icon-fvr"></i><em>0</em>
+		                <!-- <i class="icon icon-cmt"></i><em>${a.date}</em>
+		                <i class="icon icon-fvr"></i><em>0</em> -->
 	                </div>
 					<!--外部文章/内部文章两者取其一-->
 	                <div class="mob-sub">[@text_cut s=a.description len=28 append='...'/]</div>
@@ -346,8 +305,8 @@
                             <div class="story-info" style="display:none">
                                 <p class="story-detail-hide">[@text_cut s=a.description len=28 append='...'/]<a href="${a.url}" target="_blank" class="transition">详情&gt;&gt;</a></p>
                                 <div class="story-time">
-                                    <p class="time">5小时前</p>
-                                    <p class="like">
+                                    <p class="time">${a.date?string(dateFormat)}</p>
+                                    <!-- <p class="like">
                                     </p><div class="article-type pull-right">
                                         <div class="icon-like-prompt">
                                             <i class="icon icon-like active"></i><span class="c1">+1</span>
@@ -355,13 +314,13 @@
                                         <ul>
                                             <li class="js-icon-like-new load-count-list" data-type="like" data-id="3152" data-product="story"><i class="icon icon-like "></i><span class="like agree-count">0</span></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <p></p>
                                     <div class="clear"></div>
                                 </div>
                             </div>
                             <div class="story-time story-time-footer">
-                                <p class="time">5小时前</p>
+                                <p class="time">${a.date?string(dateFormat)}</p>
                                 <div class="clear"></div>
                             </div>
                         </div>
@@ -457,7 +416,7 @@
                         </a>
                     </div>
                     <div class="project-content">
-                        <a href="${a.url}" class="c2" target="_blank">数字医疗</a><span class="point">•</span><a href="${a.url}" target="_blank">${a.title}</a>
+                        <!-- <a href="${a.url}" class="c2" target="_blank">数字医疗</a><span class="point">•</span> --><a href="${a.url}" target="_blank">${a.title}</a>
                     </div>
                 </li>
     			[/#list]
