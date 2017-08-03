@@ -22,19 +22,20 @@
 <script type="text/javascript">
 	function forward_tencentqzone(title) {
 		var p = {
-			url : '${content.url}',
+			url : 'http://www.cnews123.com'+'${content.url}',
 			showcount : '1',
 			desc : '${content.title}',
-			summary : '${content.title}',
+			summary : '',
 			title : '${content.title}',
 			site : '${site.name}',
-			pics : 'http://www.cnews123.com${content.typeImg!}',
+			pics : 'http://www.cnews123.com'+'${content.typeImg!}',
 			style : '203',
 			width : 98,
 			height : 22
 		};
 		var s = [];
 		for ( var i in p) {
+			
 			s.push(i + '=' + p[i] || '');
 		}
 		var _u = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?'
