@@ -134,27 +134,31 @@
             
             [@cms_content_list count='20' typeId='1,2'  channelId='${channel.id}' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
             [#list tag_list as a]
+            
            <div class="mod-b mod-art " data-aid="201869">
-                            <div class="mod-angle">热</div>
+           [#if a_index<5]
+           <div class="mod-angle">热</div>
+           [/#if]
                         <!--栏目链接-->
             <div class="mod-thumb ">
-                                <a class="transition" title="${a.title}" href="${a.url}" target="_blank">
-                                            <img class="lazy" data-original="${a.typeImg!}" alt="${a.title}" src="${a.typeImg!}" style="display: inline;">
-                                    </a>
+	            <a class="transition" title="${a.title}" href="${a.url}" target="_blank">
+	            	<img class="lazy" data-original="${a.typeImg!}" alt="${a.title}" src="${a.typeImg!}" style="display: inline;">
+	            </a>
             </div>
             <div class="mob-ctt">
                 <h2>
                     <a href="${a.url}" class="transition msubstr-row2" target="_blank">${a.title}</a>
                 </h2>
                 <div class="mob-author">
-                                            <div class="author-face">
+                        <!-- <div class="author-face">
                             <a href="${a.url}" target="_blank"><img src="./雪花一代-虎嗅网_files/75_avatar_big.jpg"></a>
-                        </div>
-                        <a href="https://www.huxiu.com/member/1351375.html" target="_blank">
-                            <span class="author-name">水原瓜子</span>
+                        </div> -->
+                        <a href="" >
+                            <span class="author-name">${a.ctgName}</span>
                         </a>
                         <a href="https://www.huxiu.com/vip" target="_blank"></a>
-                        <i class="i-icon icon-team-auth" title="虎嗅团队"></i>                                        <span class="time">1天前</span>
+                        <i class="i-icon icon-team-auth" title="虎嗅团队"></i> 
+						<span class="time">${a.date?string(dateFormat)}</span>
                     <i class="icon icon-cmt"></i><em>5</em>
                     <i class="icon icon-fvr"></i><em>63</em>
                 </div>
