@@ -2,7 +2,9 @@ package com.jeecms.common.upload;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 
 import org.apache.commons.io.FileUtils;
@@ -10,6 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
+
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.geometry.Positions;
 
 /**
  * 本地文件存储
@@ -61,21 +66,27 @@ public class FileRepository implements ServletContextAware {
 		store(file, dest);
 		return filename;
 	}
-
+//上传类型图片走着
 	private void store(MultipartFile file, File dest) throws IOException {
 		try {
 			UploadUtils.checkDirAndCreate(dest.getParentFile());
-			file.transferTo(dest);
+			
+			InputStream isFile = file.getInputStream();
+			Thumbnails.of(isFile).size(530, 400).toFile(dest);
+//			file.transferTo(dest);
 		} catch (IOException e) {
 			log.error("Transfer file error when upload file", e);
 			throw e;
 		}
 	}
-
+//上传内容图片和附件图片的时候走这
 	private void store(File file, File dest) throws IOException {
 		try {
 			UploadUtils.checkDirAndCreate(dest.getParentFile());
-			FileUtils.copyFile(file, dest);
+//			Thumbnails.of(file).size(600, 500).toFile(dest);
+			log.info("&&&&"+getRealPath("/r/cms/www/zgkuixun.png"));
+			Thumbnails.of(file).size(550, 500).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(getRealPath("/r/cms/www/zgkuixun.png"))), 0.5f).outputQuality(1f).toFile(dest);
+//			FileUtils.copyFile(file, dest);
 		} catch (IOException e) {
 			log.error("Transfer file error when upload file", e);
 			throw e;

@@ -402,12 +402,12 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 				if(StringUtils.isBlank(ext.getTypeImg())){
 					ext.setTypeImg(imgList.get(0));
 				}
-				if(StringUtils.isBlank(ext.getContentImg())){
-					ext.setContentImg(imgList.get(0));
-				}
-				if(StringUtils.isBlank(ext.getTitleImg())){
-					ext.setTitleImg(imgList.get(0));
-				}
+//				if(StringUtils.isBlank(ext.getContentImg())){
+//					ext.setContentImg(imgList.get(0));
+//				}
+//				if(StringUtils.isBlank(ext.getTitleImg())){
+//					ext.setTitleImg(imgList.get(0));
+//				}
 			}
 		}
 		
@@ -495,12 +495,12 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 				if(StringUtils.isBlank(ext.getTypeImg())){
 					ext.setTypeImg(imgList.get(0));
 				}
-				if(StringUtils.isBlank(ext.getContentImg())){
-					ext.setContentImg(imgList.get(0));
-				}
-				if(StringUtils.isBlank(ext.getTitleImg())){
-					ext.setTitleImg(imgList.get(0));
-				}
+//				if(StringUtils.isBlank(ext.getContentImg())){
+//					ext.setContentImg(imgList.get(0));
+//				}
+//				if(StringUtils.isBlank(ext.getTitleImg())){
+//					ext.setTitleImg(imgList.get(0));
+//				}
 			}
 		}
 		// 更新扩展表
