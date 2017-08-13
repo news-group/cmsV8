@@ -1,6 +1,7 @@
 <script type="text/javascript" src="/${res}/js/hx/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/${res}/js/hx/jquery.detection.js"></script>
 <script type="text/javascript" src="/${res}/js/hx/sea.js"></script>
+ 
 <header id="top" role="banner" class="transition">
     <div class="container">
         <div class="navbar-header transition">
@@ -25,8 +26,38 @@
 			</li>
 
         </ul>
-
         <ul class="nav navbar-nav navbar-right transition">
+        <div >
+        	<form onsubmit="return baiduWithHttps(this)" action="http://www.baidu.com/baidu" target="_blank">
+    <input name="tn" type="hidden" value="SE_zzsearchcode_shhzc78w">
+    <a href="https://www.baidu.com/" target="_blank">
+        <img src="https://www.baidu.com/img/baidu_jgylogo3.gif" alt="Baidu" align="bottom" border="0" style="width:100px;height:32px">
+    </a>
+    <a display:block; style="padding-left: 5; margin-bottom: 0;">
+        <input type="text"  onfocus="checkHttps" name="word"  size="3" style="width:185px;height:26px">
+    </a>
+    <!-- <input type="submit"value="百度搜索" style="width:65px;height:28px"> -->
+</form>
+<script src="http://s1.bdstatic.com/r/www/cache/global/js/BaiduHttps_20150714_zhanzhang.js"></script>
+<script>
+    function checkHttps () {
+        BaiduHttps.useHttps();    
+    };
+    function baiduWithHttps (formname) {
+        var data = BaiduHttps.useHttps();
+        if (data.s === 0) {
+            return true;
+        }
+        else {
+            formname.action = 'https://www.baidu.com/baidu' + '?ssl_s=1&ssl_c' + data.ssl_code;
+            return true;
+        }
+    };
+</script>
+        </div>	
+        </ul>
+
+        <!-- <ul class="nav navbar-nav navbar-right transition">
             <li class="app-guide js-app-guide">
                 <div class="app-guide-box" style="opacity: 0; margin-top: 0px; display: none;">
                     <img src="./虎嗅网_files/1448211685.png">
@@ -41,6 +72,6 @@
                         <li class="login-link-box"><a class="js-login">登录</a></li>
             <li><a class="js-register">注册</a></li>
                         <li><a class="js-open-contribute transition" target="_blank">投稿</a></li>
-        </ul>
+        </ul> -->
     </div>
 </header>

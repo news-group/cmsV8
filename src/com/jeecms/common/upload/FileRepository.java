@@ -1,5 +1,6 @@
 package com.jeecms.common.upload;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +15,7 @@ import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
 import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.Thumbnails.Builder;
 import net.coobird.thumbnailator.geometry.Positions;
 
 /**
@@ -66,19 +68,40 @@ public class FileRepository implements ServletContextAware {
 		store(file, dest);
 		return filename;
 	}
-//上传类型图片走着
+//上传类型图片走这
 	private void store(MultipartFile file, File dest) throws IOException {
 		try {
 			UploadUtils.checkDirAndCreate(dest.getParentFile());
 			
 			InputStream isFile = file.getInputStream();
-			Thumbnails.of(isFile).size(530, 400).toFile(dest);
+//			Thumbnails.of(isFile).size(530, 400).sourceRegion(Positions.CENTER, 530, 400).toFile(dest);
+			Thumbnails.of(isFile).scale(1f).toFile(dest);
+			pressPic(dest,530,400,dest);
 //			file.transferTo(dest);
 		} catch (IOException e) {
 			log.error("Transfer file error when upload file", e);
 			throw e;
 		}
 	}
+	//压缩至指定图片尺寸，保持图片不变形，多余部分裁剪掉
+		public static void pressPic(File file,int width,int higth,File to) throws IOException{
+			BufferedImage image = ImageIO.read(file);  
+			Builder<BufferedImage> builder = null;  
+			  
+			int imageWidth = image.getWidth();  
+			int imageHeitht = image.getHeight();  
+			if ((float)higth / width != (float)imageWidth / imageHeitht) {  
+			    if (imageWidth > imageHeitht) {  
+			        image = Thumbnails.of(file).height(higth).asBufferedImage();  
+			    } else {  
+			        image = Thumbnails.of(file).width(width).asBufferedImage();  
+			    }  
+			    builder = Thumbnails.of(image).sourceRegion(Positions.CENTER, width, higth).size(width, higth);  
+			} else {  
+			    builder = Thumbnails.of(image).size(width, higth);  
+			}  
+			builder.toFile(to); 
+		}
 //上传内容图片和附件图片的时候走这
 	private void store(File file, File dest) throws IOException {
 		try {

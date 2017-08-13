@@ -20,19 +20,13 @@
 	name="viewport">
 <meta name="renderer" content="webkit">
 <meta name="baidu-site-verification" content="R9XA5lWxu2">
-<meta name="author" content="提琴没有弦-虎嗅网">
-<meta name="keywords" content="电影，冯小刚">
-<meta name="description" content="其实是电视和电影行业的战争">
+<meta name="author" content="${content.author!}">
+<meta name="keywords" content="${content.tagStr!}">
+<meta name="description" content="${content.description!}">
 <meta name="base-static-url" content="https://statics.huxiu.com/w/mini">
-<meta content="电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？" property="og:title">
+<meta content="${content.title}" property="og:title">
 <meta content="article" property="og:type">
-<meta content="虎嗅网" property="og:site_name">
-<meta content="https://www.huxiu.com/article/200762.html"
-	property="og:url">
-<meta
-	content="https://img.huxiucdn.com/article/cover/201706/20/202129606420.jpg"
-	property="og:image">
-<meta content="其实是电视和电影行业的战争" property="og:description">
+<meta content="${site.name}" property="og:site_name">
 <link rel="stylesheet" type="text/css"
 	href="/${res}/css/hx/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
@@ -51,30 +45,18 @@
 	href="/${res}/css/hx/o.css">
 <link rel="stylesheet" type="text/css"
 	href="/${res}/css/hx/video.css">
+	<link rel='icon' href='${base}/r/cms/www/k.ico' type='image/x-ico' />
 <!--[if lt IE 9]>
     <script src="https://static.huxiucdn.com/common/html5shiv/html5shiv.min.js"></script>
     <script src="https://static.huxiucdn.com/common/respond/respond.min.js"></script>
     <![endif]-->
-<link rel="apple-touch-icon" sizes="76x76"
-	href="https://static.huxiucdn.com/common/image/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="120x120"
-	href="https://static.huxiucdn.com/common/image/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="152x152"
-	href="https://static.huxiucdn.com/common/image/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180"
-	href="https://static.huxiucdn.com/common/image/apple-touch-icon-180x180.png">
 <script>
 	var uid = '0';
 	var is_vip = '';
-	var huxiu_hash_code = 'aa6599014b5e371b990d200c5aa05944';
+	var huxiu_hash_code1 = 'aa6599014b5e371b990d200c5aa05944';
 	var aid = 200762;
 
-	var itemId = '200762';
-	var signAna = 'beb66e9404bc4754cf01134b4ade8e26944de1f9';
-	var signTime = '1498052565';
-	var productId = '11';
-	var channel = 'huxiu';
-	var refer = 'https://www.huxiu.com/';
+	
 
 	var relatedArticle = '';
 	var url = window.location.href;
@@ -216,8 +198,6 @@
 	<input type="hidden" id="article">
 	<input type="hidden" id="nextArticleId" value="200761">
 	<input type="hidden" id="comment-type" value="article">
-	<input type="hidden" id="analyzer-server-url"
-		value="https://analyzer.huxiu.com">
 	<div class="article-section-wrap">
 		<div class="article-section" data-aid="200762">
 			<div class="container" id="article200762">
@@ -285,9 +265,6 @@
 							</ul>
 						</div>
 
-
-
-						<!--公共评论-->
 						
 						<!--相关文章位置-->
 						<div id="related-article-wrap200762">
@@ -296,84 +273,23 @@
 								<span class="span-mark-author">推荐阅读</span>
 								<div class="article-list-box">
 									<input type="hidden" id="relatedSourceType" value="manual">
+									[@cms_content_list typeId='2' count='6' orderBy='7' channelId='${channel.id}' channelOption='2']
+								     [#list tag_list as a]
 									<div class="article-box transition">
 										<div class="related-pic-box">
-											<a id="re_aid_199952" class="js-related-article"
-												data-id="199952" data-is-video="0" target="_blank"> <img
-												src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/173507804164.jpg">
-
+											<a id="re_aid_199952" class="js-related-article" href="${a.url}"
+												data-id="199952" data-is-video="0" target="_blank"> 
+												<img src="${a.typeImg!}">
 											</a>
 										</div>
 										<div class="article-title">
-											<a class="js-related-article" data-id="199952"
-												target="_blank">走过被“遗忘”的30年，上海电影如何再...</a>
+											<a class="js-related-article" data-id="199952" href="${a.url}"
+												target="_blank">${a.title}</a>
 										</div>
 									</div>
-									<div class="article-box transition">
-										<div class="related-pic-box">
-											<a id="re_aid_195960" class="js-related-article"
-												data-id="195960" data-is-video="0" target="_blank"> <img
-												src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/230251691060.jpg">
-
-											</a>
-										</div>
-										<div class="article-title">
-											<a class="js-related-article" data-id="195960"
-												target="_blank">范冰冰当上戛纳电影节评委了，红毯争艳背...</a>
-										</div>
-									</div>
-									<div class="article-box transition">
-										<div class="related-pic-box">
-											<a id="re_aid_196595" class="js-related-article"
-												data-id="196595" data-is-video="0" target="_blank"> <img
-												src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/223213937120.jpg">
-
-											</a>
-										</div>
-										<div class="article-title">
-											<a class="js-related-article" data-id="196595"
-												target="_blank">孟非、吴秀波入伙的澳洲电影公司，能帮助...</a>
-										</div>
-									</div>
-									<div class="article-box transition">
-										<div class="related-pic-box">
-											<a id="re_aid_197327" class="js-related-article"
-												data-id="197327" data-is-video="0" target="_blank"> <img
-												src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/192056978382.jpg">
-
-											</a>
-										</div>
-										<div class="article-title">
-											<a class="js-related-article" data-id="197327"
-												target="_blank">在关注同性恋群体方面，好莱坞影视公司哪...</a>
-										</div>
-									</div>
-									<div class="article-box transition">
-										<div class="related-pic-box">
-											<a id="re_aid_200342" class="js-related-article"
-												data-id="200342" data-is-video="0" target="_blank"> <img
-												src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/121518777827.jpg">
-
-											</a>
-										</div>
-										<div class="article-title">
-											<a class="js-related-article" data-id="200342"
-												target="_blank">去年扎堆成立的新电影公司们，是如何干掉...</a>
-										</div>
-									</div>
-									<div class="article-box transition">
-										<div class="related-pic-box">
-											<a id="re_aid_196375" class="js-related-article"
-												data-id="196375" data-is-video="0" target="_blank"> <img
-												src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/151443974473.jpg">
-
-											</a>
-										</div>
-										<div class="article-title">
-											<a class="js-related-article" data-id="196375"
-												target="_blank">自high式营销行不通，复映片《大话西...</a>
-										</div>
-									</div>
+								     [/#list]
+								   [/@cms_content_list]
+									
 								</div>
 							</div>
 						</div>
@@ -554,8 +470,9 @@
 <![endif]-->
 
 
-
+	
 	<script>
+	//百度推送抓取
 		(function() {
 			var bp = document.createElement('script');
 			var curProtocol = window.location.protocol.split(':')[0];

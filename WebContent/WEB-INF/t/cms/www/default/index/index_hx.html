@@ -8,8 +8,8 @@
     <meta name="renderer" content="webkit">
     <meta name="baidu-site-verification" content="R9XA5lWxu2">
     <meta name="author" content="${site.name}">
-    <meta name="keywords" content="科技资讯,商业评论,明星公司,动态,宏观,趋势,创业,精选,有料,干货,有用,细节,内幕">
-    <meta name="description" content="聚合优质的创新信息与人群，捕获精选|深度|犀利的商业科技资讯。不错过互联网的每个重要时刻。">
+    <meta name="keywords" content="资讯,评论,明星公司,动态,时尚,趋势,潮流,首发,有料,干货,有用,细节,内幕,科技,正能量,进步,特色,网红,最新,牛人,鲜肉">
+    <meta name="description" content="高效发布最新最想看的资讯，为你推送最优信息，捕获娱乐|时尚|科技|达人资讯。不错过互联网的每个重要时刻。">
     <meta name="base-static-url" content="https://statics.huxiu.com/w/mini">
         <link rel="stylesheet" type="text/css" href="/${res}/css/hx/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/${res}/css/hx/build.css">
@@ -81,7 +81,7 @@
     <div class="search-content">
 
         <div class="search-input">
-            <form role="search" method="get" action="https://www.huxiu.com/search.html" onsubmit="return checkinput()">
+            <form role="search" method="get" action="http://www.baidu.com" onsubmit="return checkinput()">
                 <button type="submit"></button>
                 <input placeholder="请输入关键字" name="s" id="search-input">
                                 <input type="hidden" name="f" value="index_search" id="search-input">
@@ -123,8 +123,9 @@
 <div class="container" id="index">
 
         <div class="wrap-left pull-left">
+        <!-- 焦点图 -->
         <div class="big-pic-box">
-        [@cms_content_list count='3' typeId='3'  channelId='94' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+        [@cms_content_list count='3' typeId='3'  channelId='94,96,97,98,76,99' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
                 [#list tag_list as a]
                 [#if a_index<1]
                 <!--一级banner图-->
@@ -171,7 +172,7 @@
 
             <!--文章列表-->
         <div class="mod-info-flow">
-        	[@cms_content_list count='30' typeId='1,2'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+        	[@cms_content_list count='30' typeId='1,2'  channelId='94,96,97,98,76,99' orderBy='4' titLen='22' channelOption='0' recommend='2' dateFormat='yyyy-MM-dd']   
             [#list tag_list as a]
             [#if a_index=2||a_index=5||a_index=8]
             <!--特殊文章列表由编辑推送-->
@@ -194,10 +195,9 @@
                             <a href="${a.url}" target="_blank">
                                 <span class="author-name">${a.ctgName}</span>
                             </a>
-                            <a href="https://www.huxiu.com/vip" target="_blank"></a>
-                            <i class="i-icon icon-team-auth" title="虎嗅团队"></i><span class="time">${a.date?string(dateFormat)}</span>
+                            <i class="i-icon icon-team-auth" title="${a.title}"></i><span class="time">${a.date?string(dateFormat)}</span>
                     </div>
-                    <div class="mob-sub">[@text_cut s=a.description len=28 append='...'/]</div>
+                    <div class="mob-sub">[@text_cut s=a.description len=98 append='...'/]</div>
                  </div>
             </div>
             [#else]
@@ -206,7 +206,7 @@
                 <div class="mod-thumb ">
 	                <a class="transition" title="${a.title}" href="${a.url}" target="_blank">
 	                <!--文章图片-->
-	                <img class="lazy" data-original="${a.tyteImg!a.titleImg!}" alt="${a.title}" src="${a.typeImg!}">
+	                <img class="lazy" data-original="${a.tyteImg!}" alt="${a.title}" src="${a.typeImg!}">
 	                </a>
                 </div>
                 <!--文章Tag展示-->
@@ -228,51 +228,18 @@
 		                <i class="icon icon-fvr"></i><em>0</em> -->
 	                </div>
 					<!--外部文章/内部文章两者取其一-->
-	                <div class="mob-sub">[@text_cut s=a.description len=28 append='...'/]</div>
+	                <div class="mob-sub">[@text_cut s=a.description len=98 append='...'/]</div>
                 </div>
             </div>
             [/#if]
             [/#list]
             [/@cms_content_list]	
             	
-            	
-              
-                                                                                <!--特殊文章列表由编辑推送-->
-            <div class="mod-b mod-art mod-b-push ">
-                <a class="transition" href="https://www.huxiu.com/article/201139.html" target="_blank" title="京东“卖家秀”土到你不敢相信？sorry，人家已入股时尚买手电商Farfetch，洋气着呢">
-                    <div class="mod-thumb ">
-                        
-                                                    <img class="lazy" data-original="https://img.huxiucdn.com/article/cover/201706/22/163513851666.jpg?imageView2/1/w/900/h/675/|imageMogr2/strip/interlace/1/quality/85/format/jpg" alt="京东“卖家秀”土到你不敢相信？sorry，人家已入股时尚买手电商Farfetch，洋气着呢" src="./虎嗅网_files/bg.png">
-                                            </div>
-                </a>
-                <!--文章Tag展示-->
-                                    <div class="column-link-box column-link-big-box">
-                                                                                                                                    <a href="https://www.huxiu.com/channel/103.html" class="column-link" target="_blank">电商消费</a>
-                                                                        </div>
-                                <div class="mob-ctt">
-                    <h2><a href="https://www.huxiu.com/article/201139.html" class="transition msubstr-row5" target="_blank">京东“卖家秀”土到你不敢相信？sorry，人家已入股时尚买手电商Farfetch，洋气着呢</a></h2>
-
-                    <div class="mob-author">
-                                                    <div class="author-face">
-                                <a href="https://www.huxiu.com/member/325078.html" target="_blank"><img class="lazy" data-original="https://img.huxiucdn.com/auth/data/avatar/000/32/50/78_avatar_big.jpg?imageView2/1/w/72/h/72/|imageMogr2/strip/interlace/1/quality/85/format/jpg" src="./虎嗅网_files/bg.png"></a>
-                            </div>
-                            <a href="https://www.huxiu.com/member/325078.html" target="_blank">
-                                <span class="author-name">发条橙子</span>
-                            </a>
-                            <a href="https://www.huxiu.com/vip" target="_blank"></a>
-                            <i class="i-icon icon-team-auth" title="虎嗅团队"></i>                                                <span class="time">6小时前</span>
-                    </div>
-
-                                            <div class="mob-sub">可以可以</div>
-                                    </div>
-            </div>
-
-
         </div>
-    
-        <div class="get-mod-more js-get-mod-more-list transition" data-cur_page="1" data-last_dateline="1498088340">
+    <!--增加动态加载功能  -->
+        <!-- <div class="get-mod-more js-get-mod-more-list transition" data-cur_page="1" data-last_dateline="1498088340">
             点击加载更多
-        </div>
+        </div> -->
 
         
     </div>
@@ -286,7 +253,7 @@
 <div id="story_center"></div>
 <div class="box-moder moder-story-list">
     <h3>Top头条</h3>
-    <span class="pull-right project-more story-more"><a href="https://www.huxiu.com/story/index" class="transition" target="_blank">全部</a></span>
+    <span class="pull-right project-more story-more"></span>
     <span class="span-mark"></span>
     <div class="story-box-warp">
         <div class="nano">
@@ -344,15 +311,15 @@
         </div>
         <ul class="project-info">
             <li>1.投稿与撤稿：editor_ent@163.com</li>
-            <li>2.QQ:123456</li>
+            <li>2.合作QQ: 396530768</li>
         </ul>
     </div>
     <div class="placeholder"></div>
 <div class="box-moder moder-rumors-list">
-    <h3>热点</h3>
+    <h3>热点</h3><!-- 只推明星 -->
 <!--    <span class="pull-right project-more story-more"><a href="--><!--" class="transition" target="_blank">全部</a></span>-->
     <span class="span-mark"></span>
-    [@cms_content_list count='1' typeId='2'  channelId='' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+    [@cms_content_list count='1' typeId='2'  channelId='94' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
     	[#list tag_list as a]
     <div class="big2-pic pull-right">
         <a href="https://www.huxiu.com/#" class="back-img" target="_blank">
@@ -401,10 +368,10 @@
 
 
     <div class="box-moder moder-project-list promote-box">
-        <h3>赞助内容</h3>
+        <h3>精品推荐</h3><!--  主要是科技／时尚-->
         <span class="span-mark"></span>
         <ul>
-        	[@cms_content_list count='5' typeId='2'  channelId='99' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+        	[@cms_content_list count='5' typeId='2'  channelId='97,99' orderBy='4' titLen='22' channelOption='0' recommend='1' dateFormat='yyyy-MM-dd']   
     			[#list tag_list as a]
     			<li>
                     <div class="mod-thumb">
@@ -418,143 +385,61 @@
                 </li>
     			[/#list]
     		[/@cms_content_list]
-                
         </ul>
     </div>
     <div class="placeholder"></div>
 
-
-<!--研究报告部分开始-->
+<!--明星大剖析开始-->
     <div class="box-moder hot-article">
-        <h3>创新案例</h3>
-        <span class="pull-right project-more story-more">
+        <h3>明星大剖析</h3>
+        <!-- <span class="pull-right project-more story-more">
             <a href="https://www.huxiu.com/report.html" class="transition" target="_blank">全部</a></span>
-        <span class="span-mark"></span>
+        <span class="span-mark"></span> -->
         <ul>
-            
+        	[@cms_content_list count='1' typeId='2'  channelId='107' orderBy='4' titLen='22' channelOption='0' dateFormat='yyyy-MM-dd']   
+    		[#list tag_list as a]
             <li>
             <div class="hot-article-img">
-                <a href="https://www.huxiu.com/article/199967.html" target="_blank">
-                    <img src="./虎嗅网_files/062631847037.jpg">
+                <a href="${a.url}" target="_blank">
+                    <img src="${a.typeImg!}">
                 </a>
             </div>
-            <a href="https://www.huxiu.com/article/199967.html" class="transition" target="_blank">【创新案例017】基金卖得比蚂蚁还多的东方财富，凭什么市值攀高500亿，隐忧又在哪？</a>
+            <a href="${a.url}" class="transition" target="_blank">${a.title}</a>
 
             <div class="report-author-info" style="margin-left:0px;margin-top:0px;">
-                <span class="author-face">
-                    <img src="./虎嗅网_files/63_1466563770.jpg">
-                </span>
                 <span>
-                    网事风云
+                    [@text_cut s=a.description len=28 append='...'/]
                 </span>
-                <div style="margin-left: 40px;margin-top: 5px;">
-                    关注互金、在线教育、文体等
-                </div>
             </div>
-        </li>
-                    </ul>
-        <div class="report-explain">
+        	</li>
+        	[/#list]
+    		[/@cms_content_list]
+        </ul>
+        <!-- <div class="report-explain">
             全年30+篇 案例分析，复盘有代表性的创新公司，还原商业成功背后的魔鬼细节。
-        </div>
+        </div> -->
     </div>
     <div class="placeholder"></div>
     
 
     <div class="box-moder hot-article">
-        <h3>热文</h3>
+        <h3>最热资讯</h3><!-- 所有频道不推荐的内容 -->
         <span class="span-mark"></span>
         <ul>
-                                            <li>
+        	[@cms_content_list count='8' typeId='2'  channelId='94,96,97,98,76,99' orderBy='4' titLen='22' channelOption='0' recommend='0' dateFormat='yyyy-MM-dd']   
+    		[#list tag_list as a]
+    			<li>
                     <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200781.html" target="_blank" title="连马云都不见的王卫，却被马化腾请出来了">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/215654236278.jpg">
-                            
+                        <a href="${a.url}" target="_blank" title="${a.title}">
+                                <img src="${a.typeImg!}">
                         </a>
                     </div>
-                    <a href="https://www.huxiu.com/article/200781.html" class="transition" target="_blank">连马云都不见的王卫，却被马化腾请出来了</a>
+                    <a href="${a.url}" class="transition" target="_blank">${a.title}</a>
                 </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200843.html" target="_blank" title="国产特斯拉真的要来了，除了“中国特斯拉”们，其他人坐稳了，冷静下">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/105758031001.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200843.html" class="transition" target="_blank">国产特斯拉真的要来了，除了“中国特斯拉”们，其他人坐稳了，冷静下</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200737.html" target="_blank" title="618刚过，又一家淘品牌“向死而生”怒怼京东，他哪来这么大勇气？">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/121935l2a24qg4qxk4a4la.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200737.html" class="transition" target="_blank">618刚过，又一家淘品牌“向死而生”怒怼京东，他哪来这么大勇气？</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200809.html" target="_blank" title="马云底特律“见面会”过于火爆，当地航班都瘫痪了">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/085523781793.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200809.html" class="transition" target="_blank">马云底特律“见面会”过于火爆，当地航班都瘫痪了</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/199799.html" target="_blank" title="Uber创始人卡兰尼克辞去CEO职务，或许正是他的激情“烧焦”了Uber">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/175221118942.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/199799.html" class="transition" target="_blank">Uber创始人卡兰尼克辞去CEO职务，或许正是他的激情“烧焦”了Uber</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200743.html" target="_blank" title="16家中概股，哪些风光、哪些掉队了？">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/110635125129.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200743.html" class="transition" target="_blank">16家中概股，哪些风光、哪些掉队了？</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200995.html" target="_blank" title="坚果 Pro 成了 618 销量黑马，但锤子离要成还有多远？">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/220911742376.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200995.html" class="transition" target="_blank">坚果 Pro 成了 618 销量黑马，但锤子离要成还有多远？</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200766.html" target="_blank" title="蚂蚁牵手建行，京东牵手工行，百度牵手农行，最近金融圈里的战略合作怎么这么多？">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/215326874825.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200766.html" class="transition" target="_blank">蚂蚁牵手建行，京东牵手工行，百度牵手农行，最近金融圈里的战略合作怎么这么多？</a>
-                </li>
-                                            <li>
-                    <div class="hot-article-img">
-                        <a href="https://www.huxiu.com/article/200899.html" target="_blank" title="对话王兴：如何点评阿里、腾讯和自己？">
-                                                            <!--视频和图片保留一个-->
-                                <img src="./虎嗅网_files/142341093307.jpg">
-                            
-                        </a>
-                    </div>
-                    <a href="https://www.huxiu.com/article/200899.html" class="transition" target="_blank">对话王兴：如何点评阿里、腾讯和自己？</a>
-                </li>
-                    </ul>
+    		[/#list]
+    		[/@cms_content_list]
+                
+          </ul>
     </div>
     <div class="placeholder"></div>
 
