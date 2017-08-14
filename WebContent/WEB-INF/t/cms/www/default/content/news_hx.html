@@ -90,27 +90,7 @@
 		}
 	</script>
 	<div id="login-reg-warp" class="login-reg-warp-modal"></div>
-	<div class="search-box" id="search-box">
-		<i class="icon icon-search-close js-show-search-box"></i>
 
-		<div class="search-content">
-
-			<div class="search-input">
-				<form role="search" method="get"
-					action="https://www.huxiu.com/search.html"
-					onsubmit="return checkinput()">
-					<button type="submit"></button>
-					<input placeholder="请输入关键字" name="s" id="search-input">
-				</form>
-			</div>
-			<div class="search-history hide" id="history">
-				
-			</div>
-			<div class="search-history search-hot">
-				
-			</div>
-		</div>
-	</div>
 	<!--[if lt IE 9]>
     <style>
         .search-box{
@@ -176,21 +156,36 @@
 					target="_blank">热议<span class="nums-prompt nums-prompt-topic"
 						style="display: none;"></span></a></li> -->
 			</ul>
-
+<!--百度搜索框   -->
 			<ul class="nav navbar-nav navbar-right transition">
-				<li class="app-guide js-app-guide">
-					<div class="app-guide-box">
-						<img src="./电影演员不应该去演真人秀？冯小刚、徐峥他们说得有道理吗？-虎嗅网_files/1448211685.png">
-						<div class="app-guide-title">
-							<span>微信扫一扫</span><br> <span>下载虎嗅APP</span>
-						</div>
-					</div> <i class="icon icon-sm-phone"></i>APP下载<em class="guide-prompt"></em>
-				</li>
-				<li class="search-li js-show-search-box"><i
-					class="icon icon-search "></i><span>搜索</span></li>
-				<li class="login-link-box"><a class="js-login">登录</a></li>
-				<li><a class="js-register">注册</a></li>
-				<li><a class="js-open-contribute transition" target="_blank">投稿</a></li>
+				<div >
+	        	<form onsubmit="return baiduWithHttps(this)" action="http://www.baidu.com/baidu" target="_blank">
+			    <input name="tn" type="hidden" value="SE_zzsearchcode_shhzc78w">
+			    <a href="https://www.baidu.com/" target="_blank">
+			        <img src="https://www.baidu.com/img/baidu_jgylogo3.gif" alt="Baidu" align="bottom" border="0" style="width:100px;height:32px">
+			    </a>
+			    <a display:block; style="padding-left: 5; margin-bottom: 0;">
+			        <input type="text"  onfocus="checkHttps" name="word"  size="3" style="width:185px;height:26px">
+			    </a>
+			    <!-- <input type="submit"value="百度搜索" style="width:65px;height:28px"> -->
+			</form>
+			<script src="http://s1.bdstatic.com/r/www/cache/global/js/BaiduHttps_20150714_zhanzhang.js"></script>
+			<script>
+			    function checkHttps () {
+			        BaiduHttps.useHttps();    
+			    };
+			    function baiduWithHttps (formname) {
+			        var data = BaiduHttps.useHttps();
+			        if (data.s === 0) {
+			            return true;
+			        }
+			        else {
+			            formname.action = 'https://www.baidu.com/baidu' + '?ssl_s=1&ssl_c' + data.ssl_code;
+			            return true;
+			        }
+			    };
+			</script>
+        </div>
 			</ul>
 		</div>
 	</header>
@@ -221,8 +216,8 @@
 								<span class="article-time pull-left">${content.releaseDate}</span> 
 								<!-- <span class="article-share pull-left">收藏7</span> 
 								<span class="article-pl pull-left">评论6</span>  -->
-								<a href="${base}/news/index.jhtml"
-									class="column-link" target="_blank">${channel.name}</a> <i></i>
+								<a href="${base}/a/${channel.path}"
+									class="column-link" target="_blank">${channel.path}</a> <i></i>
 							</div>
 
 						</div>
@@ -277,14 +272,14 @@
 								     [#list tag_list as a]
 									<div class="article-box transition">
 										<div class="related-pic-box">
-											<a id="re_aid_199952" class="js-related-article" href="${a.url}"
-												data-id="199952" data-is-video="0" target="_blank"> 
+											<a href="${a.url}"
+												 data-is-video="0" target="_blank"> 
 												<img src="${a.typeImg!}">
 											</a>
 										</div>
 										<div class="article-title">
-											<a class="js-related-article" data-id="199952" href="${a.url}"
-												target="_blank">${a.title}</a>
+											<a href="${a.url}"
+												target="_blank">[@text_cut s=a.title len='22' append='...' /]</a>
 										</div>
 									</div>
 								     [/#list]
